@@ -32,6 +32,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Environment
+        uses: ./.github/common-actions/setup
+
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
