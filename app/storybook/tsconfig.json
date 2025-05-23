@@ -1,5 +1,5 @@
 {
-  "extends": "@hikoui/typescript-config-hikoui/react.json",
+  "extends": "typescript-config-hikoui/react.json",
   "include": ["stories"],
   "exclude": ["node_modules", "storybook-static"]
 }

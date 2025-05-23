@@ -1,4 +1,4 @@
-import { config } from "@hikoui/eslint-config-hikoui/base";
+import { config } from "eslint-config-hikoui/base";
 
 /** @type {import("eslint").Linter.Config} */
 const configs = [

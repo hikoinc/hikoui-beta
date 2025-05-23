@@ -19,7 +19,7 @@ importers:
       "@commitlint/types":
         specifier: ^19.8.1
         version: 19.8.1
-      "@hikoui/eslint-config-hikoui":
+      "eslint-config-hikoui":
         specifier: workspace:*
         version: link:libs/eslint-config-hikoui
       eslint:
@@ -65,10 +65,10 @@ importers:
       "@chromatic-com/storybook":
         specifier: ^3
         version: 3.2.6(react@19.1.0)(storybook@8.6.14(prettier@3.5.3))
-      "@hikoui/eslint-config-hikoui":
+      "eslint-config-hikoui":
         specifier: workspace:*
         version: link:../../libs/eslint-config-hikoui
-      "@hikoui/typescript-config-hikoui":
+      "typescript-config-hikoui":
         specifier: workspace:*
         version: link:../../libs/typescript-config-hikoui
       "@storybook/addon-essentials":
@@ -177,10 +177,10 @@ importers:
         specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
     devDependencies:
-      "@hikoui/eslint-config-hikoui":
+      "eslint-config-hikoui":
         specifier: workspace:*
         version: link:../../libs/eslint-config-hikoui
-      "@hikoui/typescript-config-hikoui":
+      "typescript-config-hikoui":
         specifier: workspace:*
         version: link:../../libs/typescript-config-hikoui
       "@turbo/gen":
