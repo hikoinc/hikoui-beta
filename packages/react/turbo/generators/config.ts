@@ -2,6 +2,9 @@ import type { PlopTypes } from "@turbo/gen";
 
 // Learn more about Turborepo Generators at https://turborepo.com/docs/guides/generating-code
 
+/**
+ * @param {PlopTypes.NodePlopAPI} plop - The Plop API for generator configuration.
+ */
 export default function generator(plop: PlopTypes.NodePlopAPI): void {
   // A simple generator to add a new React component to the internal UI library
   plop.setGenerator("react-component", {

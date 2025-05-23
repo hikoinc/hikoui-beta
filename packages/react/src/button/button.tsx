@@ -1,6 +1,7 @@
+/* global alert */
 "use client";
 
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 interface ButtonProps {
   children: ReactNode;
@@ -14,7 +15,7 @@ const Button = ({ children, className, appName }: ButtonProps) => {
   };
 
   return (
-    <button className={className} onClick={handleClick}>
+    <button className={className} onClick={handleClick} type="button">
       {children}
     </button>
   );
