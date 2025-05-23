@@ -1,63 +1,14 @@
-import configPrettier from "eslint-config-prettier";
-import importPlugin from "eslint-plugin-import";
+import configPrettier from "eslint-config-prettier/flat";
+import globals from "globals";
 import js from "@eslint/js";
-import jsxA11y from "eslint-plugin-jsx-a11y";
-import path from "node:path";
-import react from "eslint-plugin-react";
-import reactHooks from "eslint-plugin-react-hooks";
+import pluginJsxA11y from "eslint-plugin-jsx-a11y";
+import pluginPrettier from "eslint-plugin-prettier";
+import pluginReact from "eslint-plugin-react";
+import pluginReactHooks from "eslint-plugin-react-hooks";
+import pluginSonarjs from "eslint-plugin-sonarjs";
 import tseslint from "typescript-eslint";
 
-/** @type {import("eslint").Linter.Config} */
-export default [
-  configPrettier,
-  js.configs.recommended,
-  ...tseslint.configs.recommended,
-  ...tseslint.configs.strict,
-  {
-    plugins: {
-      import: importPlugin,
-    },
-    rules: {
-      ...importPlugin.configs.recommended.rules,
-    },
-    settings: {
-      "import/resolver": {
-        node: {
-          extensions: [".js", ".jsx", ".ts", ".tsx"],
-        },
-        typescript: {
-          alwaysTryTypes: true,
-          project: path.resolve("./tsconfig.json"),
-        },
-      },
-    },
-  },
-  {
-    plugins: {
-      "jsx-a11y": jsxA11y,
-    },
-    rules: {
-      ...jsxA11y.configs.recommended.rules,
-    },
-  },
-  {
-    plugins: {
-      react,
-    },
-    rules: {
-      ...react.configs.recommended.rules,
-      ...react.configs["jsx-runtime"].rules,
-    },
-    settings: {
-      react: { version: "detect" },
-    },
-  },
-  {
-    plugins: {
-      "react-hooks": reactHooks,
-    },
-    rules: {
-      ...reactHooks.configs.recommended.rules,
-    },
-  },
-];
+export default tseslint.config(
+
+
+);

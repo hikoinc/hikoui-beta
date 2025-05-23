@@ -1,25 +1,27 @@
-import configPrettier from "eslint-config-prettier";
+import * as importX from "eslint-plugin-import-x";
+import configPrettier from "eslint-config-prettier/flat";
 import js from "@eslint/js";
+import tsParser from "@typescript-eslint/parser";
 import tseslint from "typescript-eslint";
-import turboPlugin from "eslint-plugin-turbo";
+import { configs as sonarjsConfigs } from "eslint-plugin-sonarjs";
+import { configs as turboConfigs } from "eslint-plugin-turbo";
 
-/** @type {import("eslint").Linter.Config} */
-const configs = [
-  configPrettier,
+export default tseslint.config(
+  importX.flatConfigs.recommended,
+  importX.flatConfigs.typescript,
   js.configs.recommended,
-  ...tseslint.configs.recommended,
-  ...tseslint.configs.strict,
+  sonarjsConfigs.recommended,
+  turboConfigs["flat/recommended"],
+  configPrettier,
   {
-    plugins: {
-      turbo: turboPlugin,
-    },
-    rules: {
-      "turbo/no-undeclared-env-vars": "error",
+    files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"],
+    languageOptions: {
+      parser: tsParser,
+      ecmaVersion: "latest",
+      sourceType: "module",
     },
   },
   {
-    ignores: ["app", "packages"],
+    ignores: ["packages", "app"],
   },
-];
-
-export default configs;
+);

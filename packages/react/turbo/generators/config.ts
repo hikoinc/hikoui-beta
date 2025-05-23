@@ -22,8 +22,8 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       {
         type: "append",
         path: "package.json",
-        pattern: /"exports"\s*:\s*{\s*(?<insertion>)/g,
-        template: '    "./{{kebabCase name}}": "./src/{{kebabCase name}}.tsx",',
+        pattern: /"exports"\s*:\s*{\s*/g,
+        template: '"./{{kebabCase name}}": "./src/{{kebabCase name}}.tsx",',
       },
     ],
   });

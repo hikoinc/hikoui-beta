@@ -14,7 +14,7 @@ const Button = ({ children, className, appName }: ButtonProps) => {
   };
 
   return (
-    <button className={className} onClick={handleClick} type="button">
+    <button className={className} onClick={handleClick}>
       {children}
     </button>
   );
