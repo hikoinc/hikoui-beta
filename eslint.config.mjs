@@ -1,11 +1,25 @@
-import { config } from "eslint-config-hikoui/base";
+import configPrettier from "eslint-config-prettier";
+import js from "@eslint/js";
+import tseslint from "typescript-eslint";
+import turboPlugin from "eslint-plugin-turbo";
 
 /** @type {import("eslint").Linter.Config} */
 const configs = [
+  configPrettier,
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  ...tseslint.configs.strict,
   {
-    ignores: ["**/dist/**", "**/storybook-static/**"],
+    plugins: {
+      turbo: turboPlugin,
+    },
+    rules: {
+      "turbo/no-undeclared-env-vars": "error",
+    },
   },
-  ...config,
+  {
+    ignores: ["app", "packages"],
+  },
 ];
 
 export default configs;
