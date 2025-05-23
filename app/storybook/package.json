@@ -3,15 +3,21 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "clean": "rimraf dist .turbo",
+    "build": "pnpm storybook:build",
+    "clean": "rimraf storybook-static .turbo",
+    "dev": "pnpm storybook",
     "eslint": "eslint .",
     "eslint:fix": "eslint . --fix",
-    "generate-component": "turbo gen react-component",
     "sort-package-json": "pnpm exec sort-package-json",
     "sort-package-json:check": "pnpm exec sort-package-json --check",
-    "typescheck": "tsc --noEmit",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook:build": "storybook build",
+    "typescheck": "tsc --noEmit"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   },
   "dependencies": {
     "react": "^19.1.0",
@@ -54,10 +60,5 @@
   "packageManager": "pnpm@10.11.0",
   "engines": {
     "node": ">=20"
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
   }
 }

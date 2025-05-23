@@ -6,5 +6,7 @@ export default defineConfig({
   clean: true,
   target: "es2019",
   dts: true,
-  banner: { js: '"use client";' },
+  banner: {
+    js: '"use client";',
+  },
 });
