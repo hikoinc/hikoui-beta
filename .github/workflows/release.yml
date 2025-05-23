@@ -32,7 +32,7 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: pnpm release
+          publish: pnpm changeset:release
           commit: "ci(changesets): version packages"
           setupGitUser: false
 

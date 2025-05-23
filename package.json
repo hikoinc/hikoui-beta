@@ -3,6 +3,12 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
+    "changeset:next-exit": "changeset pre exit next",
+    "changeset:next-nter": "changeset pre enter next",
+    "changeset:release": "changeset publish",
+    "changeset:release-dev": "changeset publish --tag dev",
+    "changeset:version": "changeset version",
+    "changeset:version-dev": "changeset version --snapshot dev",
     "clean": "pnpm clean:turbo && pnpm clean:lock && pnpm clean:node-modules && pnpm install --hoist",
     "clean:changelogs": "rimraf ./packages/**/**/CHANGELOG.md",
     "clean:lock": "rimraf ./pnpm-lock.yaml",
