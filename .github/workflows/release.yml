@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  push:
+    paths:
+      - .changeset/**
+      - packages/**"
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.RELEASE_PAT }}
+
+      - name: Setup Environment
+        uses: ./.github/common-actions/setup
+
+      - name: Build
+        run: pnpm build
+
+      - name: Create release Pull Request or publish to NPM
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: pnpm release
+          commit: "ci(changesets): version packages"
+          setupGitUser: false
+
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
