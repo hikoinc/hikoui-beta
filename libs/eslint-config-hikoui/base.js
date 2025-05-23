@@ -16,14 +16,10 @@ export const config = [
   {
     plugins: {
       turbo: turboPlugin,
+      onlyWarn: onlyWarn,
     },
     rules: {
       "turbo/no-undeclared-env-vars": "error",
-    },
-  },
-  {
-    plugins: {
-      onlyWarn,
     },
   },
   {
