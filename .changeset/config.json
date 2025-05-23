@@ -8,5 +8,5 @@
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": { "onlyUpdatePeerDependentsWhenOutOfRange": true },
-  "ignore": ["@hikoui/eslint-config-hikoui, @hikoui/typescript-config-hikoui, @hikoui/storybook"]
+  "ignore": ["@hikoui/eslint-config-hikoui", "@hikoui/typescript-config-hikoui", "@hikoui/storybook"]
 }
