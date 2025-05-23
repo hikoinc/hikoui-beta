@@ -11,6 +11,7 @@
   "type": "module",
   "scripts": {
     "build": "turbo build",
+    "changeset": "changeset",
     "changeset:next-enter": "changeset pre enter next",
     "changeset:next-exit": "changeset pre exit next",
     "changeset:release": "changeset publish",
