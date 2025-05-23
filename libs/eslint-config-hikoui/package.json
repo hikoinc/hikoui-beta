@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-hikoui",
+  "name": "@hikoui/eslint-config-hikoui",
   "version": "1.0.0",
   "private": true,
   "type": "module",

@@ -1,5 +1,5 @@
 {
-  "name": "typescript-config-hikoui",
+  "name": "@hikoui/typescript-config-hikoui",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
