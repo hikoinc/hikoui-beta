@@ -3,6 +3,7 @@ import js from "@eslint/js";
 import onlyWarn from "eslint-plugin-only-warn";
 import tseslint from "typescript-eslint";
 import turboPlugin from "eslint-plugin-turbo";
+
 /**
  * A shared ESLint configuration for the repository.
  *
