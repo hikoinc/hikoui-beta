@@ -1,0 +1,8 @@
+{
+  // "*.{js,jsx,ts,tsx,mjs,mts}": ["eslint . --fix", "prettier --write"],
+  // "*.{json,md,yml,yaml}": "prettier --write",
+  // "app/*.{js,jsx,ts,tsx,mjs,mts}": ["eslint --fix", "prettier --write"],
+  "packages/*.{js,jsx,ts,tsx,mjs,mts}": ["eslint --fix", "prettier --write"]
+  // "app/*.{json,md,yml,yaml}": "prettier --write",
+  // "packages/*.{json,md,yml,yaml}": "prettier --write"
+}
