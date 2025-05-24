@@ -12,7 +12,9 @@
     "sort-package-json:check": "pnpm exec sort-package-json --check",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "typescheck": "tsc --noEmit"
+    "typescheck": "tsc --noEmit",
+    "prettier": "prettier --write .",
+    "prettier:check": "prettier --check ."
   },
   "eslintConfig": {
     "extends": [

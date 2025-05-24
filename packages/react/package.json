@@ -49,7 +49,9 @@
     "generate-component": "turbo gen react-component",
     "sort-package-json": "pnpm exec sort-package-json",
     "sort-package-json:check": "pnpm exec sort-package-json --check",
-    "typescheck": "tsc --noEmit"
+    "typescheck": "tsc --noEmit",
+    "prettier": "prettier --write .",
+    "prettier:check": "prettier --check ."
   },
   "dependencies": {
     "react": "^19.1.0",
