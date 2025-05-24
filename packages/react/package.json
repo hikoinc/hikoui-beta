@@ -44,8 +44,6 @@
     "build": "tsup",
     "clean": "rimraf dist .turbo",
     "dev": "tsup --watch",
-    "eslint": "eslint .",
-    "eslint:fix": "eslint . --fix",
     "generate-component": "turbo gen react-component",
     "sort-package-json": "pnpm exec sort-package-json",
     "sort-package-json:check": "pnpm exec sort-package-json --check",
@@ -56,25 +54,12 @@
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.27.0",
     "@turbo/gen": "^2.5.0",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
-    "@typescript-eslint/eslint-plugin": "^8.32.1",
-    "@typescript-eslint/parser": "^8.32.1",
-    "eslint": "^9.27.0",
-    "eslint-import-resolver-typescript": "^4.3.5",
-    "eslint-plugin-import-x": "^4.12.2",
-    "eslint-plugin-jsdoc": "^50.6.17",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-sonarjs": "^3.0.2",
-    "eslint-plugin-turbo": "^2.5.3",
     "sort-package-json": "^3.0.0",
     "tsup": "^8.5.0",
-    "typescript": "5.8.2",
-    "typescript-eslint": "^8.32.1"
+    "typescript": "5.8.2"
   },
   "peerDependencies": {
     "react": ">=18 || >=19.0.0-rc.0",

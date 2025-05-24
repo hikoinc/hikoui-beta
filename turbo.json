@@ -12,12 +12,6 @@
       "cache": false,
       "persistent": true
     },
-    "eslint": {
-      "dependsOn": ["^eslint"]
-    },
-    "eslint:fix": {
-      "dependsOn": ["^eslint:fix"]
-    },
     "sort-package-json": {
       "dependsOn": ["^sort-package-json"]
     },
