@@ -1,6 +1,6 @@
 {
   "name": "@hikoui-beta/react",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Hikoui is a minimal-design React + Tailwind CSS component system for fast, scalable UI development.",
   "keywords": [
     "react",
@@ -44,8 +44,6 @@
     "build": "tsup",
     "clean": "rimraf dist .turbo",
     "dev": "tsup --watch",
-    "eslint": "eslint . --max-warnings 0",
-    "eslint:fix": "eslint . --fix --max-warnings 0",
     "generate-component": "turbo gen react-component",
     "sort-package-json": "pnpm exec sort-package-json",
     "sort-package-json:check": "pnpm exec sort-package-json --check",
@@ -56,13 +54,9 @@
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@hikoui/eslint-config-hikoui": "workspace:*",
-    "@hikoui/typescript-config-hikoui": "workspace:*",
     "@turbo/gen": "^2.5.0",
-    "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
-    "eslint": "^9.27.0",
     "sort-package-json": "^3.0.0",
     "tsup": "^8.5.0",
     "typescript": "5.8.2"
@@ -70,6 +64,10 @@
   "peerDependencies": {
     "react": ">=18 || >=19.0.0-rc.0",
     "react-dom": ">=18 || >=19.0.0-rc.0"
+  },
+  "packageManager": "pnpm@10.11.0",
+  "engines": {
+    "node": ">=20"
   },
   "publishConfig": {
     "access": "public"

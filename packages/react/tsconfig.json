@@ -1,10 +1,9 @@
 {
-  "extends": "@hikoui/typescript-config-hikoui/react.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
-    "declaration": true,
-    "declarationMap": true
+    "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": ["src", "turbo"],
   "exclude": ["node_modules", "dist"]
 }

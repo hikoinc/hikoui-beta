@@ -1,9 +1,11 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { storybookTest } from "@storybook/experimental-addon-test/vitest-plugin";
 import { defineConfig } from "vitest/config";
 
-import { storybookTest } from "@storybook/experimental-addon-test/vitest-plugin";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const dirname = typeof __dirname !== "undefined" ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 

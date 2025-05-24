@@ -10,6 +10,7 @@ const commitlintConfig: UserConfig = {
     "scope-case": [2, "always", "lower-case"],
     "subject-empty": [2, "never"],
     "subject-case": [2, "always", "lower-case"],
+    "subject-max-length": [2, "always", 50],
     "type-enum": [
       2,
       "always",
