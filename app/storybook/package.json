@@ -12,9 +12,7 @@
     "sort-package-json:check": "pnpm exec sort-package-json --check",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "typescheck": "tsc --noEmit",
-    "prettier": "prettier --write .",
-    "prettier:check": "prettier --check ."
+    "typescheck": "tsc --noEmit"
   },
   "eslintConfig": {
     "extends": [
@@ -42,7 +40,6 @@
     "@vitest/browser": "^3.1.4",
     "@vitest/coverage-v8": "^3.1.4",
     "eslint": "^9.27.0",
-    "eslint-config-prettier": "^10.1.5",
     "eslint-import-resolver-typescript": "^4.3.5",
     "eslint-plugin-import-x": "^4.12.2",
     "eslint-plugin-jsdoc": "^50.6.17",
