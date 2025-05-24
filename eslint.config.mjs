@@ -5,7 +5,6 @@ import * as importX from "eslint-plugin-import-x";
 import jsdoc from "eslint-plugin-jsdoc";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import react from "eslint-plugin-react";
-import storybook from "eslint-plugin-storybook";
 import { configs as reactHooksConfigs } from "eslint-plugin-react-hooks";
 import { configs as sonarjsConfigs } from "eslint-plugin-sonarjs";
 import { configs as turboConfigs } from "eslint-plugin-turbo";
@@ -24,7 +23,6 @@ export default tsConfig(
       sonarjsConfigs.recommended,
       jsdoc.configs["flat/recommended"],
       reactHooksConfigs["recommended-latest"],
-      storybook.configs["flat/recommended"],
       turboConfigs["flat/recommended"],
       prettier,
     ],
