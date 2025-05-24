@@ -1,5 +1,4 @@
 {
-  "packages/react/**/*.{ts,tsx}": "eslint --fix",
-  "app/storybook/**/*.{ts,tsx}": "eslint --fix",
+  ".{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}": "eslint --fix",
   "*.{json,md,yml,yaml}": "prettier --write"
 }
