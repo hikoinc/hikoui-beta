@@ -61,10 +61,24 @@ jobs:
       - name: Check Sorted package.json
         run: pnpm sort-package-json:check
 
+  test:
+    name: Run Tests with Jest
+    runs-on: ubuntu-latest
+    needs: [eslint, typescheck, format, sort-package-json]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Environment
+        uses: ./.github/common-actions/setup
+
+      - name: Run
+        run: pnpm test
+
   build:
     name: Build and Compile Project
     runs-on: ubuntu-latest
-    needs: [eslint, typescheck, format, sort-package-json]
+    needs: [eslint, typescheck, format, sort-package-json, test]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
