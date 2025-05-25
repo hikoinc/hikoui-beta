@@ -25,6 +25,9 @@ importers:
       "@eslint/js":
         specifier: ^9.27.0
         version: 9.27.0
+      "@types/eslint-plugin-jsx-a11y":
+        specifier: ^6.10.0
+        version: 6.10.0
       "@typescript-eslint/parser":
         specifier: ^8.32.1
         version: 8.32.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.2)
@@ -55,6 +58,9 @@ importers:
       eslint-plugin-sonarjs:
         specifier: ^3.0.2
         version: 3.0.2(eslint@9.27.0(jiti@2.4.2))
+      eslint-plugin-testing-library:
+        specifier: ^7.2.1
+        version: 7.2.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.2)
       eslint-plugin-turbo:
         specifier: ^2.5.3
         version: 2.5.3(eslint@9.27.0(jiti@2.4.2))(turbo@2.5.3)
@@ -1233,6 +1239,14 @@ packages:
     resolution:
       { integrity: sha512-eOIHzCUSH7SMfonMG1LsC2f8vxBFtho6NGBznK41R84YzPuvSBzrhEps33IsQiOW9+VL6NQ9DbjQJznk/S4uRA== }
 
+  "@types/eslint-plugin-jsx-a11y@6.10.0":
+    resolution:
+      { integrity: sha512-TGKmk2gO6DrvTVADNOGQMqn3SzqcFcJILFnXNllQA34us9uClS3/AsL/cERPz6jS9ePI3bx+1q8/d2GZsxPVYw== }
+
+  "@types/eslint@9.6.1":
+    resolution:
+      { integrity: sha512-FXx2pKgId/WyYo2jXw63kk7/+TY7u7AziEJxJAnSFzHlqTAS3Ync6SvgYAN/k4/PQpnnVuzoMuVnByKK2qp0ag== }
+
   "@types/estree@1.0.7":
     resolution:
       { integrity: sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ== }
@@ -2407,6 +2421,13 @@ packages:
       { integrity: sha512-LxjbfwI7ypENeTmGyKmDyNux3COSkMi7H/6Cal5StSLQ6edf0naP45SZR43OclaNR7WfhVTZdhOn63q3/Y6puQ== }
     peerDependencies:
       eslint: ^8.0.0 || ^9.0.0
+
+  eslint-plugin-testing-library@7.2.1:
+    resolution:
+      { integrity: sha512-sZFbfPaWt+4M1tSY6bc9zyTHAEYR4RNoe7XppcAx/+PQpps+ZGEAmAiTcMykcxRFPNIsbaaIOGinTcY6++ttOA== }
+    engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0, pnpm: ^9.14.0 }
+    peerDependencies:
+      eslint: ^8.57.0 || ^9.0.0
 
   eslint-plugin-turbo@2.5.3:
     resolution:
@@ -6198,6 +6219,15 @@ snapshots:
 
   "@types/doctrine@0.0.9": {}
 
+  "@types/eslint-plugin-jsx-a11y@6.10.0":
+    dependencies:
+      "@types/eslint": 9.6.1
+
+  "@types/eslint@9.6.1":
+    dependencies:
+      "@types/estree": 1.0.7
+      "@types/json-schema": 7.0.15
+
   "@types/estree@1.0.7": {}
 
   "@types/glob@7.2.0":
@@ -7305,6 +7335,15 @@ snapshots:
       scslre: 0.3.0
       semver: 7.7.1
       typescript: 5.8.2
+
+  eslint-plugin-testing-library@7.2.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.2):
+    dependencies:
+      "@typescript-eslint/scope-manager": 8.32.1
+      "@typescript-eslint/utils": 8.32.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.2)
+      eslint: 9.27.0(jiti@2.4.2)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
 
   eslint-plugin-turbo@2.5.3(eslint@9.27.0(jiti@2.4.2))(turbo@2.5.3):
     dependencies:

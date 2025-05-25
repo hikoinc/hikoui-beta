@@ -1,4 +1,4 @@
-# Hikoui
+# Hikoui React
 
 Hikoui is a minimal-design React + Tailwind CSS component system for fast, scalable UI development.
 
@@ -8,8 +8,8 @@ Hikoui is a minimal-design React + Tailwind CSS component system for fast, scala
 
 We’re building Hikoui openly and plan to welcome community contributions soon.
 
-For now, feel free to explore the code and see our [contributing guide](./CONTRIBUTING.md).
+For now, feel free to explore the code and see our [contributing guide](../../CONTRIBUTING.md).
 
 ## License
 
-MIT License — see [LICENSE](./LICENSE).
+MIT License — see [LICENSE](../../LICENSE).
