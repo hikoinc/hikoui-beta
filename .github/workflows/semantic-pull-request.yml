@@ -10,7 +10,7 @@ on:
 
 jobs:
   main:
-    name: Validate Pull Request title
+    name: Validate Pull Request Title
     runs-on: ubuntu-latest
     permissions:
       pull-requests: read
