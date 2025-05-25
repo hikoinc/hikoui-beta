@@ -3,8 +3,8 @@ name: Release
 on:
   push:
     paths:
-      - .changeset/**
-      - packages/**"
+      - ".changeset/**"
+      - "packages/**"
     branches:
       - main
 
@@ -35,7 +35,6 @@ jobs:
           publish: pnpm changeset:release
           commit: "ci(changesets): version packages"
           setupGitUser: false
-
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.RELEASE_PAT }}
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT }}
