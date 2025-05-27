@@ -17,12 +17,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Environment
         uses: ./.github/common-actions/setup
 
       - name: Run tests and collect coverage
-        run: pnpm jest --coverage
+        run: |
+          pnpm jest --coverage
+          ls -al coverage
+          cat coverage/lcov.info | head -n 20
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4
