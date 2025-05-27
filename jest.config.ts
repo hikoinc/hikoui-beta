@@ -2,7 +2,7 @@ import type { Config } from "jest";
 
 const config: Config = {
   testEnvironment: "jsdom",
-  collectCoverageFrom: ["packages/**/*.{ts,tsx}"],
+  collectCoverageFrom: ["packages/**/*.{ts,tsx}", "!**/turbo/**", "!**/dist/**", "!**/*.d.ts"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   modulePathIgnorePatterns: ["<rootDir>/examples", "<rootDir>/tooling/cra-template*"],
   transform: {
