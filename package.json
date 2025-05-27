@@ -9,7 +9,8 @@
   "license": "MIT",
   "author": "Joe Takara <anuchit.boonsom@gmail.com>",
   "scripts": {
-    "build": "turbo build",
+    "build": "pnpm --filter=./packages/* build",
+    "build:storybook": "turbo run build --filter=app/storybook",
     "changeset": "changeset",
     "changeset:next-enter": "changeset pre enter next",
     "changeset:next-exit": "changeset pre exit next",
@@ -17,7 +18,7 @@
     "changeset:release-next": "changeset publish --tag next",
     "changeset:version": "changeset version",
     "changeset:version-next": "changeset version --snapshot next",
-    "clean": "pnpm clean:turbo && pnpm clean:lock && pnpm clean:coverage && pnpm clean:node-modules && pnpm install --hoist",
+    "clean": "turbo run clean && pnpm clean:lock && pnpm clean:coverage && pnpm clean:node-modules && pnpm install --hoist",
     "clean:changelogs": "rimraf ./packages/**/**/CHANGELOG.md",
     "clean:coverage": "rimraf ./coverage",
     "clean:lock": "rimraf ./pnpm-lock.yaml",
