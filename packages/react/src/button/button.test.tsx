@@ -3,6 +3,10 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import Button from "./button";
 
 describe("Button", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("renders the children text", () => {
     render(<Button>hello</Button>);
     expect(screen.getByText(/hello/i)).toBeInTheDocument();
