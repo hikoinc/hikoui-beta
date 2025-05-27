@@ -24,7 +24,10 @@ jobs:
         uses: ./.github/common-actions/setup
 
       - name: Run tests and collect coverage
-        run: pnpm jest --coverage
+        run: |
+          pnpm jest --coverage
+          ls -al coverage
+          cat coverage/lcov.info | head -n 20
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4
