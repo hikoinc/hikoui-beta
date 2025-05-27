@@ -1,6 +1,6 @@
-![GitHub Release](https://img.shields.io/github/v/release/hikoinc/hikoui-beta)
-![GitHub branch check runs](https://img.shields.io/github/check-runs/hikoinc/hikoui-beta/main)
-[![codecov](https://codecov.io/gh/hikoinc/hikoui-beta/graph/badge.svg?token=A5M6HU52MQ)](https://codecov.io/gh/hikoinc/hikoui-beta)
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=hikoinc_hikoui-beta&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=hikoinc_hikoui-beta)
+[![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=hikoinc_hikoui-beta&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=hikoinc_hikoui-beta)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=hikoinc_hikoui-beta&metric=coverage)](https://sonarcloud.io/summary/new_code?id=hikoinc_hikoui-beta)
 ![GitHub License](https://img.shields.io/github/license/hikoinc/hikoui-beta)
 
 # Hikoui
@@ -17,4 +17,4 @@ For now, feel free to explore the code and see our [contributing guide](./CONTRI
 
 ## License
 
-MIT License — see [LICENSE](./LICENSE).
+MIT License [Joe Takara](https://github.com/joetakara).

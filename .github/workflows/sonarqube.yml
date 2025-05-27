@@ -12,7 +12,7 @@ on:
 
 jobs:
   upload-coverage:
-    name: Upload Coverage
+    name: SonarQube Analysis
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,7 +22,7 @@ jobs:
         uses: ./.github/common-actions/setup
 
       - name: Run tests and collect coverage
-        run: pnpm jest:coverage
+        run: pnpm jest --coverage
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4
