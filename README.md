@@ -1,3 +1,8 @@
+![GitHub Release](https://img.shields.io/github/v/release/hikoinc/hikoui-beta)
+![GitHub branch check runs](https://img.shields.io/github/check-runs/hikoinc/hikoui-beta/main)
+[![codecov](https://codecov.io/gh/hikoinc/hikoui-beta/branch/main/graph/badge.svg)](https://codecov.io/gh/hikoinc/hikoui-beta)
+![GitHub License](https://img.shields.io/github/license/hikoinc/hikoui-beta)
+
 # Hikoui
 
 Hikoui is a minimal-design React + Tailwind CSS component system for fast, scalable UI development.
