@@ -1,4 +1,4 @@
-name: Semantic PR Title Check
+name: Semantic
 
 on:
   pull_request:
