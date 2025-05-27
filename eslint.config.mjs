@@ -1,4 +1,5 @@
 import * as importX from "eslint-plugin-import-x";
+import globals from "globals";
 import js from "@eslint/js";
 import jsdoc from "eslint-plugin-jsdoc";
 import jsxA11y from "eslint-plugin-jsx-a11y";
@@ -35,6 +36,11 @@ const configs = tsConfig(
       parser: tsParser,
       ecmaVersion: "latest",
       sourceType: "module",
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...globals.jest,
+      },
     },
     plugins: {
       import: importX,

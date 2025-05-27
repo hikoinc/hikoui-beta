@@ -1,4 +1,4 @@
-name: Semantic Pull Request
+name: "Lint PR"
 
 on:
   pull_request:
@@ -10,12 +10,13 @@ on:
 
 jobs:
   main:
-    name: Validate Pull Request title
+    name: Validate PR title
     runs-on: ubuntu-latest
     permissions:
       pull-requests: read
     steps:
-      - uses: amannn/action-semantic-pull-request@v5.4.0
+      - name: semantic-pull-request
+        uses: amannn/action-semantic-pull-request@v5
         with:
           types: |
             build
@@ -35,11 +36,11 @@ jobs:
           headerPattern: '^(\w+)\(([a-z]+)\): (.+)$'
           headerPatternCorrespondence: type, scope, subject
 
-          subjectPattern: '^[a-z0-9\s\-_.,!]{1,50}$'
+          subjectPattern: '^[a-zA-Z0-9\s\-_.,!]{1,50}$'
           subjectPatternError: |
             The subject "{subject}" in pull request title "{title}"
-            must be lowercase, max 50 characters, and can only contain:
-            letters, numbers, spaces, dash, underscore, dot, comma, and exclamation mark.
+            must be max 50 characters, and can only contain:
+            letters (a–z, A–Z), numbers, spaces, dash, underscore, dot, comma, and exclamation mark.
 
           ignoreLabels: |
             Version Packages

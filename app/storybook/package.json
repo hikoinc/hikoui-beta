@@ -13,8 +13,12 @@
     "typescheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@hikoui-beta/react": "workspace:*",
+    "@tailwindcss/postcss": "^4.1.7",
+    "postcss": "^8.5.3",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.7"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.6",
