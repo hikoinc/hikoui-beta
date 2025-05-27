@@ -24,7 +24,7 @@ jobs:
       - name: Run tests and collect coverage
         run: pnpm jest:coverage
 
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v5
-        with:
-          slug: hikoinc/hikoui-beta
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v4
+        env:
+          SONAR_TOKEN: ${{ secrets. SONARCLOUD_TOKEN }}
