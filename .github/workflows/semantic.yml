@@ -1,4 +1,4 @@
-name: "Lint PR"
+name: Semantic
 
 on:
   pull_request:
@@ -6,6 +6,7 @@ on:
       - opened
       - edited
       - reopened
+      - synchronize
       - labeled
 
 jobs:
@@ -14,6 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: read
+      statuses: write
+
     steps:
       - name: semantic-pull-request
         uses: amannn/action-semantic-pull-request@v5
@@ -45,6 +48,9 @@ jobs:
           ignoreLabels: |
             Version Packages
             bot
+
+          validateSingleCommit: true
+          validateSingleCommitMatchesPrTitle: true
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
