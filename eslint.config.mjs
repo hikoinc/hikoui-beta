@@ -31,7 +31,7 @@ const configs = tsConfig(
       turboConfigs["flat/recommended"],
       prettier,
     ],
-    files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"],
+    files: ["**/*.{js,jsx,mjs,cjs,mjsx,ts,tsx,mts,cts,mtsx}"],
     languageOptions: {
       parser: tsParser,
       ecmaVersion: "latest",
