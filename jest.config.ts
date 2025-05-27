@@ -2,9 +2,15 @@ import type { Config } from "jest";
 
 const config: Config = {
   testEnvironment: "jsdom",
+  collectCoverage: true,
   collectCoverageFrom: ["packages/**/*.{ts,tsx}", "!**/turbo/**", "!**/dist/**", "!**/*.d.ts"],
+  coverageDirectory: "coverage",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   modulePathIgnorePatterns: ["<rootDir>/examples", "<rootDir>/tooling/cra-template*"],
+  setupFilesAfterEnv: ["@testing-library/jest-dom", "./scripts/setup-test.ts"],
+  testTimeout: 15000,
+  transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+  watchPlugins: ["jest-watch-typeahead/filename", "jest-watch-typeahead/testname"],
   transform: {
     "^.+\\.(t|j)sx?$": [
       "@swc/jest",
@@ -19,10 +25,6 @@ const config: Config = {
       },
     ],
   },
-  transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
-  setupFilesAfterEnv: ["@testing-library/jest-dom", "./scripts/setup-test.ts"],
-  watchPlugins: ["jest-watch-typeahead/filename", "jest-watch-typeahead/testname"],
-  testTimeout: 15000,
 };
 
 export default config;
