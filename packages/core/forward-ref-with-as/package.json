@@ -1,8 +1,9 @@
 {
-  "name": "@hikoui-beta/react",
+  "name": "@hikoui-beta/forward-ref-with-as",
   "version": "0.0.2",
   "description": "Hikoui is a minimal-design React + Tailwind CSS component system for fast, scalable UI development.",
   "keywords": [
+    "polymorphic",
     "react",
     "ui",
     "components",
@@ -21,10 +22,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hikoinc/hikoui.git",
-    "directory": "packages/react"
+    "directory": "packages/core/forward-ref-with-as"
   },
   "license": "MIT",
-  "author": "Joe Takara <anuchit.boonsom@gmail.com>",
+  "author": "Joe Takara <https://github.com/joetakara>",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -42,30 +43,29 @@
   ],
   "scripts": {
     "build": "tsup",
-    "clean": "rimraf dist .turbo",
+    "clean": "pnpm clean:dist && pnpm clean:turbo && pnpm clean:node_modules",
+    "clean:dist": "rimraf dist",
+    "clean:node_modules": "rimraf node_modules",
+    "clean:turbo": "rimraf .turbo",
     "dev": "tsup --watch",
-    "generate-component": "turbo gen react-component",
     "sort-package-json": "pnpm exec sort-package-json",
     "sort-package-json:check": "pnpm exec sort-package-json --check",
     "typescheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.7",
-    "react": ">=18 || >=19.0.0-rc.0",
-    "react-dom": ">=18 || >=19.0.0-rc.0",
-    "tailwindcss": "^4.1.7"
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "tsup": "^8.5.0"
   },
   "devDependencies": {
-    "@turbo/gen": "^2.5.0",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "sort-package-json": "^3.0.0",
-    "tsup": "^8.5.0",
     "typescript": "5.8.2"
   },
   "peerDependencies": {
-    "react": ">=18 || >=19.0.0-rc.0",
-    "react-dom": ">=18 || >=19.0.0-rc.0"
+    "react": ">=19",
+    "react-dom": ">=19"
   },
   "packageManager": "pnpm@10.11.0",
   "engines": {

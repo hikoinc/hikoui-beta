@@ -1,9 +1,9 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../../tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
     "jsx": "react-jsx"
   },
-  "include": ["src", "turbo"],
+  "include": ["src", "turbo", "**.config.ts"],
   "exclude": ["node_modules", "dist"]
 }

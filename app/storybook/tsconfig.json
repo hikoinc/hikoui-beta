@@ -1,6 +1,0 @@
-{
-  "extends": "../../tsconfig.json",
-  "compilerOptions": { "module": "es2022", "moduleResolution": "Node", "jsx": "react-jsx" },
-  "include": ["stories", "**.config.ts"],
-  "exclude": ["node_modules", "storybook-static"]
-}
