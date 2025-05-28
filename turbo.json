@@ -12,9 +12,6 @@
     "clean": {
       "dependsOn": ["^clean"]
     },
-    "storybook": {
-      "dependsOn": ["^storybook"]
-    },
     "typescheck": {
       "dependsOn": ["^typescheck"]
     },

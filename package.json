@@ -10,9 +10,8 @@
   "author": "Joe Takara (https://github.com/joetakara)",
   "scripts": {
     "@testing-library/jest-dom": "^6.6.3",
-    "build": "pnpm build:packages && pnpm build:storybook",
+    "build": "pnpm build:packages",
     "build:packages": "pnpm --filter=./packages/** build",
-    "build:storybook": "pnpm --filter=./apps/storybook",
     "changeset": "changeset",
     "changeset:next-enter": "changeset pre enter next",
     "changeset:next-exit": "changeset pre exit next",
@@ -36,7 +35,6 @@
     "prettier:check": "prettier --check .",
     "sort-package-json": "pnpm exec sort-package-json && turbo sort-package-json",
     "sort-package-json:check": "pnpm exec sort-package-json --check && turbo sort-package-json:check",
-    "storybook": "turbo storybook",
     "test": "pnpm jest",
     "typescheck": "turbo typescheck"
   },
