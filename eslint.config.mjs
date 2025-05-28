@@ -1,7 +1,6 @@
 import * as importX from "eslint-plugin-import-x";
 import globals from "globals";
 import js from "@eslint/js";
-import jsdoc from "eslint-plugin-jsdoc";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import prettier from "eslint-config-prettier/flat";
 import react from "eslint-plugin-react";
@@ -25,7 +24,6 @@ const configs = tsConfig(
       jsxA11y.flatConfigs.recommended,
       react.configs.flat.recommended,
       sonarjsConfigs.recommended,
-      jsdoc.configs["flat/recommended"],
       reactHooksConfigs["recommended-latest"],
       testingLibrary.configs["flat/dom"],
       turboConfigs["flat/recommended"],

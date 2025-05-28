@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "build": "pnpm storybook:build",
-    "clean": "rimraf storybook-static .turbo",
+    "clean": "pnpm clean:storybook-static && pnpm clean:turbo && pnpm clean:node_modules",
+    "clean:node_modules": "rimraf node_modules",
+    "clean:storybook-static": "rimraf storybook-static",
+    "clean:turbo": "rimraf .turbo",
     "dev": "pnpm storybook",
     "sort-package-json": "pnpm exec sort-package-json",
     "sort-package-json:check": "pnpm exec sort-package-json --check",
@@ -13,9 +16,7 @@
     "typescheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@hikoui-beta/react": "^0.0.2",
-    "@tailwindcss/postcss": "^4.1.7",
-    "postcss": "^8.5.3",
+    "@hikoui-beta/react": "workspace:*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.7"
@@ -29,11 +30,13 @@
     "@storybook/react": "^8.6.14",
     "@storybook/react-vite": "^8.6.14",
     "@storybook/test": "^8.6.14",
+    "@tailwindcss/postcss": "^4.1.7",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "@vitest/browser": "^3.1.4",
     "@vitest/coverage-v8": "^3.1.4",
     "playwright": "^1.52.0",
+    "postcss": "^8.5.3",
     "sort-package-json": "^3.0.0",
     "storybook": "^8.6.14",
     "typescript": "5.8.2",

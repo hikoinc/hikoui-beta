@@ -7,9 +7,9 @@
     "url": "git+https://github.com/hikoinc/hikoui.git"
   },
   "license": "MIT",
-  "author": "Joe Takara <anuchit.boonsom@gmail.com>",
+  "author": "Joe Takara (https://github.com/joetakara)",
   "scripts": {
-    "build": "pnpm --filter=./packages/* build",
+    "build": "pnpm --filter=./packages/** build",
     "build:storybook": "turbo run build --filter=app/storybook",
     "changeset": "changeset",
     "changeset:next-enter": "changeset pre enter next",
@@ -18,13 +18,11 @@
     "changeset:release-next": "changeset publish --tag next",
     "changeset:version": "changeset version",
     "changeset:version-next": "changeset version --snapshot next",
-    "clean": "turbo run clean && pnpm clean:lock && pnpm clean:coverage && pnpm clean:reports && pnpm clean:node-modules && pnpm install --hoist",
-    "clean:changelogs": "rimraf ./packages/**/**/CHANGELOG.md",
+    "clean": "turbo run clean && pnpm clean:lock && pnpm clean:turbo && pnpm clean:coverage && pnpm clean:node-modules && pnpm install --hoist",
     "clean:coverage": "rimraf ./coverage",
     "clean:lock": "rimraf ./pnpm-lock.yaml",
-    "clean:node-modules": "rimraf ./apps/**/node_modules && rimraf ./packages/**/**/node_modules && rimraf ./node_modules",
-    "clean:reports": "rimraf ./reports",
-    "clean:turbo": "turbo clean && rimraf ./node_modules/.cache/turbo",
+    "clean:node-modules": "rimraf ./node_modules",
+    "clean:turbo": "rimraf .turbo",
     "dev": "turbo dev",
     "eslint": "eslint . --max-warnings 0",
     "eslint:fix": "eslint . --fix --max-warnings 0",
@@ -40,9 +38,6 @@
     "test": "pnpm jest",
     "typescheck": "turbo typescheck"
   },
-  "dependencies": {
-    "@testing-library/react": "^16.3.0"
-  },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.1",
     "@changesets/cli": "^2.29.4",
@@ -52,6 +47,7 @@
     "@eslint/js": "^9.27.0",
     "@swc/jest": "^0.2.38",
     "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
     "@types/jest": "^29.5.14",
     "@typescript-eslint/parser": "^8.32.1",
@@ -59,7 +55,6 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-import-resolver-typescript": "^4.3.5",
     "eslint-plugin-import-x": "^4.12.2",
-    "eslint-plugin-jsdoc": "^50.6.17",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
