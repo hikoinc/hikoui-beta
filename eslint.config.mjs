@@ -1,5 +1,6 @@
 import path from "node:path";
 
+import importPlugin from "eslint-plugin-import-x";
 import js from "@eslint/js";
 import prettierPlugin from "eslint-plugin-prettier";
 import sonarjs from "eslint-plugin-sonarjs";
@@ -21,6 +22,36 @@ const jsConfig = [
 ];
 
 const typescriptConfig = [plugins.typescriptEslint, ...configs.base.typescript, ...configs.react.typescript];
+
+const importxConfig = [
+  {
+    name: "import/order/rules",
+    plugins: {
+      import: importPlugin,
+    },
+    rules: {
+      "import/order": [
+        "warn",
+        {
+          groups: ["builtin", "external", "internal", "parent", "sibling", "index"],
+          pathGroups: [
+            {
+              pattern: "src/**",
+              group: "internal",
+              position: "before",
+            },
+            {
+              pattern: "~/**",
+              group: "external",
+              position: "after",
+            },
+          ],
+          "newlines-between": "always",
+        },
+      ],
+    },
+  },
+];
 
 const sonarjsConfig = [
   {
@@ -75,6 +106,7 @@ export default [
   includeIgnoreFile(gitignorePath),
   ...jsConfig,
   ...typescriptConfig,
+  ...importxConfig,
   ...sonarjsConfig,
   ...reactConfig,
   ...prettierConfig,

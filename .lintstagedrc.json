@@ -1,5 +1,6 @@
 {
   "*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}": ["pnpm -w eslint --fix", "pnpm -w prettier --write"],
   "*.{json,md,yml,yaml}": "pnpm -w prettier --write",
-  "**/package.json": ["pnpm exec sort-package-json"]
+  "**/package.json": ["pnpm exec sort-package-json"],
+  "**/__tests__/*.{ts,tsx}": ["pnpm test -- --findRelatedTests"]
 }

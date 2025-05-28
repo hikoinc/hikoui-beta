@@ -53,6 +53,7 @@
     "typescheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "tsup": "^8.5.0"
