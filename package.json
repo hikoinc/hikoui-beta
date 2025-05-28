@@ -9,6 +9,7 @@
   "license": "MIT",
   "author": "Joe Takara (https://github.com/joetakara)",
   "scripts": {
+    "@testing-library/jest-dom": "^6.6.3",
     "build": "pnpm build:packages && pnpm build:storybook",
     "build:packages": "pnpm --filter=./packages/** build",
     "build:storybook": "pnpm --filter=./apps/storybook",

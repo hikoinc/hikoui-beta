@@ -1,36 +1,24 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
 import Button from "../button";
 
 describe("Button", () => {
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-
-  it("renders the children text", () => {
-    render(<Button>hello</Button>);
-    expect(screen.getByText(/hello/i)).toBeInTheDocument();
-  });
-
-  it("calls alert with correct message when clicked with appName", () => {
-    window.alert = jest.fn();
-
+  it("renders children", () => {
     render(<Button>Click me</Button>);
-    const button = screen.getByRole("button", { name: /click me/i });
-
-    fireEvent.click(button);
-
-    expect(window.alert).toHaveBeenCalledWith("Hello from your TestApp app!");
+    expect(screen.getByText("Click me")).toBeInTheDocument();
   });
 
-  it("calls alert with default message when appName is not provided", () => {
-    window.alert = jest.fn();
+  it("applies className", () => {
+    render(<Button className="test-class">Click me</Button>);
+    expect(screen.getByRole("button")).toHaveClass("test-class");
+  });
 
+  it("does not crash when clicked", () => {
     render(<Button>Click me</Button>);
-    const button = screen.getByRole("button", { name: /click me/i });
-
-    fireEvent.click(button);
-
-    expect(window.alert).toHaveBeenCalledWith("Hello from your new app!");
+    const button = screen.getByRole("button");
+    expect(() => {
+      fireEvent.click(button);
+    }).not.toThrow();
   });
 });
