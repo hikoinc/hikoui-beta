@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { forwardRef } from "react";
 import type { ElementType, ForwardRefRenderFunction, PropsWithoutRef, ReactElement } from "react";
 

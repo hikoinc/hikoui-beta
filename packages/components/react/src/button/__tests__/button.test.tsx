@@ -15,7 +15,7 @@ describe("Button", () => {
   it("calls alert with correct message when clicked with appName", () => {
     window.alert = jest.fn();
 
-    render(<Button appName="TestApp">Click me</Button>);
+    render(<Button>Click me</Button>);
     const button = screen.getByRole("button", { name: /click me/i });
 
     fireEvent.click(button);

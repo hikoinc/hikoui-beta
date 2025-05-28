@@ -1,0 +1,21 @@
+
+# Dependencies
+node_modules
+
+# Testing
+coverage
+
+# Turbo
+.turbo
+
+# Vercel
+.vercel
+
+# Changeset
+.changeset
+
+# Build outputs
+dist
+
+# Package
+pnpm-lock.yaml

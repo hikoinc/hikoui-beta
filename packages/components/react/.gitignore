@@ -1,0 +1,11 @@
+# Dependencies
+node_modules
+
+# Turbo Cache
+.turbo
+
+# Build Outputs
+dist
+
+# OS/Editor Misc
+.DS_Store
