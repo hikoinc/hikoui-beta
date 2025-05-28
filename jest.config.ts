@@ -3,7 +3,7 @@ import type { Config } from "jest";
 const config: Config = {
   testEnvironment: "jsdom",
   collectCoverage: true,
-  collectCoverageFrom: ["packages/**/*.{ts,tsx}", "!**/*.d.ts", "!**/turbo/**", "!**/dist/**"],
+  collectCoverageFrom: ["packages/**/*.{ts,tsx,js,jsx}", "!**/*.d.ts", "!**/turbo/**", "!**/dist/**"],
   coverageDirectory: "coverage",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   setupFilesAfterEnv: ["@testing-library/jest-dom", "./scripts/setup-test.ts"],
