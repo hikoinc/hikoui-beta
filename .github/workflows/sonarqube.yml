@@ -24,7 +24,10 @@ jobs:
         uses: ./.github/common-actions/setup
 
       - name: Run tests and collect coverage
-        run: pnpm jest --coverage
+        run: pnpm jest:coverage
+
+      - name: Check coverage file
+        run: cat coverage/lcov.info
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4
@@ -33,3 +36,6 @@ jobs:
         with:
           args: >
             -Dsonar.projectBaseDir=.
+            -Dsonar.sources=packages
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.scanner.clean=true

@@ -3,10 +3,9 @@ import type { Config } from "jest";
 const config: Config = {
   testEnvironment: "jsdom",
   collectCoverage: true,
-  collectCoverageFrom: ["packages/**/*.{ts,tsx}", "!**/turbo/**", "!**/dist/**", "!**/*.d.ts"],
+  collectCoverageFrom: ["packages/**/*.{ts,tsx,js,jsx}", "!**/*.d.ts", "!**/turbo/**", "!**/dist/**"],
   coverageDirectory: "coverage",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
-  modulePathIgnorePatterns: ["<rootDir>/examples", "<rootDir>/tooling/cra-template*"],
   setupFilesAfterEnv: ["@testing-library/jest-dom", "./scripts/setup-test.ts"],
   testTimeout: 15000,
   transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],

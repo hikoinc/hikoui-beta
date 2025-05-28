@@ -13,7 +13,7 @@
     "typescheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@hikoui-beta/react": "workspace:*",
+    "@hikoui-beta/react": "^0.0.2",
     "@tailwindcss/postcss": "^4.1.7",
     "postcss": "^8.5.3",
     "react": "^19.1.0",
