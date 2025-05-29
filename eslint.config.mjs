@@ -4,6 +4,7 @@ import importPlugin from "eslint-plugin-import-x";
 import js from "@eslint/js";
 import prettierPlugin from "eslint-plugin-prettier";
 import sonarjs from "eslint-plugin-sonarjs";
+import storybook from "eslint-plugin-storybook";
 import { configs, plugins } from "eslint-config-airbnb-extended";
 import { includeIgnoreFile } from "@eslint/compat";
 import { rules as prettierConfigRules } from "eslint-config-prettier";
@@ -25,12 +26,27 @@ const typescriptConfig = [plugins.typescriptEslint, ...configs.base.typescript, 
 
 const importxConfig = [
   {
-    name: "import/order/rules",
+    name: "import-x/order/rules",
     plugins: {
       import: importPlugin,
     },
     rules: {
-      "import/order": [
+      "import-x/no-extraneous-dependencies": [
+        "error",
+        {
+          devDependencies: [
+            "**/*.config.{js,cjs,mjs,ts,cts,mts}",
+            "**/*.setup.ts",
+            "**/*.stories.tsx",
+            "**/*.test.{ts,tsx}",
+            "**/.storybook/**",
+            "**/setup-test.ts",
+            "**/tsup.config.ts",
+          ],
+          optionalDependencies: false,
+        },
+      ],
+      "import-x/order": [
         "warn",
         {
           groups: ["builtin", "external", "internal", "parent", "sibling", "index"],
@@ -77,11 +93,30 @@ const reactConfig = [
           extensions: [".tsx"],
         },
       ],
+      "react/function-component-definition": [
+        "error",
+        {
+          namedComponents: "arrow-function",
+          unnamedComponents: "arrow-function",
+        },
+      ],
     },
     settings: {
       react: {
         version: "detect",
       },
+    },
+  },
+];
+
+const storybookConfig = [
+  {
+    name: "storybook/config",
+    plugins: {
+      storybook,
+    },
+    rules: {
+      ...storybook.configs.recommended.rules,
     },
   },
 ];
@@ -109,5 +144,6 @@ export default [
   ...importxConfig,
   ...sonarjsConfig,
   ...reactConfig,
+  ...storybookConfig,
   ...prettierConfig,
 ];

@@ -1,6 +1,11 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "hikoinc/hikoui-beta" }],
+  "changelog": [
+    "@changesets/changelog-github",
+    {
+      "repo": "hikoinc/hikoui-beta"
+    }
+  ],
   "commit": false,
   "fixed": [],
   "linked": [],
@@ -8,7 +13,7 @@
   "baseBranch": "main",
   "updateInternalDependencies": "minor",
   "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
-     "onlyUpdatePeerDependentsWhenOutOfRange": true
+    "onlyUpdatePeerDependentsWhenOutOfRange": true
   },
-  "ignore": ["@hikoui/storybook"]
+  "ignore": ["apps"]
 }

@@ -3,9 +3,9 @@ import type { Config } from "jest";
 const config: Config = {
   testEnvironment: "jsdom",
   collectCoverage: true,
-  collectCoverageFrom: ["packages/**/*.{ts,tsx,js,jsx}", "!**/*.d.ts", "!**/turbo/**", "!**/dist/**"],
+  collectCoverageFrom: ["packages/**/*.{ts,tsx}", "!**/*.d.ts", "!**/dist/**", "!**/turbo/**"],
   coverageDirectory: "coverage",
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
+  moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
   setupFilesAfterEnv: ["@testing-library/jest-dom", "./scripts/setup-test.ts"],
   testTimeout: 15000,
   transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
