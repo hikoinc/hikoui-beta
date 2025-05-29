@@ -52,18 +52,18 @@
     "typescheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^6.6.3",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "tsup": "^8.5.0"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.7",
+    "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "sort-package-json": "^3.0.0",
     "tailwindcss": "^4.1.7",
+    "tsup": "^8.5.0",
     "typescript": "5.8.2"
   },
   "peerDependencies": {
