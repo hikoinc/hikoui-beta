@@ -7,12 +7,10 @@ interface ButtonProps {
   className?: string;
 }
 
-function Button({ children, className }: Readonly<ButtonProps>) {
-  return (
-    <button className={className} onClick={() => {}} type="button">
-      {children}
-    </button>
-  );
-}
+const Button = ({ children, className }: Readonly<ButtonProps>) => (
+  <button className={className} onClick={() => {}} type="button">
+    {children}
+  </button>
+);
 
 export default Button;
