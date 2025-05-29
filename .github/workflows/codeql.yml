@@ -2,17 +2,15 @@ name: CodeQL
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
   schedule:
     - cron: "31 7 * * 3"
 
 jobs:
   analyze:
-    name: Analyze (${{ matrix.language }})
+    name: CodeQL Analysis
     runs-on: ubuntu-latest
     permissions:
       security-events: write
@@ -21,16 +19,12 @@ jobs:
       contents: read
       checks: write
 
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - language: Javascript
-          - language: TypeScript
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v3
+        with:
+          cache: "pnpm"
 
       - name: Setup Environment
         uses: ./.github/common-actions/setup
@@ -38,13 +32,11 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
-          languages: ${{ matrix.language }}
-          build-mode: none
+          languages: javascript,typescript
+          build-mode: "build"
 
-      - name: Build manually
+      - name: Build Project
         run: pnpm build
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
-        with:
-          category: /language:${{matrix.language}}

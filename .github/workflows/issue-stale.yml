@@ -1,4 +1,5 @@
 name: Issue Stale
+
 on:
   workflow_dispatch:
   schedule:
@@ -9,20 +10,21 @@ permissions:
   pull-requests: write
   actions: write
 
+concurrency:
+  group: stale-issues
+  cancel-in-progress: true
+
 jobs:
   issues:
     runs-on: ubuntu-latest
     if: github.repository_owner == 'hikoui-beta'
     steps:
       - uses: actions/stale@v9
-        name: "Close stale issues"
         with:
           repo-token: ${{ secrets.ACTIONS_PAT }}
-          close-issue-message: >
+          close-issue-message: |
             This issue has been automatically closed due to inactivity.
-            If you believe this was closed by mistake, please feel free to reopen it or leave a comment.
-            Thank you for your understanding.
-
+            If you believe this was closed by mistake, please reopen or comment.
             _Note: This is an automated message._
           days-before-issue-close: 7
           days-before-issue-stale: 30

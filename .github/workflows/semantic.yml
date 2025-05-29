@@ -2,24 +2,17 @@ name: Semantic
 
 on:
   pull_request:
-    types:
-      - opened
-      - edited
-      - reopened
-      - synchronize
-      - labeled
+    types: [opened, edited, reopened, synchronize, labeled]
 
 jobs:
-  main:
-    name: Validate PR title
+  validate-pr-title:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: read
       statuses: write
 
     steps:
-      - name: semantic-pull-request
-        uses: amannn/action-semantic-pull-request@v5
+      - uses: amannn/action-semantic-pull-request@v5
         with:
           types: |
             build
@@ -35,22 +28,18 @@ jobs:
             test
 
           requireScope: true
-
           headerPattern: '^(\w+)\(([a-z]+)\): (.+)$'
           headerPatternCorrespondence: type, scope, subject
-
           subjectPattern: '^[a-zA-Z0-9\s\-_.,!]{1,50}$'
           subjectPatternError: |
             The subject "{subject}" in pull request title "{title}"
             must be max 50 characters, and can only contain:
             letters (a–z, A–Z), numbers, spaces, dash, underscore, dot, comma, and exclamation mark.
-
           ignoreLabels: |
             Version Packages
             bot
 
           validateSingleCommit: true
           validateSingleCommitMatchesPrTitle: true
-
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
