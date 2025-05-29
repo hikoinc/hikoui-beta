@@ -109,6 +109,18 @@ const reactConfig = [
   },
 ];
 
+const storybookConfig = [
+  {
+    name: "storybook/config",
+    plugins: {
+      storybook,
+    },
+    rules: {
+      ...storybook.configs.recommended.rules,
+    },
+  },
+];
+
 const prettierConfig = [
   {
     name: "prettier/plugin/config",
@@ -132,6 +144,6 @@ export default [
   ...importxConfig,
   ...sonarjsConfig,
   ...reactConfig,
+  ...storybookConfig,
   ...prettierConfig,
-  ...storybook.configs["flat/recommended"],
 ];
