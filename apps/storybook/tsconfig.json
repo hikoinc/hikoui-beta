@@ -3,6 +3,6 @@
   "compilerOptions": {
     "jsx": "react-jsx"
   },
-  "include": ["stories", ".storybook/**/*", "**.shims.d.ts", "vitest.config.mts"],
+  "include": ["stories", ".storybook/**/*", "**.shims.d.ts", "**.config.mts"],
   "exclude": ["node_modules", "storybook-static"]
 }
