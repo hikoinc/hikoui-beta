@@ -1,0 +1,2 @@
+@import "tailwindcss";
+@source '../../node_modules/@hikoui-beta/react/dist/**/*.{js,ts,jsx,tsx}';

@@ -201,12 +201,21 @@ importers:
 
   packages/components/react:
     dependencies:
+      '@tailwindcss/postcss':
+        specifier: ^4.1.8
+        version: 4.1.8
+      postcss:
+        specifier: ^8.5.4
+        version: 8.5.4
       react:
         specifier: 19.1.0
         version: 19.1.0
       react-dom:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
+      tailwindcss:
+        specifier: ^4.1.8
+        version: 4.1.8
     devDependencies:
       '@testing-library/jest-dom':
         specifier: ^6.6.3
