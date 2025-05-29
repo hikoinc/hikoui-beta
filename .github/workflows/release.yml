@@ -5,26 +5,31 @@ on:
     paths:
       - ".changeset/**"
       - "packages/**"
-    branches: [main]
+    branches:
+      - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout branch
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.ACTIONS_PAT }}
 
-      - uses: ./.github/common-actions/setup
+      - name: Setup Environment
+        uses: ./.github/common-actions/setup
 
-      - run: pnpm build
+      - name: Build
+        run: pnpm build
 
-      - id: changesets
+      - name: Create release Pull Request or publish to NPM
+        id: changesets
         uses: changesets/action@v1
         with:
           publish: pnpm changeset:release

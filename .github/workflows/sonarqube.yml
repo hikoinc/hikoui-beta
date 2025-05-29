@@ -2,29 +2,35 @@ name: SonarQube
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    types: [opened, synchronize, reopened]
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 jobs:
   upload-coverage:
+    name: SonarQube Analysis
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v3
-        with:
-          cache: "pnpm"
+      - name: Setup Environment
+        uses: ./.github/common-actions/setup
 
-      - uses: ./.github/common-actions/setup
+      - name: Run tests and collect coverage
+        run: pnpm jest:coverage
 
-      - run: pnpm jest:coverage
+      - name: Check coverage file
+        run: cat coverage/lcov.info
 
-      - run: cat coverage/lcov.info
-
-      - uses: SonarSource/sonarqube-scan-action@v4
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v4
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
