@@ -5,13 +5,15 @@ on:
     branches:
       - main
     paths-ignore:
-      - apps/storybook/storybook-static/**
+      - "**/dist/**"
+      - "**/storybook-static/**"
 
   pull_request:
     branches:
       - main
     paths-ignore:
-      - apps/storybook/storybook-static/**
+      - "**/dist/**"
+      - "**/storybook-static/**"
 
   schedule:
     - cron: "31 7 * * 3"
