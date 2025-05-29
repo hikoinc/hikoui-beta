@@ -10,7 +10,7 @@ Before submitting your PR, please verify:
 - You've evaluated any new external dependencies
 -->
 
-Closes # <!-- Add relevant issue number(s) here -->
+<!-- Closes # Add relevant issue number(s) here -->
 
 ## 📝 Description
 
