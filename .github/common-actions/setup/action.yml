@@ -6,12 +6,22 @@ inputs:
     description: "Node.js version to use"
     required: false
     default: "20"
+  git-email:
+    description: "Git email to use for commits"
+    required: false
+    default: "github-actions[bot]@users.noreply.github.com"
+  git-name:
+    description: "Git name to use for commits"
+    required: false
+    default: "github-actions[bot]"
 
 runs:
   using: composite
   steps:
     - name: Setup pnpm
       uses: pnpm/action-setup@v4
+      with:
+        version: 10.11.0
 
     - name: Setup Node.js with pnpm cache
       uses: actions/setup-node@v4
@@ -22,8 +32,8 @@ runs:
     - name: Setup Git User
       shell: bash
       run: |
-        git config --global user.email "anuchit.boonsom@gmail.com"
-        git config --global user.name "Joe Takata"
+        git config --global user.email "${{ inputs.git-email }}"
+        git config --global user.name "${{ inputs.git-name }}"
 
     - name: Install dependencies
       shell: bash
