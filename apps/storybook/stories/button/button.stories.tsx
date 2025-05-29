@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "@hikoui-beta/react";
 
-const meta = {
+type ButtonMeta = Meta<typeof Button>;
+
+const meta: ButtonMeta = {
   title: "Example/Button",
   component: Button,
   parameters: {
@@ -10,7 +12,7 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {},
   args: {},
-} satisfies Meta<typeof Button>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
