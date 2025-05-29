@@ -38,9 +38,6 @@
     "test": "pnpm jest",
     "typescheck": "turbo typescheck"
   },
-  "dependencies": {
-    "@testing-library/jest-dom": "^6.6.3"
-  },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.1",
     "@changesets/cli": "^2.29.4",
@@ -51,6 +48,7 @@
     "@eslint/js": "^9.27.0",
     "@stylistic/eslint-plugin": "^3.1.0",
     "@swc/jest": "^0.2.38",
+    "@testing-library/jest-dom": "^6.6.3",
     "@types/jest": "^29.5.14",
     "eslint": "^9.27.0",
     "eslint-config-airbnb-extended": "^1.0.11",
