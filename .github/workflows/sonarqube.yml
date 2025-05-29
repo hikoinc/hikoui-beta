@@ -26,9 +26,6 @@ jobs:
       - name: Run tests and collect coverage
         run: pnpm jest:coverage
 
-      - name: Check coverage file
-        run: cat coverage/lcov.info
-
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4
         env:
