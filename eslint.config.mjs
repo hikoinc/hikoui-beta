@@ -93,6 +93,13 @@ const reactConfig = [
           extensions: [".tsx"],
         },
       ],
+      "react/function-component-definition": [
+        "error",
+        {
+          namedComponents: "arrow-function",
+          unnamedComponents: "arrow-function",
+        },
+      ],
     },
     settings: {
       react: {
