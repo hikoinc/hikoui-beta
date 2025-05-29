@@ -4,6 +4,7 @@ import importPlugin from "eslint-plugin-import-x";
 import js from "@eslint/js";
 import prettierPlugin from "eslint-plugin-prettier";
 import sonarjs from "eslint-plugin-sonarjs";
+import storybook from "eslint-plugin-storybook";
 import { configs, plugins } from "eslint-config-airbnb-extended";
 import { includeIgnoreFile } from "@eslint/compat";
 import { rules as prettierConfigRules } from "eslint-config-prettier";
@@ -35,9 +36,12 @@ const importxConfig = [
         {
           devDependencies: [
             "**/*.config.{js,cjs,mjs,ts,cts,mts}",
-            "**/tsup.config.ts",
+            "**/*.setup.ts",
+            "**/*.stories.tsx",
             "**/*.test.{ts,tsx}",
+            "**/.storybook/**",
             "**/setup-test.ts",
+            "**/tsup.config.ts",
           ],
           optionalDependencies: false,
         },
@@ -122,4 +126,5 @@ export default [
   ...sonarjsConfig,
   ...reactConfig,
   ...prettierConfig,
+  ...storybook.configs["flat/recommended"],
 ];
