@@ -23,6 +23,9 @@ jobs:
       - name: Setup Environment
         uses: ./.github/common-actions/setup
 
+      - name: Build packages
+        run: pnpm build
+
       - name: Run tests and collect coverage
         run: pnpm jest:coverage
 
