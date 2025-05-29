@@ -11,16 +11,9 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
-function Button({ primary = false, size = "medium", backgroundColor, label, ...props }: Readonly<ButtonProps>) {
-  const mode = primary ? "storybook-button--primary" : "storybook-button--secondary";
-
+function Button({ backgroundColor, label, ...props }: Readonly<ButtonProps>) {
   return (
-    <button
-      type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(" ")}
-      style={{ backgroundColor }}
-      {...props}
-    >
+    <button type="button" className="bg-amber-500" style={{ backgroundColor }} {...props}>
       {label}
     </button>
   );
