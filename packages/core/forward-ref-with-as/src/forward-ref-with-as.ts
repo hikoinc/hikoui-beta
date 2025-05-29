@@ -1,17 +1,12 @@
 import { forwardRef } from "react";
-import type { ElementType, ForwardRefRenderFunction, PropsWithoutRef, ReactElement } from "react";
+import type { ReactElement, RefObject } from "react";
 
-import type { PolymorphicComponentProps, PolymorphicPropsWithRef, PolymorphicRef } from "./forward-ref-with-as.types";
+import type { As, ComponentWithAs, PropsFromAs } from "./forward-ref-with-as.types";
 
-function forwardRefWithAs<DefaultElement extends ElementType, Props = Record<string, unknown>>(
-  render: ForwardRefRenderFunction<
-    PolymorphicRef<DefaultElement>,
-    PropsWithoutRef<PolymorphicComponentProps<DefaultElement, Props>>
-  >,
+function forwardRefWithAs<Props, ComponentType extends As>(
+  component: (props: PropsFromAs<ComponentType, Props>, ref: RefObject<any>) => ReactElement | null,
 ) {
-  return forwardRef(render) as <T extends ElementType = DefaultElement>(
-    props: PolymorphicPropsWithRef<T, Props>,
-  ) => ReactElement | null;
+  return forwardRef(component as any) as unknown as ComponentWithAs<ComponentType, Props>;
 }
 
 export default forwardRefWithAs;

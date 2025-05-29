@@ -1,40 +1,37 @@
-import { createRef } from "react";
 import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
 
+import "@testing-library/jest-dom";
 import forwardRefWithAs from "../forward-ref-with-as";
 
-interface ButtonProps {
-  customProp?: string;
-}
-
-const PolymorphicButton = forwardRefWithAs<"button", ButtonProps>((props, ref) => {
-  const { as: Component = "button", customProp, ...rest } = props as any;
-  return <Component ref={ref} data-custom={customProp} {...rest} />;
-});
-
 describe("forwardRefWithAs", () => {
-  it("should forward ref correctly", () => {
-    const ref = createRef<HTMLButtonElement>();
-    render(<PolymorphicButton ref={ref}>Click me</PolymorphicButton>);
-    expect(ref.current).toBeInstanceOf(HTMLButtonElement);
-    expect(screen.getByRole("button")).toHaveTextContent("Click me");
+  it("renders component with default element type", () => {
+    const Component = forwardRefWithAs<{ children: React.ReactNode }, "div">((props, ref) => (
+      <div ref={ref} {...props} />
+    ));
+
+    render(<Component>Test content</Component>);
+    expect(screen.getByText("Test content")).toBeInTheDocument();
   });
 
-  it("should render as different element when 'as' prop is passed", () => {
-    const ref = createRef<HTMLAnchorElement>();
-    render(
-      <PolymorphicButton as="a" ref={ref} href="https://example.com">
-        Link
-      </PolymorphicButton>,
-    );
-    expect(ref.current).toBeInstanceOf(HTMLAnchorElement);
-    expect(screen.getByText("Link").closest("a")).toHaveAttribute("href", "https://example.com");
+  it("renders component with custom element type using 'as' prop", () => {
+    const Component = forwardRefWithAs<{ children: React.ReactNode }, "div">((props, ref) => {
+      const { as: As = "div", ...rest } = props;
+
+      return <As ref={ref} {...rest} />;
+    });
+
+    render(<Component as="span">Test content</Component>);
+    expect(screen.getByText("Test content").tagName.toLowerCase()).toBe("span");
   });
 
-  it("should pass additional props correctly", () => {
-    render(<PolymorphicButton customProp="hello" data-testid="btn" />);
-    const el = screen.getByTestId("btn");
-    expect(el).toHaveAttribute("data-custom", "hello");
+  it("forwards ref to the rendered element", () => {
+    const Component = forwardRefWithAs<{ children: React.ReactNode }, "div">((props, ref) => (
+      <div ref={ref} {...props} />
+    ));
+
+    const ref = { current: null };
+
+    render(<Component ref={ref}>Test content</Component>);
+    expect(ref.current).toBeInstanceOf(HTMLDivElement);
   });
 });
