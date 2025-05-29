@@ -11,12 +11,10 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
-function Button({ backgroundColor, label, ...props }: Readonly<ButtonProps>) {
-  return (
-    <button type="button" className="bg-amber-500" style={{ backgroundColor }} {...props}>
-      {label}
-    </button>
-  );
-}
+const Button = ({ backgroundColor, label, ...props }: Readonly<ButtonProps>) => (
+  <button type="button" className="bg-amber-500" style={{ backgroundColor }} {...props}>
+    {label}
+  </button>
+);
 
 export default Button;
