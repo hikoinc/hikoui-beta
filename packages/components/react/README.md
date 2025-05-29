@@ -1,4 +1,4 @@
-# Hikoui React
+# @hikoui/react
 
 Hikoui is a minimal-design React + Tailwind CSS component system for fast, scalable UI development.
 
