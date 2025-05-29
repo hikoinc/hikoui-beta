@@ -1,41 +1,41 @@
 <!---
-Thanks for contributing to Hikoui! ✨
+Thank you for your contribution to Hikoui! 🌟
 
-Please fill out the following template to help us review your pull request.
+To help us review your pull request effectively, please complete this template.
 
-Before submitting, please ensure:
-- Your PR title follows the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification (e.g., `feat(button): add new size option`).
-- You have linked the relevant issue(s) below.
-- Your changes are focused and keep the PR as small as possible.
-- You have considered the impact of adding new external dependencies.
+Before submitting your PR, please verify:
+- Your PR title adheres to the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format (example: `feat(button): add new size option`)
+- You've referenced the related issue(s) below
+- Your changes are focused and the PR remains concise
+- You've evaluated any new external dependencies
 -->
 
-Closes # <!-- Link the relevant issue(s) here -->
+Closes # <!-- Add relevant issue number(s) here -->
 
 ## 📝 Description
 
-> Describe the problem this PR solves and the overall approach
+> Please provide a brief overview of your changes. Explain the problem being solved and its significance. Include relevant context about current behavior and improvements.
 
 ## ⛳️ Changes
 
-> Detail the specific changes made in this PR
+> List the specific modifications included in this PR
 
 ## 🚀 New behavior
 
-> Describe how the application/component behaves after this change
+> Explain the updated behavior of the application/component after these changes
 
 ## 💣 Is this a breaking change? (Yes/No)
 
 <!--
-If Yes, please describe:
-- The impact of this change on existing users/integrations.
-- The migration path or steps required for users to adapt to this change.
+If Yes, please outline:
+- How this change affects existing users/integrations
+- Required migration steps for users to adapt to this change
 -->
 
 > No
 
 ## 📝 Additional Information
 
-<!-- Any other relevant information, context, or screenshots -->
+<!-- Include any relevant details, context, or visual aids -->
 
-> Please provide any additional context, screenshots, or information that would help reviewers understand your changes better.
+> Share any supplementary information, screenshots, or context that would assist reviewers in understanding your changes.
