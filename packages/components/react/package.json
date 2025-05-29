@@ -47,7 +47,6 @@
     "clean:node_modules": "rimraf node_modules",
     "clean:turbo": "rimraf .turbo",
     "dev": "tsup --watch",
-    "generate-component": "turbo gen react-component",
     "sort-package-json": "pnpm exec sort-package-json",
     "sort-package-json:check": "pnpm exec sort-package-json --check",
     "typescheck": "tsc --noEmit"
@@ -61,7 +60,6 @@
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.7",
     "@testing-library/react": "^16.3.0",
-    "@turbo/gen": "^2.5.0",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "sort-package-json": "^3.0.0",
