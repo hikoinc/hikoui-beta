@@ -25,12 +25,24 @@ const typescriptConfig = [plugins.typescriptEslint, ...configs.base.typescript, 
 
 const importxConfig = [
   {
-    name: "import/order/rules",
+    name: "import-x/order/rules",
     plugins: {
       import: importPlugin,
     },
     rules: {
-      "import/order": [
+      "import-x/no-extraneous-dependencies": [
+        "error",
+        {
+          devDependencies: [
+            "**/*.config.{js,cjs,mjs,ts,cts,mts}",
+            "**/tsup.config.ts",
+            "**/*.test.{ts,tsx}",
+            "**/setup-test.ts",
+          ],
+          optionalDependencies: false,
+        },
+      ],
+      "import-x/order": [
         "warn",
         {
           groups: ["builtin", "external", "internal", "parent", "sibling", "index"],
