@@ -107,4 +107,4 @@ jobs:
         uses: ./.github/common-actions/setup
 
       - name: Run tests and collect coverage
-        run: pnpm jest:coverage
+        run: pnpm test
