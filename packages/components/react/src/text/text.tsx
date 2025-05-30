@@ -1,13 +1,13 @@
 "use client";
 
-import forwardRefWithAs from "@hikoui-beta/forward-ref-with-as";
+import { forwardRef } from "@hikoui-beta/system";
 
 import useText from "./text.hook";
 import type { UseTextProps } from "./text.hook";
 
 export type TextProps = UseTextProps;
 
-const Text = forwardRefWithAs<TextProps, "span">((props, ref) => {
+const Text = forwardRef<TextProps, "span">((props, ref) => {
   const { Component, children, getTextProps } = useText(props);
 
   return (
