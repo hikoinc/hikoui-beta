@@ -4,12 +4,7 @@ import "./styles/globals.css";
 
 const preview: Preview = {
   parameters: {
-    controls: {
-      matchers: {},
-    },
-    a11y: {
-      test: "todo",
-    },
+    controls: {},
   },
 };
 
