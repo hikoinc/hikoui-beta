@@ -1,3 +1,3 @@
-# @hikoui/forward-ref-with-as
+# @hikoui/foobar
 
 This package is part of [hikoui](https://github.com/hikoinc/hikoui). See the repo for more details.
