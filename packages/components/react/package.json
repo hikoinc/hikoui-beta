@@ -50,7 +50,6 @@
     "typescheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@hikoui-beta/forward-ref": "workspace:*",
     "@hikoui-beta/system": "workspace:*",
     "@react-types/shared": "^3.29.1",
     "class-variance-authority": "^0.7.1",
