@@ -1,0 +1,55 @@
+{
+  "name": "@hikoui-beta/theme",
+  "version": "0.0.2",
+  "description": "Hikoui is a minimal-design React + Tailwind CSS component system for fast, scalable UI development.",
+  "keywords": [
+    "theme",
+    "react",
+    "ui",
+    "components",
+    "tailwindcss",
+    "typescript",
+    "design",
+    "minimal",
+    "frontend"
+  ],
+  "homepage": "https://hikoui.com",
+  "bugs": {
+    "url": "https://github.com/hikoinc/hikoui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hikoinc/hikoui.git",
+    "directory": "packages/core/theme"
+  },
+  "license": "MIT",
+  "author": "Joe Takara <https://github.com/joetakara>",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "default": "./src/base.css"
+    },
+    "./base": "./src/base.css"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "clean": "pnpm clean:turbo && pnpm clean:node_modules",
+    "clean:node_modules": "rimraf node_modules",
+    "clean:turbo": "rimraf .turbo",
+    "sort-package-json": "pnpm exec sort-package-json",
+    "sort-package-json:check": "pnpm exec sort-package-json --check"
+  },
+  "devDependencies": {
+    "sort-package-json": "^3.0.0"
+  },
+  "peerDependencies": {},
+  "packageManager": "pnpm@10.11.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
