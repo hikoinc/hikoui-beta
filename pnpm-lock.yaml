@@ -207,12 +207,15 @@ importers:
 
   packages/components/react:
     dependencies:
-      '@hikoui-beta/forward-ref-with-as':
+      '@hikoui-beta/forward-ref':
         specifier: workspace:*
-        version: link:../../core/forward-ref-with-as
+        version: link:../../core/forward-ref
       '@hikoui-beta/system':
         specifier: workspace:*
         version: link:../../core/system
+      '@react-types/shared':
+        specifier: ^3.29.1
+        version: 3.29.1(react@19.1.0)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -266,7 +269,7 @@ importers:
         specifier: 5.8.2
         version: 5.8.2
 
-  packages/core/forward-ref-with-as:
+  packages/core/forward-ref:
     dependencies:
       prop-types:
         specifier: ^15.8.1
@@ -284,9 +287,6 @@ importers:
       '@testing-library/react':
         specifier: ^16.3.0
         version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.1.1(@types/react@19.1.0))(@types/react@19.1.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@types/prop-types':
-        specifier: ^15.7.14
-        version: 15.7.14
       '@types/react':
         specifier: 19.1.0
         version: 19.1.0
@@ -1058,6 +1058,11 @@ packages:
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
 
+  '@react-types/shared@3.29.1':
+    resolution: {integrity: sha512-KtM+cDf2CXoUX439rfEhbnEdAgFZX20UP2A35ypNIawR7/PFFPjQDWyA2EnClCcW/dLWJDEPX2U8+EJff8xqmQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+
   '@rollup/pluginutils@5.1.4':
     resolution: {integrity: sha512-USm05zrsFxYLPdWWq+K3STlWiT/3ELn3RcV5hJMghpeAIhxfsUIg6mt12CBJBInWMV4VneoV7SfGv8xIwo2qNQ==}
     engines: {node: '>=14.0.0'}
@@ -1557,9 +1562,6 @@ packages:
 
   '@types/node@22.15.27':
     resolution: {integrity: sha512-5fF+eu5mwihV2BeVtX5vijhdaZOfkQTATrePEaXTcKqI16LhJ7gi2/Vhd9OZM0UojcdmiOCVg5rrax+i1MdoQQ==}
-
-  '@types/prop-types@15.7.14':
-    resolution: {integrity: sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==}
 
   '@types/react-dom@19.1.1':
     resolution: {integrity: sha512-jFf/woGTVTjUJsl2O7hcopJ1r0upqoq/vIOoCj0yLh3RIXxWcljlpuZ+vEBRXsymD1jhfeJrlyTy/S1UW+4y1w==}
@@ -6254,6 +6256,10 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
+  '@react-types/shared@3.29.1(react@19.1.0)':
+    dependencies:
+      react: 19.1.0
+
   '@rollup/pluginutils@5.1.4(rollup@4.41.1)':
     dependencies:
       '@types/estree': 1.0.7
@@ -6739,8 +6745,6 @@ snapshots:
   '@types/node@22.15.27':
     dependencies:
       undici-types: 6.21.0
-
-  '@types/prop-types@15.7.14': {}
 
   '@types/react-dom@19.1.1(@types/react@19.1.0)':
     dependencies:
