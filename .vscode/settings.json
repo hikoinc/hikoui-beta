@@ -3,13 +3,20 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
   },
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
   "typescript.tsdk": "node_modules/typescript/lib",
   "tailwindCSS.classFunctions": ["cva", "cx", "twMerge"],
-  "terminal.integrated.scrollback": 10000,
-  "editor.tabSize": 2
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "terminal.integrated.scrollback": 10000
 }
