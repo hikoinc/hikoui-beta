@@ -1,6 +1,6 @@
-# Contributing to Hikoui
+# Contributing to HikoUI
 
-> We’re actively developing Hikoui and preparing to welcome contributions soon.
+> We’re actively developing HikoUI and preparing to welcome contributions soon.
 
 Thanks so much for your interest in contributing!  
 Right now, we’re focused on building and stabilizing the core codebase, tooling, and workflows.
@@ -16,4 +16,4 @@ If you have questions or ideas in the meantime, feel free to reach out via:
 - [Discord](https://discord.gg/HXHzYvNrfV)
 - [Email](mailto:anuchit.boonsom@gmail.com)
 
-Thanks again for your support — we look forward to building Hikoui together with the community!
+Thanks again for your support — we look forward to building HikoUI together with the community!
