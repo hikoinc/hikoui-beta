@@ -10,9 +10,7 @@
     "typescript",
     "design",
     "minimal",
-    "clean",
-    "frontend",
-    "open source"
+    "frontend"
   ],
   "homepage": "https://hikoui.com",
   "bugs": {
@@ -21,7 +19,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hikoinc/hikoui.git",
-    "directory": "packages/react"
+    "directory": "packages/component/react"
   },
   "license": "MIT",
   "author": "Joe Takara <https://github.com/joetakara>",
