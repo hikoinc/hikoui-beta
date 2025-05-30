@@ -17,6 +17,6 @@ const Text = forwardRefWithAs<TextProps, "span">((props, ref) => {
   );
 });
 
-Text.displayName = "Hikoui.Text";
+Text.displayName = "HikoUI.Text";
 
 export default Text;
