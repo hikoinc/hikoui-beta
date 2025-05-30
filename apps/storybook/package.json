@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@hikoui-beta/react": "workspace:*",
+    "@hikoui-beta/theme": "workspace:*",
     "@tailwindcss/postcss": "^4.1.8",
     "postcss": "^8.5.4",
     "react": "19.1.0",
