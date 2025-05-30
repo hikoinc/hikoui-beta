@@ -11,7 +11,7 @@ const Text = forwardRefWithAs<TextProps, "span">((props, ref) => {
   const { Component, children, getTextProps } = useText(props);
 
   return (
-    <Component ref={ref} {...getTextProps}>
+    <Component ref={ref} {...getTextProps()}>
       {children}
     </Component>
   );
