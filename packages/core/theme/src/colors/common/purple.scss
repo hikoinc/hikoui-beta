@@ -1,0 +1,13 @@
+@mixin purple {
+  --color-hiko-purple-50: oklch(0.977 0.014 308.299);
+  --color-hiko-purple-100: oklch(0.946 0.033 307.174);
+  --color-hiko-purple-200: oklch(0.902 0.063 306.703);
+  --color-hiko-purple-300: oklch(0.827 0.119 306.383);
+  --color-hiko-purple-400: oklch(0.714 0.203 305.504);
+  --color-hiko-purple-500: oklch(0.627 0.265 303.9);
+  --color-hiko-purple-600: oklch(0.558 0.288 302.321);
+  --color-hiko-purple-700: oklch(0.496 0.265 301.924);
+  --color-hiko-purple-800: oklch(0.438 0.218 303.724);
+  --color-hiko-purple-900: oklch(0.381 0.176 304.987);
+  --color-hiko-purple-950: oklch(0.291 0.149 302.717);
+}

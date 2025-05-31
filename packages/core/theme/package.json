@@ -27,24 +27,31 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "default": "./src/base.css"
+      "default": "./dist/base.css"
     },
-    "./base": "./src/base.css"
+    "./base": "./dist/base.css"
   },
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
-    "clean": "pnpm clean:turbo && pnpm clean:node_modules",
+    "build": "pnpm clean:build && sass src:dist --style=compressed --source-map",
+    "clean": "pnpm clean:build && pnpm clean:turbo && pnpm clean:node_modules",
+    "clean:build": "rimraf dist",
     "clean:node_modules": "rimraf node_modules",
     "clean:turbo": "rimraf .turbo",
+    "dev": "pnpm clean:build && sass src:dist --style=expanded --source-map --watch",
     "sort-package-json": "pnpm exec sort-package-json",
     "sort-package-json:check": "pnpm exec sort-package-json --check"
   },
+  "dependencies": {
+    "sass": "^1.89.1"
+  },
   "devDependencies": {
+    "@types/node": "^22.10.2",
+    "rimraf": "^6.0.1",
     "sort-package-json": "^3.0.0"
   },
-  "peerDependencies": {},
   "packageManager": "pnpm@10.11.0",
   "engines": {
     "node": ">=20"
