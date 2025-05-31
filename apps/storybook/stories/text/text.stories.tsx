@@ -17,7 +17,7 @@ const meta: Meta<TextProps> = {
     },
     size: {
       control: "select",
-      options: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl", "7xl", "8xl", "9xl"],
+      options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl", "7xl", "8xl", "9xl"],
       description: "Controls the text size",
     },
     color: {
