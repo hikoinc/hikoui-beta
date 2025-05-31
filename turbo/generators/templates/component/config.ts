@@ -1,7 +1,7 @@
 import type { PlopTypes } from "@turbo/gen";
 
 function componentGenerator(plop: PlopTypes.NodePlopAPI): void {
-  plop.setGenerator("react-component", {
+  plop.setGenerator("component", {
     description: "Adds a new react component",
     prompts: [
       {
@@ -45,7 +45,7 @@ function componentGenerator(plop: PlopTypes.NodePlopAPI): void {
       {
         type: "add",
         path: "apps/storybook/stories/{{kebabCase name}}/{{kebabCase name}}.stories.tsx",
-        templateFile: "templates/component/component.stories.hbs",
+        templateFile: "templates/component/stories/component.stories.hbs",
       },
       {
         type: "append",
