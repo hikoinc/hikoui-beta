@@ -1,7 +1,3 @@
-/**
- * All credit goes to Chance (Reach UI), Haz (Reakit), (fluentui), (chakra-ui), (heroui)
- * for creating the base type definitions upon which we improved on
- */
 import { forwardRef as reactForwardRef } from "react";
 import type { ForwardRefRenderFunction } from "react";
 
