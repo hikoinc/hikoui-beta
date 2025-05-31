@@ -12,138 +12,157 @@ import { rules as prettierConfigRules } from "eslint-config-prettier";
 export const projectRoot = path.resolve(".");
 export const gitignorePath = path.resolve(projectRoot, ".gitignore");
 
-const jsConfig = [
-  {
-    name: "js/config",
-    ...js.configs.recommended,
-  },
-  plugins.stylistic,
-  plugins.importX,
-  ...configs.base.recommended,
-];
-
-const typescriptConfig = [plugins.typescriptEslint, ...configs.base.typescript, ...configs.react.typescript];
-
-const importxConfig = [
-  {
-    name: "import-x/order/rules",
-    plugins: {
-      import: importPlugin,
+function createJavaScriptConfig() {
+  return [
+    {
+      name: "js/config",
+      ...js.configs.recommended,
     },
-    rules: {
-      "import-x/no-extraneous-dependencies": [
-        "error",
-        {
-          devDependencies: [
-            "**/*.config.{js,cjs,mjs,ts,cts,mts}",
-            "**/*.setup.ts",
-            "**/*.stories.tsx",
-            "**/*.test.{ts,tsx}",
-            "**/.storybook/**",
-            "**/setup-test.ts",
-            "**/tsup.config.ts",
-          ],
-          optionalDependencies: false,
-        },
-      ],
-      "import-x/order": [
-        "warn",
-        {
-          groups: ["builtin", "external", "internal", "parent", "sibling", "index"],
-          pathGroups: [
-            {
-              pattern: "src/**",
-              group: "internal",
-              position: "before",
-            },
-            {
-              pattern: "~/**",
-              group: "external",
-              position: "after",
-            },
-          ],
-          "newlines-between": "always",
-        },
-      ],
-    },
-  },
-];
+    plugins.stylistic,
+    plugins.importX,
+    ...configs.base.recommended,
+  ];
+}
 
-const sonarjsConfig = [
-  {
-    name: "sonarjs/config",
-    plugins: {
-      sonarjs,
-    },
-  },
-];
+function createTypeScriptConfig() {
+  return [plugins.typescriptEslint, ...configs.base.typescript, ...configs.react.typescript];
+}
 
-const reactConfig = [
-  plugins.react,
-  plugins.reactHooks,
-  plugins.reactA11y,
-  ...configs.react.recommended,
-  {
-    name: "react/disable-react-in-jsx-scope",
-    rules: {
-      "react/react-in-jsx-scope": "off",
-      "react/jsx-filename-extension": [
-        "error",
-        {
-          extensions: [".tsx"],
-        },
-      ],
-      "react/function-component-definition": [
-        "error",
-        {
-          namedComponents: "arrow-function",
-          unnamedComponents: "arrow-function",
-        },
-      ],
+function createImportConfig() {
+  const devDependencyPatterns = [
+    "**/*.config.{js,cjs,mjs,ts,cts,mts}",
+    "**/*.setup.ts",
+    "**/*.stories.tsx",
+    "**/*.test.{ts,tsx}",
+    "**/.storybook/**",
+    "**/setup-test.ts",
+    "**/tsup.config.ts",
+  ];
+
+  const importOrderGroups = ["builtin", "external", "internal", "parent", "sibling", "index"];
+
+  const pathGroups = [
+    {
+      pattern: "src/**",
+      group: "internal",
+      position: "before",
     },
-    settings: {
-      react: {
-        version: "detect",
+    {
+      pattern: "~/**",
+      group: "external",
+      position: "after",
+    },
+  ];
+  return [
+    {
+      name: "import-x/order/rules",
+      plugins: {
+        import: importPlugin,
+      },
+      rules: {
+        "import-x/no-extraneous-dependencies": [
+          "error",
+          {
+            devDependencies: devDependencyPatterns,
+            optionalDependencies: false,
+          },
+        ],
+        "import-x/order": [
+          "warn",
+          {
+            groups: importOrderGroups,
+            pathGroups,
+            "newlines-between": "always",
+          },
+        ],
       },
     },
-  },
-];
+  ];
+}
 
-const storybookConfig = [
-  {
-    name: "storybook/config",
-    plugins: {
-      storybook,
+function createReactConfig() {
+  return [
+    plugins.react,
+    plugins.reactHooks,
+    plugins.reactA11y,
+    ...configs.react.recommended,
+    {
+      name: "react/custom-rules",
+      rules: {
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": [
+          "error",
+          {
+            extensions: [".tsx"],
+          },
+        ],
+        "react/function-component-definition": [
+          "error",
+          {
+            namedComponents: "arrow-function",
+            unnamedComponents: "arrow-function",
+          },
+        ],
+      },
+      settings: {
+        react: {
+          version: "detect",
+        },
+      },
     },
-    rules: {
-      ...storybook.configs.recommended.rules,
-    },
-  },
-];
+  ];
+}
 
-const prettierConfig = [
-  {
-    name: "prettier/plugin/config",
-    plugins: {
-      prettier: prettierPlugin,
+function createSonarJSConfig() {
+  return [
+    {
+      name: "sonarjs/config",
+      plugins: {
+        sonarjs,
+      },
     },
-  },
-  {
-    name: "prettier/config",
-    rules: {
-      ...prettierConfigRules,
-      "prettier/prettier": "error",
+  ];
+}
+
+function createStorybookConfig() {
+  return [
+    {
+      name: "storybook/config",
+      plugins: {
+        storybook,
+      },
+      rules: {
+        ...storybook.configs.recommended.rules,
+      },
     },
-  },
-];
+  ];
+}
+
+function createPrettierConfig() {
+  return [
+    {
+      name: "prettier/plugin/config",
+      plugins: {
+        prettier: prettierPlugin,
+      },
+    },
+    {
+      name: "prettier/rules",
+      rules: {
+        ...prettierConfigRules,
+        "prettier/prettier": "error",
+      },
+    },
+  ];
+}
 
 export default [
   includeIgnoreFile(gitignorePath),
-  ...jsConfig,
-  ...typescriptConfig,
-  ...importxConfig,
-  ...sonarjsConfig,
-  ...reactConfig,
-  ...storybookConfig,
-  ...prettierConfig,
+  ...createJavaScriptConfig(),
+  ...createTypeScriptConfig(),
+  ...createImportConfig(),
+  ...createReactConfig(),
+  ...createSonarJSConfig(),
+  ...createStorybookConfig(),
+  ...createPrettierConfig(),
 ];

@@ -7,6 +7,7 @@ coverage
 
 # Turbo
 .turbo
+**/*.hbs
 
 # Vercel
 .vercel

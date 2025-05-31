@@ -1,3 +1,2 @@
-import Button from "./button";
-
-export default Button;
+export { default as Text } from "./text";
+export type * from "./text";

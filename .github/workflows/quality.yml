@@ -106,5 +106,5 @@ jobs:
       - name: Setup Environment
         uses: ./.github/common-actions/setup
 
-      - name: Run Tests
+      - name: Run tests and collect coverage
         run: pnpm test

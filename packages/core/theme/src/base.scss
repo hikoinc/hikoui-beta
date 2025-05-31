@@ -1,0 +1,30 @@
+@use "./themes/light.scss" as light;
+@use "./themes/dark.scss" as dark;
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  @include light.light-theme;
+
+  --color-hiko-text-primary: var(--color-black);
+  --color-hiko-text-secondary: var(--color-hiko-neutral-800);
+  --color-hiko-text-tertiary: var(--color-hiko-neutral-600);
+  --color-hiko-text-success: var(--color-hiko-green-500);
+  --color-hiko-text-warning: var(--color-hiko-yellow-500);
+  --color-hiko-text-danger: var(--color-hiko-red-500);
+  --color-hiko-text-info: var(--color-hiko-blue-500);
+  --color-hiko-text-muted: var(--color-hiko-neutral-200);
+}
+
+[data-theme="dark"] {
+  @include dark.dark-theme;
+
+  --color-hiko-text-primary: var(--color-white);
+  --color-hiko-text-secondary: var(--color-hiko-neutral-800);
+  --color-hiko-text-tertiary: var(--color-hiko-neutral-600);
+  --color-hiko-text-success: var(--color-hiko-green-500);
+  --color-hiko-text-warning: var(--color-hiko-yellow-500);
+  --color-hiko-text-danger: var(--color-hiko-red-500);
+  --color-hiko-text-info: var(--color-hiko-blue-500);
+  --color-hiko-text-muted: var(--color-hiko-neutral-200);
+}

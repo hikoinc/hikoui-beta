@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@import "@hikoui-beta/theme";
+
+@source "../../node_modules/@hikoui-beta/react";

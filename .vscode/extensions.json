@@ -11,6 +11,7 @@
     "gruntfuggly.todo-tree",
     "ms-vsliveshare.vsliveshare",
     "ms-vscode.vscode-js-profile-flame",
-    "unifiedjs.vscode-mdx"
+    "unifiedjs.vscode-mdx",
+    "orta.vscode-jest"
   ]
 }

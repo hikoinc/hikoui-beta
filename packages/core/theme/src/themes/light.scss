@@ -1,0 +1,15 @@
+@use "../colors/common/red.scss" as red;
+@use "../colors/common/blue.scss" as blue;
+@use "../colors/common/green.scss" as green;
+@use "../colors/common/yellow.scss" as yellow;
+@use "../colors/common/purple.scss" as purple;
+@use "../colors/light/neutral.scss" as neutral;
+
+@mixin light-theme {
+  @include red.red;
+  @include blue.blue;
+  @include green.green;
+  @include yellow.yellow;
+  @include purple.purple;
+  @include neutral.neutral;
+}

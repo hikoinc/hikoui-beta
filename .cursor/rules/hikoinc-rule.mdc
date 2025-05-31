@@ -1,0 +1,11 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+- Use function declaration syntax (function funcName() { ... }) for `.ts` and `.js` files, except files matching `*.hook.ts`.
+- Use arrow functions for `.tsx`, `.jsx`, and files matching `*.hook.ts`.
+- Add full TypeScript types for all parameters and return types.
+- Do not use `any` or `unknown`.
+- Import lodash as `import _ from "lodash";` when needed.
+- Provide idiomatic, valid TypeScript code.
