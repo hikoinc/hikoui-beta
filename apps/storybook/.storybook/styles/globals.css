@@ -2,7 +2,3 @@
 @import "@hikoui-beta/theme";
 
 @source "../../node_modules/@hikoui-beta/react";
-
-html.dark .docs-story {
-  background-color: #000000;
-}
