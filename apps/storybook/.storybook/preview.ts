@@ -1,5 +1,6 @@
-import type { Preview, StoryFn, StoryContext } from "@storybook/react";
+import type { Preview, StoryFn, StoryContext } from "@storybook/react-vite";
 
+import applyThemeClass from "./utils/apply-theme-class";
 import "./styles/globals.css";
 
 const preview: Preview = {
@@ -19,13 +20,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story: StoryFn, context: StoryContext) => {
-      const backgroundValue = context.globals.backgrounds?.value;
-      const isDark = backgroundValue === "#000000" || backgroundValue === "dark";
-      const className = isDark ? "dark" : "light";
-
-      const htmlElement = document.documentElement;
-      htmlElement.classList.remove("dark", "light");
-      htmlElement.classList.add(className);
+      applyThemeClass(context);
 
       return Story(context.args, context);
     },
