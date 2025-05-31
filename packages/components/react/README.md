@@ -1,6 +1,6 @@
 # @hikoui/react
 
-HikoUI is a minimal-design React + Tailwind CSS component system for fast, scalable UI development.
+A minimalist React component library built with Tailwind CSS for fast, scalable UI development.
 
 > Build clean, simple, and consistent UIs with minimal design — quickly and efficiently.
 
