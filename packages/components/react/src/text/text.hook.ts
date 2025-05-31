@@ -1,6 +1,6 @@
 import { filterHTMLAttributes } from "@hikoui-beta/system";
 import { twMerge } from "tailwind-merge";
-import { useMemo, useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import type { ReactNode, ElementType } from "react";
 
 import textVariants from "./text.variants";
