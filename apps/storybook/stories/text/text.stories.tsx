@@ -1,13 +1,11 @@
 import { Text } from "@hikoui-beta/react";
 import type { TextProps } from "@hikoui-beta/react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { ComponentType } from "react";
 
-/**
- * Storybook metadata for the Text component
- */
 const meta: Meta<TextProps> = {
   title: "Component/Text",
-  component: Text,
+  component: Text as ComponentType<TextProps>,
   parameters: {
     layout: "centered",
   },
@@ -27,14 +25,14 @@ const meta: Meta<TextProps> = {
       options: ["primary", "secondary", "tertiary", "success", "warning", "danger", "info", "muted"],
       description: "Controls the text color",
     },
+    className: {
+      control: "text",
+      description: "Additional CSS classes to apply",
+    },
     as: {
       control: "select",
       options: ["span", "p", "h1", "h2", "h3", "h4", "h5", "h6", "strong", "em", "div", "label"],
       description: "The HTML element type to render",
-    },
-    className: {
-      control: "text",
-      description: "Additional CSS classes to apply",
     },
   },
   args: {
@@ -49,9 +47,6 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-/**
- * Default text component display
- */
 export const Primary: Story = {
   args: {},
 };
