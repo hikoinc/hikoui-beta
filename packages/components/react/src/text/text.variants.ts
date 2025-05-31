@@ -4,17 +4,16 @@ import type { VariantProps } from "class-variance-authority";
 const textVariants = cva("text", {
   variants: {
     color: {
-      primary: "text-primary",
-      secondary: "text-secondary",
-      tertiary: "text-tertiary",
-      success: "text-success",
-      warning: "text-warning",
-      danger: "text-danger",
-      info: "text-info",
-      muted: "text-muted",
+      primary: "text-hiko-text-primary",
+      secondary: "text-hiko-text-secondary",
+      tertiary: "text-hiko-text-tertiary",
+      success: "text-hiko-text-success",
+      warning: "text-hiko-text-warning",
+      danger: "text-hiko-text-danger",
+      info: "text-hiko-text-info",
+      muted: "text-hiko-text-muted",
     },
     size: {
-      "2xs": "text-[0.625rem]",
       xs: "text-xs",
       sm: "text-sm",
       md: "text-base",
