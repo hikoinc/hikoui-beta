@@ -1,73 +1,22 @@
 name: Semantic PR Validation
 
 on:
-  pull_request:
+  pull_request_target:
     types:
       - opened
       - edited
       - reopened
-      - synchronize
-      - labeled
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
-defaults:
-  run:
-    shell: bash
 
 jobs:
-  validate-pr-title:
-    name: Validate Pull Request Title
+  main:
+    name: Validate PR title
     runs-on: ubuntu-latest
-    timeout-minutes: 5
     permissions:
-      contents: read
       pull-requests: read
-      statuses: write
-
     steps:
-      - name: Check if PR author is a bot
-        id: check-bot
+      - uses: amannn/action-semantic-pull-request@v5
         env:
-          USER_TYPE: ${{ github.event.pull_request.user.type }}
-          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
-        run: |
-          if [[ "$USER_TYPE" == "Bot" ]] || [[ "$PR_AUTHOR" == *"[bot]" ]]; then
-            echo "is-bot=true" >> "$GITHUB_OUTPUT"
-            echo "PR author '$PR_AUTHOR' is a bot (type: $USER_TYPE)"
-          else
-            echo "is-bot=false" >> "$GITHUB_OUTPUT"
-            echo "PR author '$PR_AUTHOR' is not a bot (type: $USER_TYPE)"
-          fi
-
-      - name: Check if PR title should be ignored
-        id: check-title
-        env:
-          PR_TITLE: ${{ github.event.pull_request.title }}
-        run: |
-          if [[ "$PR_TITLE" =~ ^(Revert|Version Packages|DO NOT MERGE) ]]; then
-            echo "should-ignore=true" >> "$GITHUB_OUTPUT"
-            echo "PR title matches ignore pattern: '$PR_TITLE'"
-          else
-            echo "should-ignore=false" >> "$GITHUB_OUTPUT"
-            echo "PR title does not match ignore patterns: '$PR_TITLE'"
-          fi
-
-      - name: Skip validation summary
-        if: steps.check-bot.outputs.is-bot == 'true' || steps.check-title.outputs.should-ignore == 'true'
-        run: |
-          echo "::notice title=Validation Skipped::Semantic validation skipped for this PR"
-          if [[ "${{ steps.check-bot.outputs.is-bot }}" == "true" ]]; then
-            echo "Reason: PR created by bot user"
-          else
-            echo "Reason: PR title matches ignore pattern"
-          fi
-
-      - name: Validate semantic pull request
-        if: steps.check-bot.outputs.is-bot != 'true' && steps.check-title.outputs.should-ignore != 'true'
-        uses: amannn/action-semantic-pull-request@v5.5.3
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           types: |
             build
@@ -81,18 +30,34 @@ jobs:
             revert
             style
             test
+
+          scopes: |
+            core
+            ui
+            JIRA-\d+
+
           requireScope: true
-          headerPattern: '^([a-z]+)\(([a-z]+)\): (.+)$'
-          headerPatternCorrespondence: type,scope,subject
-          subjectPattern: "^.{1,50}$"
+
+          disallowScopes: |
+            release
+            [A-Z]+
+
+          subjectPattern: ^(?![A-Z]).{1,50}$
+
           subjectPatternError: |
             The subject "{subject}" found in the pull request title "{title}"
             didn't match the configured pattern. Please ensure that the subject:
+            - doesn't start with an uppercase character
             - is not empty
             - is maximum 50 characters long
-            - matches commitlint rules: type(scope): subject
-          wip: true
+
+          ignoreLabels: |
+            bot
+            ignore-semantic-pull-request
+
+          headerPattern: '^(\w*)(?:\(([\w$.\-*/ ]*)\))?: (.*)$'
+          headerPatternCorrespondence: type, scope, subject
+
           validateSingleCommit: true
+
           validateSingleCommitMatchesPrTitle: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

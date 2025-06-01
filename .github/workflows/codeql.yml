@@ -7,6 +7,9 @@ on:
     paths-ignore:
       - "**/dist/**"
       - "**/storybook-static/**"
+      - "**/coverage/**"
+      - "**/node_modules/**"
+      - "**/.turbo/**"
 
   pull_request:
     branches:
@@ -14,9 +17,16 @@ on:
     paths-ignore:
       - "**/dist/**"
       - "**/storybook-static/**"
+      - "**/coverage/**"
+      - "**/node_modules/**"
+      - "**/.turbo/**"
 
   schedule:
     - cron: 31 7 * * 3
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   analyze:
@@ -34,7 +44,9 @@ jobs:
       matrix:
         include:
           - language: Javascript
+            build-mode: none
           - language: TypeScript
+            build-mode: none
 
     steps:
       - name: Checkout
@@ -47,12 +59,13 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
-          build-mode: none
+          build-mode: ${{ matrix.build-mode }}
 
-      - name: Build manually
-        run: pnpm build
+      - name: Build packages (conditional)
+        if: matrix.build-mode == 'manual'
+        run: pnpm build:packages
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         with:
-          category: /language:${{matrix.language}}
+          category: /language:${{ matrix.language }}
