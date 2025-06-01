@@ -39,7 +39,7 @@ importers:
         specifier: ^6.6.3
         version: 6.6.3
       '@turbo/gen':
-        specifier: ^2.5.3
+        specifier: ^2.5.4
         version: 2.5.4(@swc/core@1.11.29)(@types/node@22.15.29)(typescript@5.8.2)
       '@types/jest':
         specifier: ^29.5.14
