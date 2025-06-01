@@ -35,3 +35,11 @@ export interface ComponentWithAs<Component extends As, Props extends object = ob
   defaultProps?: Partial<Props>;
   id?: string;
 }
+
+export type RefOf<T extends As> = T extends keyof HTMLElementTagNameMap
+  ? HTMLElementTagNameMap[T]
+  : T extends React.ComponentType<infer Props>
+    ? Props extends { ref?: React.Ref<infer RefType> }
+      ? RefType
+      : never
+    : never;
