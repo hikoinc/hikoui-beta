@@ -1,10 +1,10 @@
-name: Release & Publish
+name: Release and Publish
 
 on:
   push:
     paths:
-      - .changeset/**
-      - packages/**
+      - ".changeset/**"
+      - "packages/**"
     branches:
       - main
 
