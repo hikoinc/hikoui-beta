@@ -31,15 +31,9 @@ jobs:
             style
             test
 
-          scopes: |
-            core
-            ui
-            JIRA-\d+
-
           requireScope: true
 
           disallowScopes: |
-            release
             [A-Z]+
 
           subjectPattern: ^(?![A-Z]).{1,50}$
