@@ -39,7 +39,8 @@ jobs:
     name: Lint Code
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs: build-artifacts
+    needs:
+      - build-artifacts
     steps:
       - uses: actions/checkout@v4
 
@@ -59,7 +60,8 @@ jobs:
     name: Check TypeScript Types
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs: lint-code
+    needs:
+      - lint-code
     steps:
       - uses: actions/checkout@v4
 
@@ -79,7 +81,9 @@ jobs:
     name: Check Code Formatting (Prettier)
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: [lint-code, check-types]
+    needs:
+      - lint-code
+      - check-types
     steps:
       - uses: actions/checkout@v4
 
@@ -93,7 +97,10 @@ jobs:
     name: Check Package.json Sorting
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: [lint-code, check-types, check-formatting]
+    needs:
+      - lint-code
+      - check-types
+      - check-formatting
     steps:
       - uses: actions/checkout@v4
 
@@ -107,7 +114,11 @@ jobs:
     name: Run Tests & Coverage
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    needs: [lint-code, check-types, check-formatting, check-package-json]
+    needs:
+      - lint-code
+      - check-types
+      - check-formatting
+      - check-package-json
     steps:
       - uses: actions/checkout@v4
 
