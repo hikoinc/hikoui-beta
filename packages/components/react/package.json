@@ -19,7 +19,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hikoinc/hikoui.git",
-    "directory": "packages/component/react"
+    "directory": "packages/components/react"
   },
   "license": "MIT",
   "author": "Joe Takara <https://github.com/joetakara>",
