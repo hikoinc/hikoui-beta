@@ -51,7 +51,6 @@
     "typescheck": "tsc --noEmit"
   },
   "dependencies": {
-    "html-element-attributes": "^3.4.0",
     "lodash": "^4.17.21",
     "react": "19.1.0",
     "react-dom": "19.1.0"
