@@ -4,6 +4,7 @@ exports[`Text - Visual Regression Tests accessibility states matches snapshot fo
 <span
   aria-live="polite"
   class="antialiased text-danger-text text-base"
+  role="alert"
 >
   Error: Something went wrong
 </span>
@@ -23,6 +24,7 @@ exports[`Text - Visual Regression Tests accessibility states matches snapshot fo
 <span
   aria-live="polite"
   class="antialiased text-success-text text-base"
+  role="status"
 >
   Success: Operation completed
 </span>
