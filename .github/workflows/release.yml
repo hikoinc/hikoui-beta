@@ -1,20 +1,25 @@
-name: Release
+name: Release & Publish
 
 on:
   push:
     paths:
-      - ".changeset/**"
-      - "packages/**"
+      - .changeset/**
+      - packages/**
     branches:
       - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
-  release:
-    name: Release
+  publish-packages:
+    name: Publish Packages to NPM
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout branch
         uses: actions/checkout@v4

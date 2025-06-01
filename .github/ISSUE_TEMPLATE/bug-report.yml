@@ -1,5 +1,5 @@
-name: "Bug report"
-title: "[BUG] - YOUR_ISSUE_TITLE_HERE_REPLACE_ME"
+name: 🐛 Bug Report
+title: "[BUG]: "
 description: Create a report to help us improve
 labels: [bug]
 body:
