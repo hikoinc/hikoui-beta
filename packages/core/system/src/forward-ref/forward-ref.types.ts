@@ -1,12 +1,12 @@
 import type { ComponentProps, ComponentPropsWithoutRef } from "react";
 
-export type As<Props = any> = React.ElementType<Props>;
+export type As<Props = Record<string, unknown>> = React.ElementType<Props>;
 
 export type PropsOf<T extends As> = ComponentPropsWithoutRef<T> & {
   as?: As;
 };
 
-type OmitCommonProps<Target, OmitAdditionalProps extends keyof any = never> = Omit<
+type OmitCommonProps<Target, OmitAdditionalProps extends PropertyKey = never> = Omit<
   Target,
   "transition" | "as" | "color" | OmitAdditionalProps
 >;
@@ -32,6 +32,6 @@ export interface ComponentWithAs<Component extends As, Props extends object = ob
   ): React.JSX.Element;
 
   displayName?: string;
-  defaultProps?: Partial<any>;
+  defaultProps?: Partial<Props>;
   id?: string;
 }

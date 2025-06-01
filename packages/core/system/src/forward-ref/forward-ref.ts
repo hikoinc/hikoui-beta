@@ -1,17 +1,12 @@
 import { forwardRef as reactForwardRef } from "react";
 import type { ForwardRefRenderFunction } from "react";
 
-import { As, ComponentWithAs, PropsOf, RightJoinProps } from "./forward-ref.types";
+import { As, ComponentWithAs } from "./forward-ref.types";
 
 function forwardRef<Props extends object, Component extends As>(
-  component: ForwardRefRenderFunction<
-    any,
-    RightJoinProps<PropsOf<Component>, Props> & {
-      as?: As;
-    }
-  >,
-) {
-  return reactForwardRef(component as any) as unknown as ComponentWithAs<Component, Props>;
+  component: ForwardRefRenderFunction<Element, Props & { as?: As }>,
+): ComponentWithAs<Component, Props> {
+  return reactForwardRef(component as ForwardRefRenderFunction<Element, any>) as ComponentWithAs<Component, Props>;
 }
 
 export default forwardRef;
