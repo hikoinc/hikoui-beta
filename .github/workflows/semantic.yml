@@ -34,7 +34,6 @@ jobs:
           requireScope: true
 
           disallowScopes: |
-            release
             [A-Z]+
 
           subjectPattern: ^(?![A-Z]).{1,50}$
