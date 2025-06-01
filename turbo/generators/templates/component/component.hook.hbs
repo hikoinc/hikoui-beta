@@ -24,7 +24,7 @@ const use{{pascalCase name}} = (props: Use{{pascalCase name}}Props) => {
       className: mergedClassName,
       ...domProps,
     };
-  }, [otherProps, as, className]);
+  }, [as, otherProps, className]);
 
   const get{{pascalCase name}}Props = useMemo(() => () => getComputedProps, [getComputedProps]);
 
