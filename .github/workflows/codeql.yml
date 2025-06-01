@@ -39,9 +39,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - language: javascript
+          - language: JavaScript
             build-mode: none
-          - language: typescript
+          - language: TypeScript
             build-mode: none
 
     steps:
