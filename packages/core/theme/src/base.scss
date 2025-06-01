@@ -1,30 +1,42 @@
 @use "./themes/light.scss" as light;
 @use "./themes/dark.scss" as dark;
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where(.dark, .dark *), &:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme {
   @include light.light-theme;
 
-  --color-hiko-text-primary: var(--color-black);
-  --color-hiko-text-secondary: var(--color-hiko-neutral-800);
-  --color-hiko-text-tertiary: var(--color-hiko-neutral-600);
-  --color-hiko-text-success: var(--color-hiko-green-500);
-  --color-hiko-text-warning: var(--color-hiko-yellow-500);
-  --color-hiko-text-danger: var(--color-hiko-red-500);
-  --color-hiko-text-info: var(--color-hiko-blue-500);
-  --color-hiko-text-muted: var(--color-hiko-neutral-200);
+  // Text colors
+  --color-primary-text: var(--color-hiko-neutral-950);
+  --color-secondary-text: var(--color-hiko-neutral-700);
+  --color-tertiary-text: var(--color-hiko-neutral-500);
+  --color-success-text: var(--color-hiko-green-500);
+  --color-warning-text: var(--color-hiko-yellow-500);
+  --color-danger-text: var(--color-hiko-red-500);
+  --color-info-text: var(--color-hiko-blue-500);
+  --color-muted-text: var(--color-hiko-neutral-300);
+
+  // Text sizes
+  --text-2xs: 0.6875rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+  --text-8xl: 6rem;
+  --text-9xl: 8rem;
+}
+
+.dark {
+  @include dark.dark-theme;
 }
 
 [data-theme="dark"] {
   @include dark.dark-theme;
-
-  --color-hiko-text-primary: var(--color-white);
-  --color-hiko-text-secondary: var(--color-hiko-neutral-800);
-  --color-hiko-text-tertiary: var(--color-hiko-neutral-600);
-  --color-hiko-text-success: var(--color-hiko-green-500);
-  --color-hiko-text-warning: var(--color-hiko-yellow-500);
-  --color-hiko-text-danger: var(--color-hiko-red-500);
-  --color-hiko-text-info: var(--color-hiko-blue-500);
-  --color-hiko-text-muted: var(--color-hiko-neutral-200);
 }
