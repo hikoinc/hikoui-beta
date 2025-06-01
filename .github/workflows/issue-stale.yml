@@ -18,7 +18,6 @@ jobs:
   manage-stale-issues:
     name: Close Stale Issues and PRs
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     if: github.repository_owner == 'hikoui-beta'
     steps:
       - uses: actions/stale@v9

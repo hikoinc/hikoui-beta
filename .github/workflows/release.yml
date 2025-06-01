@@ -19,7 +19,6 @@ jobs:
   publish-packages:
     name: Publish Packages to NPM
     runs-on: ubuntu-latest
-    timeout-minutes: 20
     steps:
       - name: Checkout branch
         uses: actions/checkout@v4
