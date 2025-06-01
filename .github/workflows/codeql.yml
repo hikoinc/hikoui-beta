@@ -54,8 +54,8 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
-          # Exclude generated files and build artifacts from analysis
-          queries: security-extended,quality
+          # Use security-and-quality for comprehensive analysis
+          queries: security-and-quality
 
       - name: Build packages (conditional)
         if: matrix.build-mode == 'manual'
