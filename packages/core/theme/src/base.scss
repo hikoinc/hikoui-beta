@@ -1,7 +1,7 @@
 @use "./themes/light.scss" as light;
 @use "./themes/dark.scss" as dark;
 
-@custom-variant dark (&:where(.dark, .dark *), &:where([data-theme="dark"], [data-theme="dark"] *));
+@custom-variant dark (&:where(.dark, .dark *), &:where([data-theme='dark'], [data-theme='dark'] *));
 
 @theme {
   @include light.light-theme;
