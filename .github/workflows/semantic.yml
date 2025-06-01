@@ -27,7 +27,27 @@ jobs:
       statuses: write
 
     steps:
+      - name: Check if PR title should be ignored
+        id: check-ignore
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          PR_AUTHOR="${{ github.event.pull_request.user.login }}"
+          USER_TYPE="${{ github.event.pull_request.user.type }}"
+
+          # Check if created by bot
+          if [[ "$USER_TYPE" == "Bot" ]] || [[ "$PR_AUTHOR" == *"[bot]" ]]; then
+            echo "ignore=true" >> $GITHUB_OUTPUT
+            echo "Ignoring PR title validation for bot user: $PR_AUTHOR"
+          # Check if title matches ignore patterns
+          elif [[ "$PR_TITLE" =~ ^(Revert|Version Packages|DO NOT MERGE) ]]; then
+            echo "ignore=true" >> $GITHUB_OUTPUT
+            echo "Ignoring PR title validation for: $PR_TITLE"
+          else
+            echo "ignore=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: semantic-pull-request
+        if: steps.check-ignore.outputs.ignore != 'true'
         uses: amannn/action-semantic-pull-request@v5
         with:
           types: |
@@ -53,11 +73,6 @@ jobs:
             The subject {subject} in pull request title {title}
             must be max 50 characters, and can only contain:
             letters (a–z, A–Z), numbers, spaces, dash, underscore, dot, comma, and exclamation mark.
-
-          ignoreLabels: |
-            Version Packages
-            Revert
-            bot
 
           validateSingleCommit: true
           validateSingleCommitMatchesPrTitle: true
