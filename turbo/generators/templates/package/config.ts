@@ -19,7 +19,7 @@ function packageGenerator(plop: PlopTypes.NodePlopAPI): void {
         type: "input",
         name: "description",
         message: "What is the description of the package?",
-        default: "HikoUI is a minimal-design React + Tailwind CSS component system for fast, scalable UI development.",
+        default: "A minimalist React component library built with Tailwind CSS for fast, scalable UI development.",
       },
     ],
     actions: [
@@ -52,6 +52,11 @@ function packageGenerator(plop: PlopTypes.NodePlopAPI): void {
         type: "add",
         path: "packages/{{basePath}}/{{kebabCase name}}/src/index.ts",
         templateFile: "templates/package/src/index.hbs",
+      },
+      {
+        type: "add",
+        path: "packages/{{basePath}}/{{kebabCase name}}/.gitignore",
+        templateFile: "templates/package/.gitignore.hbs",
       },
     ],
   });
