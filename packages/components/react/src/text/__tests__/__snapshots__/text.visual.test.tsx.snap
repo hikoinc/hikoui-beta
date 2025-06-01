@@ -376,7 +376,7 @@ exports[`Text - Visual Regression Tests combined variants matches snapshot for c
 <code
   class="antialiased text-primary-text text-sm rounded bg-gray-100 px-2 py-1"
 >
-  const example = "code";
+  const example = \`code\`;
 </code>
 `;
 
