@@ -1,5 +1,5 @@
 {
-  "name": "@hikoui/storybook",
+  "name": "@hikoui-beta/storybook",
   "version": "1.0.0",
   "private": true,
   "scripts": {
