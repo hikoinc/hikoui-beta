@@ -25,5 +25,11 @@ reviews:
       - "DO NOT MERGE"
       - "Version Packages"
       - "Revert"
+    ignore_authors:
+      - "changeset-bot[bot]"
+      - "dependabot[bot]"
+      - "github-actions[bot]"
+      - "renovate[bot]"
+      - "sonarqubecloud[bot]"
 chat:
   auto_reply: true
