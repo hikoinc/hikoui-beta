@@ -187,7 +187,7 @@ importers:
         specifier: ^1.52.0
         version: 1.52.0
       postcss:
-        specifier: ^8.4.31
+        specifier: ^8.5.4
         version: 8.5.4
       sort-package-json:
         specifier: ^3.0.0
@@ -251,7 +251,7 @@ importers:
         specifier: 19.1.1
         version: 19.1.1(@types/react@19.1.0)
       postcss:
-        specifier: ^8.4.31
+        specifier: ^8.5.4
         version: 8.5.4
       sort-package-json:
         specifier: ^3.0.0
