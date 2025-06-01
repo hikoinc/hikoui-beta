@@ -8,7 +8,7 @@ describe("forwardRef", () => {
     const TestComponent = forwardRef<{ text: string }, "div">((props, ref) => {
       const { text, ...rest } = props;
       return (
-        <div ref={ref} {...rest}>
+        <div ref={ref as any} {...rest}>
           {text}
         </div>
       );
@@ -21,7 +21,7 @@ describe("forwardRef", () => {
     const TestComponent = forwardRef<{ text: string }, "div">((props, ref) => {
       const { text, ...rest } = props;
       return (
-        <div ref={ref} {...rest}>
+        <div ref={ref as any} {...rest}>
           {text}
         </div>
       );

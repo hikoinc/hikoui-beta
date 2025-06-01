@@ -1,4 +1,7 @@
+import type { ElementType } from "react";
+
 import filterHTMLAttributes from "../filter-html-attributes";
+import type { HTMLAttributes } from "../filter-html-attributes.types";
 
 describe("filterHTMLAttributes", () => {
   it("returns empty object when props is empty", () => {
@@ -7,12 +10,12 @@ describe("filterHTMLAttributes", () => {
   });
 
   it("returns empty object when props is not a plain object", () => {
-    const result = filterHTMLAttributes(null as any, "div");
+    const result = filterHTMLAttributes(null as unknown as HTMLAttributes, "div");
     expect(result).toEqual({});
   });
 
   it("returns empty object when props is undefined", () => {
-    const result = filterHTMLAttributes(undefined as any, "div");
+    const result = filterHTMLAttributes(undefined as unknown as HTMLAttributes, "div");
     expect(result).toEqual({});
   });
 
@@ -97,7 +100,7 @@ describe("filterHTMLAttributes", () => {
       title: "Test Title",
       customProp: "should be filtered out",
     };
-    const result = filterHTMLAttributes(props, "unknown-element" as any);
+    const result = filterHTMLAttributes(props, "unknown-element" as ElementType);
     expect(result).toEqual({
       id: "test-id",
       title: "Test Title",
@@ -110,7 +113,7 @@ describe("filterHTMLAttributes", () => {
       id: "test-id",
       invalidProp: "should be filtered out",
     };
-    const result = filterHTMLAttributes(props, "A" as any);
+    const result = filterHTMLAttributes(props, "A" as ElementType);
     expect(result).toEqual({
       href: "https://example.com",
       id: "test-id",

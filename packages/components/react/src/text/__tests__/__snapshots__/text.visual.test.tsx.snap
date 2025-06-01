@@ -1,0 +1,469 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text - Visual Regression Tests accessibility states matches snapshot for error state 1`] = `
+<span
+  aria-live="polite"
+  class="antialiased text-danger-text text-base"
+>
+  Error: Something went wrong
+</span>
+`;
+
+exports[`Text - Visual Regression Tests accessibility states matches snapshot for loading state 1`] = `
+<span
+  aria-busy="true"
+  aria-live="polite"
+  class="antialiased text-muted-text text-base"
+>
+  Loading...
+</span>
+`;
+
+exports[`Text - Visual Regression Tests accessibility states matches snapshot for success state 1`] = `
+<span
+  aria-live="polite"
+  class="antialiased text-success-text text-base"
+>
+  Success: Operation completed
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all color variants: text-color-danger 1`] = `
+<span
+  class="antialiased text-danger-text text-base"
+>
+  Text with 
+  danger
+   color
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all color variants: text-color-info 1`] = `
+<span
+  class="antialiased text-info-text text-base"
+>
+  Text with 
+  info
+   color
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all color variants: text-color-inherit 1`] = `
+<span
+  class="antialiased text-inherit text-base"
+>
+  Text with 
+  inherit
+   color
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all color variants: text-color-muted 1`] = `
+<span
+  class="antialiased text-muted-text text-base"
+>
+  Text with 
+  muted
+   color
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all color variants: text-color-primary 1`] = `
+<span
+  class="antialiased text-primary-text text-base"
+>
+  Text with 
+  primary
+   color
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all color variants: text-color-secondary 1`] = `
+<span
+  class="antialiased text-secondary-text text-base"
+>
+  Text with 
+  secondary
+   color
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all color variants: text-color-success 1`] = `
+<span
+  class="antialiased text-success-text text-base"
+>
+  Text with 
+  success
+   color
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all color variants: text-color-tertiary 1`] = `
+<span
+  class="antialiased text-tertiary-text text-base"
+>
+  Text with 
+  tertiary
+   color
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all color variants: text-color-warning 1`] = `
+<span
+  class="antialiased text-warning-text text-base"
+>
+  Text with 
+  warning
+   color
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all size variants: text-size-2xl 1`] = `
+<span
+  class="antialiased text-primary-text text-2xl"
+>
+  Text with 
+  2xl
+   size
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all size variants: text-size-2xs 1`] = `
+<span
+  class="antialiased text-primary-text text-2xs"
+>
+  Text with 
+  2xs
+   size
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all size variants: text-size-3xl 1`] = `
+<span
+  class="antialiased text-primary-text text-3xl"
+>
+  Text with 
+  3xl
+   size
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all size variants: text-size-4xl 1`] = `
+<span
+  class="antialiased text-primary-text text-4xl"
+>
+  Text with 
+  4xl
+   size
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all size variants: text-size-5xl 1`] = `
+<span
+  class="antialiased text-primary-text text-5xl"
+>
+  Text with 
+  5xl
+   size
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all size variants: text-size-6xl 1`] = `
+<span
+  class="antialiased text-primary-text text-6xl"
+>
+  Text with 
+  6xl
+   size
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all size variants: text-size-7xl 1`] = `
+<span
+  class="antialiased text-primary-text text-7xl"
+>
+  Text with 
+  7xl
+   size
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all size variants: text-size-8xl 1`] = `
+<span
+  class="antialiased text-primary-text text-8xl"
+>
+  Text with 
+  8xl
+   size
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all size variants: text-size-9xl 1`] = `
+<span
+  class="antialiased text-primary-text text-9xl"
+>
+  Text with 
+  9xl
+   size
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all size variants: text-size-lg 1`] = `
+<span
+  class="antialiased text-primary-text text-lg"
+>
+  Text with 
+  lg
+   size
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all size variants: text-size-md 1`] = `
+<span
+  class="antialiased text-primary-text text-base"
+>
+  Text with 
+  md
+   size
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all size variants: text-size-sm 1`] = `
+<span
+  class="antialiased text-primary-text text-sm"
+>
+  Text with 
+  sm
+   size
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all size variants: text-size-xl 1`] = `
+<span
+  class="antialiased text-primary-text text-xl"
+>
+  Text with 
+  xl
+   size
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all size variants: text-size-xs 1`] = `
+<span
+  class="antialiased text-primary-text text-xs"
+>
+  Text with 
+  xs
+   size
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all weight variants: text-weight-black 1`] = `
+<span
+  class="antialiased text-primary-text text-base font-black"
+>
+  Text with 
+  black
+   weight
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all weight variants: text-weight-bold 1`] = `
+<span
+  class="antialiased text-primary-text text-base font-bold"
+>
+  Text with 
+  bold
+   weight
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all weight variants: text-weight-extrabold 1`] = `
+<span
+  class="antialiased text-primary-text text-base font-extrabold"
+>
+  Text with 
+  extrabold
+   weight
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all weight variants: text-weight-extralight 1`] = `
+<span
+  class="antialiased text-primary-text text-base font-extralight"
+>
+  Text with 
+  extralight
+   weight
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all weight variants: text-weight-light 1`] = `
+<span
+  class="antialiased text-primary-text text-base font-light"
+>
+  Text with 
+  light
+   weight
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all weight variants: text-weight-medium 1`] = `
+<span
+  class="antialiased text-primary-text text-base font-medium"
+>
+  Text with 
+  medium
+   weight
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all weight variants: text-weight-normal 1`] = `
+<span
+  class="antialiased text-primary-text text-base font-normal"
+>
+  Text with 
+  normal
+   weight
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all weight variants: text-weight-semibold 1`] = `
+<span
+  class="antialiased text-primary-text text-base font-semibold"
+>
+  Text with 
+  semibold
+   weight
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for all weight variants: text-weight-thin 1`] = `
+<span
+  class="antialiased text-primary-text text-base font-thin"
+>
+  Text with 
+  thin
+   weight
+</span>
+`;
+
+exports[`Text - Visual Regression Tests basic variants matches snapshot for default text 1`] = `
+<span
+  class="antialiased text-primary-text text-base"
+>
+  Default text
+</span>
+`;
+
+exports[`Text - Visual Regression Tests combined variants matches snapshot for body text style 1`] = `
+<span
+  class="antialiased text-primary-text text-base leading-relaxed"
+>
+  This is a body text with relaxed leading for better readability.
+</span>
+`;
+
+exports[`Text - Visual Regression Tests combined variants matches snapshot for caption style 1`] = `
+<span
+  class="antialiased text-muted-text text-sm italic"
+>
+  Image caption or small text
+</span>
+`;
+
+exports[`Text - Visual Regression Tests combined variants matches snapshot for code style 1`] = `
+<code
+  class="antialiased text-primary-text text-sm rounded bg-gray-100 px-2 py-1"
+>
+  const example = "code";
+</code>
+`;
+
+exports[`Text - Visual Regression Tests combined variants matches snapshot for heading style 1`] = `
+<h1
+  class="antialiased text-primary-text text-3xl font-bold"
+>
+  Main Heading
+</h1>
+`;
+
+exports[`Text - Visual Regression Tests combined variants matches snapshot for subheading style 1`] = `
+<h2
+  class="antialiased text-secondary-text text-xl font-semibold"
+>
+  Subheading
+</h2>
+`;
+
+exports[`Text - Visual Regression Tests custom styling integration matches snapshot for dark mode preparation 1`] = `
+<span
+  class="antialiased text-inherit text-base dark:bg-gray-800 dark:text-white"
+>
+  Dark mode compatible text
+</span>
+`;
+
+exports[`Text - Visual Regression Tests custom styling integration matches snapshot with custom classes 1`] = `
+<span
+  class="antialiased text-primary-text text-lg custom-shadow transition-colors hover:text-blue-500"
+>
+  Text with custom styling
+</span>
+`;
+
+exports[`Text - Visual Regression Tests special styling matches snapshot for aligned text: text-align-center 1`] = `
+<span
+  class="antialiased text-primary-text text-base text-center w-64"
+>
+  Text with 
+  center
+   alignment in a fixed width container
+</span>
+`;
+
+exports[`Text - Visual Regression Tests special styling matches snapshot for aligned text: text-align-justify 1`] = `
+<span
+  class="antialiased text-primary-text text-base text-justify w-64"
+>
+  Text with 
+  justify
+   alignment in a fixed width container
+</span>
+`;
+
+exports[`Text - Visual Regression Tests special styling matches snapshot for aligned text: text-align-left 1`] = `
+<span
+  class="antialiased text-primary-text text-base text-left w-64"
+>
+  Text with 
+  left
+   alignment in a fixed width container
+</span>
+`;
+
+exports[`Text - Visual Regression Tests special styling matches snapshot for aligned text: text-align-right 1`] = `
+<span
+  class="antialiased text-primary-text text-base text-right w-64"
+>
+  Text with 
+  right
+   alignment in a fixed width container
+</span>
+`;
+
+exports[`Text - Visual Regression Tests special styling matches snapshot for decorated text 1`] = `
+<span
+  class="antialiased text-primary-text text-base tracking-wide underline uppercase"
+>
+  Decorated Text
+</span>
+`;
+
+exports[`Text - Visual Regression Tests special styling matches snapshot for truncated text 1`] = `
+<span
+  class="antialiased text-primary-text text-base line-clamp-2 w-64"
+>
+  This is a very long text that should be truncated at exactly two lines when displayed in a container with limited width.
+</span>
+`;
