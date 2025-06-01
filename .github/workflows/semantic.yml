@@ -5,12 +5,10 @@ on:
     types:
       - opened
       - edited
-      - reopened
       - synchronize
-      - labeled
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: semantic-pr-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
 defaults:
