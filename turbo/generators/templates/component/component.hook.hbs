@@ -15,7 +15,7 @@ export interface Use{{pascalCase name}}Props extends {{pascalCase name}}VariantP
 const use{{pascalCase name}} = (props: Use{{pascalCase name}}Props) => {
   const { as = "{{elementType}}", className, children, ...otherProps } = props;
 
-  const computedProps = useMemo(() => {
+  const getComputedProps = useMemo(() => {
     const variantClasses = {{camelCase name}}Variants({ ...otherProps });
     const domProps = filterHTMLAttributes(otherProps, as);
     const mergedClassName = twMerge(variantClasses, className);
@@ -26,7 +26,7 @@ const use{{pascalCase name}} = (props: Use{{pascalCase name}}Props) => {
     };
   }, [otherProps, as, className]);
 
-  const get{{pascalCase name}}Props = useMemo(() => () => computedProps, [computedProps]);
+  const get{{pascalCase name}}Props = useMemo(() => () => getComputedProps, [getComputedProps]);
 
   return {
     Component: as,

@@ -15,7 +15,7 @@ export interface UseTextProps extends TextVariantProps {
 const useText = (props: UseTextProps) => {
   const { as = "span", className, children, ...otherProps } = props;
 
-  const computedProps = useMemo(() => {
+  const getComputedProps = useMemo(() => {
     const variantClasses = textVariants({ ...otherProps });
     const domProps = filterHTMLAttributes(otherProps, as);
     const mergedClassName = twMerge(variantClasses, className);
@@ -26,7 +26,7 @@ const useText = (props: UseTextProps) => {
     };
   }, [otherProps, as, className]);
 
-  const getTextProps = useMemo(() => () => computedProps, [computedProps]);
+  const getTextProps = useMemo(() => () => getComputedProps, [getComputedProps]);
 
   return {
     Component: as,
