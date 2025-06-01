@@ -6,7 +6,6 @@
 @theme {
   @include light.light-theme;
 
-  // Text colors
   --color-primary-text: var(--color-hiko-neutral-950);
   --color-secondary-text: var(--color-hiko-neutral-700);
   --color-tertiary-text: var(--color-hiko-neutral-500);
@@ -16,7 +15,6 @@
   --color-info-text: var(--color-hiko-blue-500);
   --color-muted-text: var(--color-hiko-neutral-300);
 
-  // Text sizes
   --text-2xs: 0.6875rem;
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
