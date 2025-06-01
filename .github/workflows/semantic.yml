@@ -30,10 +30,10 @@ jobs:
     steps:
       - name: Check if PR author is a bot
         id: check-bot
+        env:
+          USER_TYPE: ${{ github.event.pull_request.user.type }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
         run: |
-          USER_TYPE="${{ github.event.pull_request.user.type }}"
-          PR_AUTHOR="${{ github.event.pull_request.user.login }}"
-
           if [[ "$USER_TYPE" == "Bot" ]] || [[ "$PR_AUTHOR" == *"[bot]" ]]; then
             echo "is-bot=true" >> "$GITHUB_OUTPUT"
             echo "PR author '$PR_AUTHOR' is a bot (type: $USER_TYPE)"
@@ -44,9 +44,9 @@ jobs:
 
       - name: Check if PR title should be ignored
         id: check-title
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
-          PR_TITLE="${{ github.event.pull_request.title }}"
-
           if [[ "$PR_TITLE" =~ ^(Revert|Version Packages|DO NOT MERGE) ]]; then
             echo "should-ignore=true" >> "$GITHUB_OUTPUT"
             echo "PR title matches ignore pattern: '$PR_TITLE'"
