@@ -1,27 +1,25 @@
 import _ from "lodash";
-import { htmlElementAttributes } from "html-element-attributes";
 import type { ElementType } from "react";
 
+import htmlElementAttributes from "./html-element-attributes";
 import type { HTMLAttributes } from "./filter-html-attributes.types";
 
-function getValidAttributes(elementType: string): Set<string> {
-  const globalAttributes = _.get(htmlElementAttributes, "*", []);
-  const elementAttributes = _.get(htmlElementAttributes, elementType, []);
-
-  return new Set([...globalAttributes, ...elementAttributes]);
-}
-
-function isValidAttribute(key: string, validAttributes: Set<string>): boolean {
-  return Boolean((validAttributes.has(key) || _.startsWith(key, "data-")) ?? _.startsWith(key, "aria-"));
-}
-
 function filterHTMLAttributes(props: HTMLAttributes, elementType: ElementType): HTMLAttributes {
-  if (_.isEmpty(props) || !_.isPlainObject(props)) return {};
+  if (!_.isPlainObject(props) || _.isEmpty(props)) return {};
 
-  const elementTypeStr = _.toLower(String(elementType));
-  const validAttributes = getValidAttributes(elementTypeStr);
+  const elementName = _.toLower(String(elementType));
 
-  return _.pickBy(props, (value, key) => isValidAttribute(key, validAttributes));
+  const globalAttributes = _.get(htmlElementAttributes, "*", []);
+  const elementAttributes = _.get(htmlElementAttributes, elementName, []);
+  const validAttributes = [...globalAttributes, ...elementAttributes];
+
+  return _.pickBy(props, (value, key) => {
+    if (_.includes(validAttributes, key)) return true;
+    if (_.startsWith(key, "data-")) return true;
+    if (_.startsWith(key, "aria-")) return true;
+
+    return false;
+  });
 }
 
 export default filterHTMLAttributes;
