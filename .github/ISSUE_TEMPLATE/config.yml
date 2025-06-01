@@ -1,13 +1,13 @@
 contact_links:
-  - name: Feature Request
+  - name: 💡 Feature Request or Enhancement
     url: https://github.com/hikoinc/hikoui/discussions/categories/feature-requests
     about: Suggest a new component, improve an existing component and etc
-  - name: Long question or ideas?
+  - name: 💬 Questions & Ideas Discussion
     url: https://github.com/hikoinc/hikoui/discussions
     about: Ask long-form questions and discuss ideas.
-  - name: Discord Community Chat
+  - name: 🎮 Discord Community Chat
     url: https://discord.gg/HXHzYvNrfV
-    about: Ask quick questions or simply chat on the `Hikoui` community Discord server.
-  - name: X
+    about: Ask quick questions or simply chat on the `HikoUI` community Discord server.
+  - name: 🐦 Follow Us on X (Twitter)
     url: https://x.com/hikoinc
-    about: Link to our X account if you want to follow us and stay up to date with Hikoui news
+    about: Link to our X account if you want to follow us and stay up to date with HikoUI news

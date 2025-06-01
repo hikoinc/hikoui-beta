@@ -1,4 +1,4 @@
-name: Semantic
+name: Semantic PR Validation
 
 on:
   pull_request:
@@ -9,10 +9,19 @@ on:
       - synchronize
       - labeled
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
-  main:
-    name: Validate PR title
+  validate-pr-title:
+    name: Validate Pull Request Title
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     permissions:
       pull-requests: read
       statuses: write
@@ -41,7 +50,7 @@ jobs:
 
           subjectPattern: '^[a-zA-Z0-9\s\-_.,!]{1,50}$'
           subjectPatternError: |
-            The subject "{subject}" in pull request title "{title}"
+            The subject {subject} in pull request title {title}
             must be max 50 characters, and can only contain:
             letters (a–z, A–Z), numbers, spaces, dash, underscore, dot, comma, and exclamation mark.
 

@@ -1,14 +1,22 @@
-name: CodeQL
+name: CodeQL Analysis
 
 on:
   push:
     branches:
       - main
+    paths-ignore:
+      - "**/dist/**"
+      - "**/storybook-static/**"
+
   pull_request:
     branches:
       - main
+    paths-ignore:
+      - "**/dist/**"
+      - "**/storybook-static/**"
+
   schedule:
-    - cron: "31 7 * * 3"
+    - cron: 31 7 * * 3
 
 jobs:
   analyze:

@@ -1,4 +1,4 @@
-name: Release
+name: Release and Publish
 
 on:
   push:
@@ -11,10 +11,15 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
-  release:
-    name: Release
+  publish-packages:
+    name: Publish Packages to NPM
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout branch
         uses: actions/checkout@v4

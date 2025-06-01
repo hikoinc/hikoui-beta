@@ -1,5 +1,5 @@
 <!---
-Thank you for your contribution to Hikoui! 🌟
+Thank you for your contribution to HikoUI! 🌟
 
 To help us review your pull request effectively, please complete this template.
 

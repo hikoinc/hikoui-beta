@@ -1,5 +1,5 @@
-name: "Bug report"
-title: "[BUG] - YOUR_ISSUE_TITLE_HERE_REPLACE_ME"
+name: 🐛 Bug Report
+title: "[BUG]: "
 description: Create a report to help us improve
 labels: [bug]
 body:
@@ -8,16 +8,16 @@ body:
       value: |
         Thank you for reporting an issue.
 
-        This issue tracker is for reporting bugs found in the [Hikoui GitHub repository](https://github.com/hikoinc/hikoui/).
+        This issue tracker is for reporting bugs found in the [HikoUI GitHub repository](https://github.com/hikoinc/hikoui/).
 
         If you're looking for help or usage guidance, please consider:
-          - [Hikoui Discussions](https://github.com/hikoinc/hikoui/discussions)
-          - [Hikoui Discord](https://discord.gg/HXHzYvNrfV)
+          - [HikoUI Discussions](https://github.com/hikoinc/hikoui/discussions)
+          - [HikoUI Discord](https://discord.gg/HXHzYvNrfV)
 
         Before submitting this issue, please check the following places to ensure it has not already been reported or resolved:
           - [Open Pull Requests](https://github.com/hikoinc/hikoui/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc)
           - [Closed Issues](https://github.com/hikoinc/hikoui/issues?q=is%3Aissue+sort%3Aupdated-desc+is%3Aclosed)
-          - [Hikoui Discussions](https://github.com/hikoinc/hikoui/discussions)
+          - [HikoUI Discussions](https://github.com/hikoinc/hikoui/discussions)
 
   - type: checkboxes
     id: duplicate_check
@@ -31,9 +31,9 @@ body:
   - type: input
     id: version
     attributes:
-      label: Hikoui Version
+      label: HikoUI Version
       description: |
-        Please provide the version of Hikoui you are using.
+        Please provide the version of HikoUI you are using.
         For example:
         - Global: 2.4.2
         - Package: @hikoui/button@2.0.34

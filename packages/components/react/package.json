@@ -1,7 +1,7 @@
 {
   "name": "@hikoui-beta/react",
   "version": "0.0.2",
-  "description": "Hikoui is a minimal-design React + Tailwind CSS component system for fast, scalable UI development.",
+  "description": "A minimalist React component library built with Tailwind CSS for fast, scalable UI development.",
   "keywords": [
     "react",
     "ui",
@@ -10,9 +10,7 @@
     "typescript",
     "design",
     "minimal",
-    "clean",
-    "frontend",
-    "open source"
+    "frontend"
   ],
   "homepage": "https://hikoui.com",
   "bugs": {
@@ -21,7 +19,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hikoinc/hikoui.git",
-    "directory": "packages/react"
+    "directory": "packages/components/react"
   },
   "license": "MIT",
   "author": "Joe Takara <https://github.com/joetakara>",
@@ -41,28 +39,36 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "pnpm clean:build && tsup",
     "clean": "pnpm clean:build && pnpm clean:turbo && pnpm clean:node_modules",
     "clean:build": "rimraf dist",
     "clean:node_modules": "rimraf node_modules",
     "clean:turbo": "rimraf .turbo",
-    "dev": "tsup --watch",
+    "dev": "pnpm clean:build && tsup --watch",
     "sort-package-json": "pnpm exec sort-package-json",
     "sort-package-json:check": "pnpm exec sort-package-json --check",
     "typescheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@hikoui-beta/system": "workspace:*",
+    "@react-types/shared": "^3.29.1",
+    "class-variance-authority": "^0.7.1",
+    "html-element-attributes": "^3.4.0",
+    "lodash": "^4.17.21",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.7",
+    "@tailwindcss/postcss": "^4.1.8",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
+    "@types/lodash": "^4.17.17",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
+    "postcss": "^8.5.4",
     "sort-package-json": "^3.0.0",
-    "tailwindcss": "^4.1.7",
+    "tailwindcss": "^4.1.8",
     "tsup": "^8.5.0",
     "typescript": "5.8.2"
   },

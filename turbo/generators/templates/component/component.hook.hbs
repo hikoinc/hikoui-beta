@@ -1,0 +1,38 @@
+import { filterHTMLAttributes } from "@hikoui-beta/system";
+import { twMerge } from "tailwind-merge";
+import { useMemo } from "react";
+import type { ReactNode, ElementType } from "react";
+
+import {{camelCase name}}Variants from "./{{kebabCase name}}.variants";
+import type { {{pascalCase name}}VariantProps } from "./{{kebabCase name}}.variants";
+
+export interface Use{{pascalCase name}}Props extends {{pascalCase name}}VariantProps {
+  children: ReactNode;
+  className?: string;
+  as?: ElementType;
+}
+
+const use{{pascalCase name}} = (props: Use{{pascalCase name}}Props) => {
+  const { as = "{{elementType}}", className, children, ...otherProps } = props;
+
+  const getComputedProps = useMemo(() => {
+    const variantClasses = {{camelCase name}}Variants({ ...otherProps });
+    const domProps = filterHTMLAttributes(otherProps, as);
+    const mergedClassName = twMerge(variantClasses, className);
+
+    return {
+      className: mergedClassName,
+      ...domProps,
+    };
+  }, [otherProps, as, className]);
+
+  const get{{pascalCase name}}Props = useMemo(() => () => getComputedProps, [getComputedProps]);
+
+  return {
+    Component: as,
+    children,
+    get{{pascalCase name}}Props,
+  };
+};
+
+export default use{{pascalCase name}};

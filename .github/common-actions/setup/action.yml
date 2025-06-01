@@ -1,17 +1,17 @@
-name: "Setup"
-description: "Sets up Node.js and runs install"
+name: Environment Setup
+description: Sets up Node.js environment with pnpm and installs dependencies
 
 inputs:
   node-version:
-    description: "Node.js version to use"
+    description: Node.js version to use
     required: false
     default: "20"
   git-email:
-    description: "Git email to use for commits"
+    description: Git email to use for commits
     required: false
     default: "github-actions[bot]@users.noreply.github.com"
   git-name:
-    description: "Git name to use for commits"
+    description: Git name to use for commits
     required: false
     default: "github-actions[bot]"
 

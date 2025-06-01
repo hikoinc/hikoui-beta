@@ -1,4 +1,4 @@
-name: SonarQube
+name: SonarQube Analysis
 
 on:
   push:
@@ -10,10 +10,19 @@ on:
       - synchronize
       - reopened
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
-  upload-coverage:
-    name: SonarQube Analysis
+  sonar-analysis:
+    name: Run SonarQube Code Analysis
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,8 +32,11 @@ jobs:
       - name: Setup Environment
         uses: ./.github/common-actions/setup
 
-      - name: Run tests and collect coverage
-        run: pnpm jest:coverage
+      - name: Build packages
+        run: pnpm build
+
+      - name: Run test
+        run: pnpm test
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4

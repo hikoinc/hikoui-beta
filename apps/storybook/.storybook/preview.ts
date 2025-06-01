@@ -1,19 +1,30 @@
-import type { Preview } from "@storybook/react-vite";
+import type { Preview, StoryFn, StoryContext } from "@storybook/react-vite";
 
-import "./styles/global.css";
+import applyThemeClass from "./utils/apply-theme-class";
+import "./styles/globals.css";
 
 const preview: Preview = {
   parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
+    backgrounds: {
+      options: {
+        dark: {
+          name: "Dark",
+          value: "#000000",
+        },
+        light: {
+          name: "Light",
+          value: "#ffffff",
+        },
       },
     },
-    a11y: {
-      test: "todo",
-    },
   },
+  decorators: [
+    (Story: StoryFn, context: StoryContext) => {
+      applyThemeClass(context);
+
+      return Story(context.args, context);
+    },
+  ],
 };
 
 export default preview;

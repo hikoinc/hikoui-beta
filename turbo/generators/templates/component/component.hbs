@@ -1,0 +1,22 @@
+"use client";
+
+import { forwardRef } from "@hikoui-beta/system";
+
+import use{{pascalCase name}} from "./{{kebabCase name}}.hook";
+import type { Use{{pascalCase name}}Props } from "./{{kebabCase name}}.hook";
+
+export type {{pascalCase name}}Props = Use{{pascalCase name}}Props;
+
+const {{pascalCase name}} = forwardRef<{{pascalCase name}}Props, "{{elementType}}">((props, ref) => {
+  const { Component, children, get{{pascalCase name}}Props } = use{{pascalCase name}}(props);
+
+  return (
+    <Component ref={ref} {...get{{pascalCase name}}Props()}>
+      {children}
+    </Component>
+  );
+});
+
+{{pascalCase name}}.displayName = "HikoUI.{{pascalCase name}}";
+
+export default {{pascalCase name}};
