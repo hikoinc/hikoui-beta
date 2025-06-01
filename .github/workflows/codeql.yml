@@ -18,10 +18,6 @@ on:
   schedule:
     - cron: 31 7 * * 3
 
-concurrency:
-  group: codeql-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   analyze:
     name: Analyze (${{ matrix.language }})
@@ -37,8 +33,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - language: javascript
-          - language: typescript
+          - language: Javascript
+          - language: TypeScript
 
     steps:
       - name: Checkout
@@ -53,8 +49,8 @@ jobs:
           languages: ${{ matrix.language }}
           build-mode: none
 
-      - name: Build packages only
-        run: pnpm build:packages
+      - name: Build manually
+        run: pnpm build
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
