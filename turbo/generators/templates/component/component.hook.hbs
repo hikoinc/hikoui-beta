@@ -3,20 +3,20 @@ import { twMerge } from "tailwind-merge";
 import { useMemo } from "react";
 import type { ReactNode, ElementType } from "react";
 
-import textVariants from "./text.variants";
-import type { TextVariantProps } from "./text.variants";
+import {{camelCase name}}Variants from "./{{kebabCase name}}.variants";
+import type { {{pascalCase name}}VariantProps } from "./{{kebabCase name}}.variants";
 
-export interface UseTextProps extends TextVariantProps {
+export interface Use{{pascalCase name}}Props extends {{pascalCase name}}VariantProps {
   children: ReactNode;
   className?: string;
   as?: ElementType;
 }
 
-export const useText = (props: UseTextProps) => {
-  const { as = "span", className, children, ...otherProps } = props;
+const use{{pascalCase name}} = (props: Use{{pascalCase name}}Props) => {
+  const { as = "{{elementType}}", className, children, ...otherProps } = props;
 
   const computedProps = useMemo(() => {
-    const variantClasses = textVariants({ ...otherProps });
+    const variantClasses = {{camelCase name}}Variants({ ...otherProps });
     const domProps = filterHTMLAttributes(otherProps, as);
     const mergedClassName = twMerge(variantClasses, className);
 
@@ -26,13 +26,13 @@ export const useText = (props: UseTextProps) => {
     };
   }, [otherProps, as, className]);
 
-  const getTextProps = useMemo(() => () => computedProps, [computedProps]);
+  const get{{pascalCase name}}Props = useMemo(() => () => computedProps, [computedProps]);
 
   return {
     Component: as,
     children,
-    getTextProps,
+    get{{pascalCase name}}Props,
   };
 };
 
-export default useText;
+export default use{{pascalCase name}};

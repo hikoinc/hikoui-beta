@@ -7,7 +7,7 @@ import type { Use{{pascalCase name}}Props } from "./{{kebabCase name}}.hook";
 
 export type {{pascalCase name}}Props = Use{{pascalCase name}}Props;
 
-const {{pascalCase name}} = forwardRef<{{pascalCase name}}Props, "div">((props, ref) => {
+const {{pascalCase name}} = forwardRef<{{pascalCase name}}Props, "{{elementType}}">((props, ref) => {
   const { Component, children, get{{pascalCase name}}Props } = use{{pascalCase name}}(props);
 
   return (
