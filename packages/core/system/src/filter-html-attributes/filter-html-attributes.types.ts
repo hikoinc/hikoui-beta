@@ -1,1 +1,1 @@
-export type HTMLAttributes = Record<string, unknown>;
+export type HTMLAttributes = Record<string, string | number | boolean | null | undefined>;
