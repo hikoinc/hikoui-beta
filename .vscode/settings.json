@@ -18,9 +18,5 @@
   ],
   "typescript.tsdk": "node_modules/typescript/lib",
   "tailwindCSS.classFunctions": ["cva", "cx", "twMerge"],
-  "files.associations": {
-    "*.css": "tailwindcss",
-    "*.scss": "tailwindcss"
-  },
   "terminal.integrated.scrollback": 10000
 }
