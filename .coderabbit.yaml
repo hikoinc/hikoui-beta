@@ -27,7 +27,6 @@ reviews:
       - "Revert"
     ignore_authors:
       - "changeset-bot[bot]"
-      - "dependabot[bot]"
       - "github-actions[bot]"
       - "renovate[bot]"
       - "sonarqubecloud[bot]"
