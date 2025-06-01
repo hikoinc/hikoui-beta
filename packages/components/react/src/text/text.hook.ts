@@ -24,7 +24,7 @@ const useText = (props: UseTextProps) => {
       className: mergedClassName,
       ...domProps,
     };
-  }, [otherProps, as, className]);
+  }, [as, otherProps, className]);
 
   const getTextProps = useMemo(() => () => getComputedProps, [getComputedProps]);
 
