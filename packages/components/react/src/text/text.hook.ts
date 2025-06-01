@@ -1,6 +1,6 @@
 import { filterHTMLAttributes } from "@hikoui-beta/system";
 import { twMerge } from "tailwind-merge";
-import { useCallback, useMemo } from "react";
+import { useMemo } from "react";
 import type { ReactNode, ElementType } from "react";
 
 import textVariants from "./text.variants";
@@ -15,17 +15,18 @@ export interface UseTextProps extends TextVariantProps {
 const useText = (props: UseTextProps) => {
   const { as = "span", className, children, ...otherProps } = props;
 
-  const variantClasses = useMemo(() => textVariants({ ...otherProps }), [otherProps]);
-  const domProps = useMemo(() => filterHTMLAttributes(otherProps, as), [otherProps, as]);
-  const mergedClassName = useMemo(() => twMerge(variantClasses, className), [variantClasses, className]);
+  const computedProps = useMemo(() => {
+    const variantClasses = textVariants({ ...otherProps });
+    const domProps = filterHTMLAttributes(otherProps, as);
+    const mergedClassName = twMerge(variantClasses, className);
 
-  const getTextProps = useCallback(
-    () => ({
+    return {
       className: mergedClassName,
       ...domProps,
-    }),
-    [mergedClassName, domProps],
-  );
+    };
+  }, [otherProps, as, className]);
+
+  const getTextProps = useMemo(() => () => computedProps, [computedProps]);
 
   return {
     Component: as,
