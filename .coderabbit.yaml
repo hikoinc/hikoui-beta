@@ -24,5 +24,6 @@ reviews:
     ignore_title_keywords:
       - "DO NOT MERGE"
       - "Version Packages"
+      - "Revert"
 chat:
   auto_reply: true
