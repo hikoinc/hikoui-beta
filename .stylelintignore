@@ -1,0 +1,18 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+storybook-static
+
+# Testing
+coverage
+
+# Turbo
+.turbo
+
+# OS
+.DS_Store
+
+# Debug
+*storybook.log 

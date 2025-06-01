@@ -1,0 +1,33 @@
+{
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "theme",
+          "source",
+          "utility",
+          "variant",
+          "custom-variant",
+          "plugin",
+          "use",
+          "forward",
+          "include",
+          "mixin",
+          "function",
+          "return",
+          "each",
+          "for",
+          "while",
+          "if",
+          "else",
+          "extend",
+          "at-root",
+          "error",
+          "warn",
+          "debug"
+        ]
+      }
+    ]
+  }
+}
