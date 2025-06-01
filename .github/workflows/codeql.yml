@@ -39,7 +39,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - language: javascript-typescript
+          - language: javascript
+            build-mode: none
+          - language: typescript
             build-mode: none
 
     steps:
@@ -54,8 +56,6 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
-          # Use security-and-quality for comprehensive analysis
-          queries: security-and-quality
 
       - name: Build packages (conditional)
         if: matrix.build-mode == 'manual'
