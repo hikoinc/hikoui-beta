@@ -53,11 +53,6 @@ function packageGenerator(plop: PlopTypes.NodePlopAPI): void {
         path: "packages/{{basePath}}/{{kebabCase name}}/src/index.ts",
         templateFile: "templates/package/src/index.hbs",
       },
-      {
-        type: "add",
-        path: "packages/{{basePath}}/{{kebabCase name}}/.gitignore",
-        templateFile: "templates/package/.gitignore.hbs",
-      },
     ],
   });
 }
