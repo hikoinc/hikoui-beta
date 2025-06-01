@@ -1,6 +1,6 @@
-import type { ComponentProps, ComponentPropsWithoutRef } from "react";
+import type { ComponentProps, ComponentPropsWithoutRef, ComponentType, ElementType, JSX, Ref } from "react";
 
-export type As<Props = Record<string, unknown>> = React.ElementType<Props>;
+export type As<Props = Record<string, unknown>> = ElementType<Props>;
 
 export type PropsOf<T extends As> = ComponentPropsWithoutRef<T> & {
   as?: As;
@@ -29,7 +29,7 @@ type MergeWithAs<
 export interface ComponentWithAs<Component extends As, Props extends object = object> {
   <AsComponent extends As = Component>(
     props: MergeWithAs<ComponentProps<Component>, ComponentProps<AsComponent>, Props, AsComponent>,
-  ): React.JSX.Element;
+  ): JSX.Element;
 
   displayName?: string;
   defaultProps?: Partial<Props>;
@@ -38,8 +38,8 @@ export interface ComponentWithAs<Component extends As, Props extends object = ob
 
 export type RefOf<T extends As> = T extends keyof HTMLElementTagNameMap
   ? HTMLElementTagNameMap[T]
-  : T extends React.ComponentType<infer Props>
-    ? Props extends { ref?: React.Ref<infer RefType> }
+  : T extends ComponentType<infer Props>
+    ? Props extends { ref?: Ref<infer RefType> }
       ? RefType
       : never
     : never;
