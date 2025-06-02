@@ -1,0 +1,4 @@
+@mixin black-white {
+  --color-hiko-white: oklch(1 0 0);
+  --color-hiko-black: oklch(0 0 0);
+}

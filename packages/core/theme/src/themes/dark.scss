@@ -4,6 +4,7 @@
 @use "../colors/common/yellow.scss" as yellow;
 @use "../colors/common/purple.scss" as purple;
 @use "../colors/dark/neutral.scss" as neutral;
+@use "../colors/dark/black-white.scss" as black-white;
 
 @mixin dark-theme {
   @include red.red;
@@ -11,5 +12,6 @@
   @include green.green;
   @include yellow.yellow;
   @include purple.purple;
+  @include black-white.black-white;
   @include neutral.neutral;
 }
