@@ -29,6 +29,11 @@ function componentGenerator(plop: PlopTypes.NodePlopAPI): void {
       },
       {
         type: "add",
+        path: "packages/react/src/components/{{kebabCase name}}/{{kebabCase name}}.variants.ts",
+        templateFile: "templates/component/component.variants.hbs",
+      },
+      {
+        type: "add",
         path: "packages/react/src/components/{{kebabCase name}}/index.ts",
         templateFile: "templates/component/index.hbs",
       },
@@ -44,7 +49,7 @@ function componentGenerator(plop: PlopTypes.NodePlopAPI): void {
       },
       {
         type: "append",
-        path: "packages/react/src/index.ts",
+        path: "packages/react/src/components/index.ts",
         template:
           'export { default as {{pascalCase name}} } from "./components/{{kebabCase name}}";\nexport type { {{pascalCase name}}Props } from "./components/{{kebabCase name}}";\n',
       },
