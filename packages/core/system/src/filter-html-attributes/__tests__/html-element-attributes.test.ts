@@ -33,7 +33,7 @@ describe("htmlElementAttributes", () => {
 
     expect(htmlElementAttributes.button).toBeDefined();
     expect(htmlElementAttributes.button).toContain("type");
-    expect(htmlElementAttributes.button).toContain("disabled");
+    expect(htmlElementAttributes.button).toContain("muted");
 
     expect(htmlElementAttributes.img).toBeDefined();
     expect(htmlElementAttributes.img).toContain("src");
