@@ -125,7 +125,10 @@ function createSonarJSConfig() {
     {
       name: "sonarjs/config",
       plugins: {
-        sonarjs: sonarjs.configs.recommended,
+        sonarjs,
+      },
+      rules: {
+        ...sonarjs.configs.recommended.rules,
       },
     },
   ];
