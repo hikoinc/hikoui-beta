@@ -1,5 +1,5 @@
-export { Text } from "./text";
-export type { TextVariantProps } from "./text";
+export { textVariants } from "./text-variants";
+export type { TextVariantProps } from "./text-variants";
 
-export { Link } from "./link";
-export type { LinkVariantProps } from "./link";
+export { linkVariants } from "./link-variants";
+export type { LinkVariantProps } from "./link-variants";
