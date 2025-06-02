@@ -1,13 +1,13 @@
 "use client";
 
-import { forwardRef } from "@hikoui-beta/system";
+import { forwardPolymorphicRef } from "@hikoui-beta/system";
 
 import useText from "./text.hook";
 import type { UseTextProps } from "./text.hook";
 
 export type TextProps = UseTextProps;
 
-const Text = forwardRef<TextProps, "span">((props, ref) => {
+const Text = forwardPolymorphicRef<"span", TextProps>((props, ref) => {
   const { Component, children, getTextProps } = useText(props);
 
   return (
