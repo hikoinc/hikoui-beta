@@ -269,6 +269,9 @@ importers:
 
   packages/core/variants:
     dependencies:
+      class-variance-authority:
+        specifier: ^0.7.1
+        version: 0.7.1
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
