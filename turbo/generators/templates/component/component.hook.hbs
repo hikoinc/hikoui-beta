@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 import { useMemo } from "react";
 import type { ReactNode, ElementType } from "react";
 
-import {{camelCase name}}Variants from "./{{kebabCase name}}.variants";
+import { {{camelCase name}}Variants } from "./{{kebabCase name}}.variants";
 import type { {{pascalCase name}}VariantProps } from "./{{kebabCase name}}.variants";
 
 export interface Use{{pascalCase name}}Props extends {{pascalCase name}}VariantProps {
@@ -15,18 +15,18 @@ export interface Use{{pascalCase name}}Props extends {{pascalCase name}}VariantP
 const use{{pascalCase name}} = (props: Use{{pascalCase name}}Props) => {
   const { as = "{{elementType}}", className, children, ...otherProps } = props;
 
-  const getComputedProps = useMemo(() => {
-    const variantClasses = {{camelCase name}}Variants({ ...otherProps });
-    const domProps = filterHTMLAttributes(otherProps, as);
-    const mergedClassName = twMerge(variantClasses, className);
+  const get{{pascalCase name}}Props = useMemo(
+    () => () => {
+      const variantClasses = {{camelCase name}}Variants({ ...otherProps });
+      const domProps = filterHTMLAttributes(otherProps, as);
+      const mergedClassName = twMerge(variantClasses, className);
 
-    return {
-      className: mergedClassName,
-      ...domProps,
-    };
-  }, [otherProps, as, className]);
-
-  const get{{pascalCase name}}Props = useMemo(() => () => getComputedProps, [getComputedProps]);
+      return {
+        className: mergedClassName,
+        ...domProps,
+      };
+    }, [as, className, otherProps]
+  );
 
   return {
     Component: as,
