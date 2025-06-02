@@ -40,7 +40,7 @@ function componentGenerator(plop: PlopTypes.NodePlopAPI): void {
       {
         type: "add",
         path: "packages/react/src/components/{{kebabCase name}}/__tests__/{{kebabCase name}}.test.tsx",
-        templateFile: "templates/component/component.test.hbs",
+        templateFile: "templates/component/__tests__/component.test.hbs",
       },
       {
         type: "add",
@@ -51,7 +51,7 @@ function componentGenerator(plop: PlopTypes.NodePlopAPI): void {
         type: "append",
         path: "packages/react/src/components/index.ts",
         template:
-          'export { default as {{pascalCase name}} } from "./components/{{kebabCase name}}";\nexport type { {{pascalCase name}}Props } from "./components/{{kebabCase name}}";\n',
+          'export { default as {{pascalCase name}} } from "./{{kebabCase name}}";\nexport type { {{pascalCase name}}Props } from "./{{kebabCase name}}";\n',
       },
     ],
   });

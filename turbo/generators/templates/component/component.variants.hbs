@@ -1,10 +1,12 @@
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 
-export const {{kebabCase name}}Variants = cva("{{kebabCase name}}", {
+const {{kebabCase name}}Variants = cva("{{kebabCase name}}", {
   variants: {},
   compoundVariants: [],
   defaultVariants: {},
 });
 
 export type {{pascalCase name}}VariantProps = VariantProps<typeof {{kebabCase name}}Variants>;
+
+export default {{kebabCase name}}Variants;
