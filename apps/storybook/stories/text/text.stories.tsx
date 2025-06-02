@@ -21,12 +21,19 @@ const meta: Meta<TextProps> = {
     children: {
       description: "The text to display",
       control: "text",
+      table: {
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: "undefined",
+        },
+      },
     },
     color: {
       description: "The color of the text",
       control: "select",
       options: ["primary", "secondary", "tertiary", "success", "warning", "danger", "info", "muted", "inherit"],
-
       table: {
         type: {
           summary: "primary | secondary | tertiary | success | warning | danger | info | muted | inherit",
@@ -39,10 +46,10 @@ const meta: Meta<TextProps> = {
     size: {
       description: "The size of the text",
       control: "select",
-      options: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl", "7xl", "8xl", "9xl"],
+      options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl", "7xl", "8xl", "9xl"],
       table: {
         type: {
-          summary: "2xs | xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | 6xl | 7xl | 8xl | 9xl",
+          summary: "xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | 6xl | 7xl | 8xl | 9xl",
         },
         defaultValue: {
           summary: "md",
@@ -57,6 +64,9 @@ const meta: Meta<TextProps> = {
         type: {
           summary: "thin | extralight | light | normal | medium | semibold | bold | extrabold | black",
         },
+        defaultValue: {
+          summary: "undefined",
+        },
       },
     },
     fontStyle: {
@@ -66,6 +76,9 @@ const meta: Meta<TextProps> = {
       table: {
         type: {
           summary: "italic | normal",
+        },
+        defaultValue: {
+          summary: "undefined",
         },
       },
     },
@@ -77,6 +90,9 @@ const meta: Meta<TextProps> = {
         type: {
           summary: "tight | snug | normal | relaxed | loose | none",
         },
+        defaultValue: {
+          summary: "undefined",
+        },
       },
     },
     letterSpacing: {
@@ -86,6 +102,9 @@ const meta: Meta<TextProps> = {
       table: {
         type: {
           summary: "tighter | tight | normal | wide | wider | widest",
+        },
+        defaultValue: {
+          summary: "undefined",
         },
       },
     },
@@ -97,6 +116,9 @@ const meta: Meta<TextProps> = {
         type: {
           summary: "normal | nowrap",
         },
+        defaultValue: {
+          summary: "undefined",
+        },
       },
     },
     decoration: {
@@ -106,6 +128,9 @@ const meta: Meta<TextProps> = {
       table: {
         type: {
           summary: "underline | overline | line-through",
+        },
+        defaultValue: {
+          summary: "undefined",
         },
       },
     },
@@ -117,6 +142,9 @@ const meta: Meta<TextProps> = {
         type: {
           summary: "uppercase | lowercase | capitalize | normal",
         },
+        defaultValue: {
+          summary: "undefined",
+        },
       },
     },
     align: {
@@ -126,6 +154,9 @@ const meta: Meta<TextProps> = {
       table: {
         type: {
           summary: "left | center | right | justify | start | end",
+        },
+        defaultValue: {
+          summary: "undefined",
         },
       },
     },
@@ -137,6 +168,9 @@ const meta: Meta<TextProps> = {
         type: {
           summary: "1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | none",
         },
+        defaultValue: {
+          summary: "undefined",
+        },
       },
     },
     display: {
@@ -147,6 +181,9 @@ const meta: Meta<TextProps> = {
         type: {
           summary: "block | inline | inline-block | none",
         },
+        defaultValue: {
+          summary: "undefined",
+        },
       },
     },
     className: {
@@ -156,6 +193,9 @@ const meta: Meta<TextProps> = {
         type: {
           summary: "string",
         },
+        defaultValue: {
+          summary: "undefined",
+        },
       },
     },
     as: {
@@ -164,7 +204,7 @@ const meta: Meta<TextProps> = {
       options: ["span", "p", "h1", "h2", "h3", "h4", "h5", "h6", "strong", "em", "div", "label"],
       table: {
         type: {
-          summary: "span | p | h1 | h2 | h3 | h4 | h5 | h6 | strong | em | div | label",
+          summary: "ElementType",
         },
         defaultValue: {
           summary: "span",
@@ -181,6 +221,8 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     children: "Text",
+    color: "primary",
+    size: "md",
   },
 };
 
@@ -203,7 +245,6 @@ export const Colors: Story = {
 export const Sizes: Story = {
   render: () => (
     <div className="flex flex-col gap-4 p-4">
-      <Text size="2xs">Text Size 2XS</Text>
       <Text size="xs">Text Size XS</Text>
       <Text size="sm">Text Size SM</Text>
       <Text size="md">Text Size MD</Text>
@@ -420,17 +461,6 @@ export const LineClamp: Story = {
         reaching for my phone to share something with you, only to remember that the conversation has ended, but
         somehow, the love remains.
       </Text>
-    </div>
-  ),
-};
-
-export const Display: Story = {
-  render: () => (
-    <div className="flex flex-col gap-4 p-4">
-      <Text display="block">In the quiet moments between heartbeats</Text>
-      <Text display="inline">In the quiet moments between heartbeats</Text>
-      <Text display="inline-block">In the quiet moments between heartbeats</Text>
-      <Text display="none">In the quiet moments between heartbeats</Text>
     </div>
   ),
 };

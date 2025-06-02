@@ -1,21 +1,20 @@
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 
-const textVariants = cva("antialiased", {
+export const textVariants = cva("antialiased", {
   variants: {
     color: {
-      primary: "text-primary-text",
-      secondary: "text-secondary-text",
-      tertiary: "text-tertiary-text",
-      success: "text-success-text",
-      warning: "text-warning-text",
-      danger: "text-danger-text",
-      info: "text-info-text",
-      muted: "text-muted-text",
-      inherit: "text-inherit",
+      primary: "text-palette-primary-text",
+      secondary: "text-palette-secondary-text",
+      tertiary: "text-palette-tertiary-text",
+      success: "text-palette-success-text",
+      warning: "text-palette-warning-text",
+      danger: "text-palette-danger-text",
+      info: "text-palette-info-text",
+      muted: "text-palette-muted-text",
+      inherit: "text-palette-inherit",
     },
     size: {
-      "2xs": "text-2xs",
       xs: "text-xs",
       sm: "text-sm",
       md: "text-base",
@@ -109,5 +108,3 @@ const textVariants = cva("antialiased", {
 });
 
 export type TextVariantProps = VariantProps<typeof textVariants>;
-
-export default textVariants;
