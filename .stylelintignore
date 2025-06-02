@@ -1,10 +1,29 @@
+# Generated/compiled files (these are empty or auto-generated trash)
+**/dist/**/*.css
+**/dist/**/*.css.map
+**/build/**/*.css
+
+# Distribution directories with generated content
+packages/core/theme/dist/
+
+# Coverage reports (generated trash)
+**/coverage/**
+
 # Dependencies
-node_modules/**/*
+**/node_modules/**
 
-# Build outputs
-dist/**/*
-storybook-static/**/*
+# Generated CSS files
+**/*.min.css
+**/*.bundle.css
 
-# Testing
-coverage/**/*
-coverage/lcov-report/**/*
+# Storybook static files
+apps/storybook/storybook-static/**
+
+# Temporary files
+**/.tmp/**
+**/temp/**
+**/tmp/**
+
+# IDE files
+**/.vscode/**
+**/.idea/**
