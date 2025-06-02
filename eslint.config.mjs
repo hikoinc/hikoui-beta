@@ -168,6 +168,21 @@ function createPrettierConfig() {
   ];
 }
 
+function forwardPolymorphicRefConfig() {
+  return [
+    {
+      name: "forward-ref/allow-any",
+      files: [
+        "packages/core/system/src/forward-polymorphic-ref/forward-polymorphic-ref.ts",
+        "packages/core/system/src/forward-polymorphic-ref/forward-polymorphic-ref.types.ts",
+      ],
+      rules: {
+        "@typescript-eslint/no-explicit-any": "off",
+      },
+    },
+  ];
+}
+
 export default [
   includeIgnoreFile(gitignorePath),
   ...createJavaScriptConfig(),
@@ -177,4 +192,5 @@ export default [
   ...createSonarJSConfig(),
   ...createStorybookConfig(),
   ...createPrettierConfig(),
+  ...forwardPolymorphicRefConfig(),
 ];
