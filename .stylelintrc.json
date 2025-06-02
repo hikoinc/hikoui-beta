@@ -1,33 +1,21 @@
 {
+  "extends": ["stylelint-config-standard-scss"],
+  "customSyntax": "postcss-scss",
   "rules": {
-    "at-rule-no-unknown": [
+    "scss/at-rule-no-unknown": [
       true,
       {
-        "ignoreAtRules": [
-          "theme",
-          "source",
-          "utility",
-          "variant",
-          "custom-variant",
-          "plugin",
-          "use",
-          "forward",
-          "include",
-          "mixin",
-          "function",
-          "return",
-          "each",
-          "for",
-          "while",
-          "if",
-          "else",
-          "extend",
-          "at-root",
-          "error",
-          "warn",
-          "debug"
-        ]
+        "ignoreAtRules": ["tailwind", "apply", "layer", "theme", "custom-variant", "source"]
       }
-    ]
+    ],
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": ["blockless-after-same-name-blockless", "first-nested"],
+        "ignore": ["after-comment"],
+        "ignoreAtRules": ["custom-variant", "theme"]
+      }
+    ],
+    "custom-property-empty-line-before": null
   }
 }

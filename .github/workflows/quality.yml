@@ -51,7 +51,7 @@ jobs:
       - name: Setup Environment
         uses: ./.github/common-actions/setup
 
-      - name: Run ESLint and Stylelint Checks
+      - name: Run ESLint Checks
         run: pnpm lint
 
   check-types:

@@ -6,29 +6,23 @@
 @theme {
   @include light.light-theme;
 
-  --color-primary-text: var(--color-hiko-neutral-950);
-  --color-secondary-text: var(--color-hiko-neutral-700);
-  --color-tertiary-text: var(--color-hiko-neutral-500);
-  --color-success-text: var(--color-hiko-green-500);
-  --color-warning-text: var(--color-hiko-yellow-500);
-  --color-danger-text: var(--color-hiko-red-500);
-  --color-info-text: var(--color-hiko-blue-500);
-  --color-muted-text: var(--color-hiko-neutral-300);
+  --color-palette-primary-text: var(--color-hiko-black);
+  --color-palette-secondary-text: var(--color-hiko-neutral-700);
+  --color-palette-tertiary-text: var(--color-hiko-neutral-500);
+  --color-palette-success-text: var(--color-hiko-green-600);
+  --color-palette-warning-text: var(--color-hiko-yellow-600);
+  --color-palette-danger-text: var(--color-hiko-red-600);
+  --color-palette-info-text: var(--color-hiko-blue-600);
+  --color-palette-muted-text: var(--color-hiko-neutral-300);
 
-  --text-2xs: 0.6875rem;
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-md: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem;
-  --text-4xl: 2.25rem;
-  --text-5xl: 3rem;
-  --text-6xl: 3.75rem;
-  --text-7xl: 4.5rem;
-  --text-8xl: 6rem;
-  --text-9xl: 8rem;
+  --color-palette-foreground-link: var(--color-hiko-neutral-950);
+  --color-palette-primary-link: var(--color-hiko-blue-500);
+  --color-palette-secondary-link: var(--color-hiko-black);
+  --color-palette-success-link: var(--color-hiko-green-600);
+  --color-palette-warning-link: var(--color-hiko-yellow-600);
+  --color-palette-danger-link: var(--color-hiko-red-600);
+  --color-palette-info-link: var(--color-hiko-blue-600);
+  --color-palette-muted-link: var(--color-hiko-neutral-300);
 }
 
 .dark {

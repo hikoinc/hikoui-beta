@@ -16,7 +16,7 @@
       "mode": "auto"
     }
   ],
+  "terminal.integrated.scrollback": 10000,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "tailwindCSS.classFunctions": ["cva", "cx", "twMerge"],
-  "terminal.integrated.scrollback": 10000
+  "tailwindCSS.classFunctions": ["cva", "cx", "twMerge"]
 }

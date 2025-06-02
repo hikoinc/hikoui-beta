@@ -1,5 +1,6 @@
 {
   "*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}": ["pnpm -w eslint --fix", "pnpm -w prettier --write"],
+  "*.{css,scss}": ["pnpm -w stylelint --fix", "pnpm -w prettier --write"],
   "*.{json,md,yml,yaml}": "pnpm -w prettier --write",
   "**/package.json": ["pnpm exec sort-package-json"]
 }

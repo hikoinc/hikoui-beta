@@ -1,16 +1,13 @@
-// Dark theme neutral color definitions
-// These values are optimized for dark backgrounds (inverted scale)
-
 @mixin neutral {
-  --color-hiko-neutral-50: oklch(0.145 0 0);
-  --color-hiko-neutral-100: oklch(0.205 0 0);
-  --color-hiko-neutral-200: oklch(0.269 0 0);
-  --color-hiko-neutral-300: oklch(0.371 0 0);
-  --color-hiko-neutral-400: oklch(0.439 0 0);
-  --color-hiko-neutral-500: oklch(0.556 0 0);
-  --color-hiko-neutral-600: oklch(0.708 0 0);
-  --color-hiko-neutral-700: oklch(0.87 0 0);
-  --color-hiko-neutral-800: oklch(0.922 0 0);
-  --color-hiko-neutral-900: oklch(0.97 0 0);
-  --color-hiko-neutral-950: oklch(0.985 0 0);
+  --color-hiko-neutral-50: oklch(14.5% 0 0deg);
+  --color-hiko-neutral-100: oklch(20.5% 0 0deg);
+  --color-hiko-neutral-200: oklch(26.9% 0 0deg);
+  --color-hiko-neutral-300: oklch(37.1% 0 0deg);
+  --color-hiko-neutral-400: oklch(43.9% 0 0deg);
+  --color-hiko-neutral-500: oklch(55.6% 0 0deg);
+  --color-hiko-neutral-600: oklch(70.8% 0 0deg);
+  --color-hiko-neutral-700: oklch(87% 0 0deg);
+  --color-hiko-neutral-800: oklch(92.2% 0 0deg);
+  --color-hiko-neutral-900: oklch(97% 0 0deg);
+  --color-hiko-neutral-950: oklch(98.5% 0 0deg);
 }
