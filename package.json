@@ -41,6 +41,8 @@
     "prettier:check": "prettier --check .",
     "sort-package-json": "pnpm exec sort-package-json && turbo sort-package-json",
     "sort-package-json:check": "pnpm exec sort-package-json --check && turbo sort-package-json:check",
+    "stylelint": "stylelint \"**/*.{css,scss}\"",
+    "stylelint:fix": "stylelint \"**/*.{css,scss}\" --fix",
     "test": "pnpm jest:coverage",
     "typescheck": "turbo typescheck"
   },
@@ -83,6 +85,9 @@
     "react-dom": "19.1.0",
     "rimraf": "^6.0.1",
     "sort-package-json": "^3.0.0",
+    "stylelint": "^16.11.0",
+    "stylelint-config-standard-scss": "^15.0.1",
+    "stylelint-config-tailwindcss": "^1.0.0",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.0",
     "turbo": "^2.5.3",
