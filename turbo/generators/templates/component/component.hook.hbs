@@ -1,9 +1,10 @@
 import { useMemo } from "react";
 import type { ReactNode, ElementType } from "react";
 
+import { createComponentProps } from "../utils";
+
 import { {{camelCase name}}Variants } from "./{{kebabCase name}}.variants";
 import type { {{pascalCase name}}VariantProps } from "./{{kebabCase name}}.variants";
-import createComponentProps from "../shared/utils/component.utils";
 
 export interface Use{{pascalCase name}}Props extends {{pascalCase name}}VariantProps {
   children: ReactNode;
@@ -17,7 +18,8 @@ const use{{pascalCase name}} = (props: Use{{pascalCase name}}Props) => {
   const get{{pascalCase name}}Props = useMemo(
     () => () => {
       const variantClasses = {{camelCase name}}Variants({ ...otherProps });
-      return createComponentProps(variantClasses, otherProps, as, className);
+
+      return createComponentProps({ variantClasses, otherProps, as, className });
     },
     [as, className, otherProps],
   );
