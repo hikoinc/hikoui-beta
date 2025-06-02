@@ -18,7 +18,8 @@ const useText = (props: UseTextProps) => {
   const getTextProps = useMemo(
     () => () => {
       const variantClasses = textVariants({ ...otherProps });
-      return createComponentProps(variantClasses, otherProps, as, className);
+
+      return createComponentProps({ variantClasses, otherProps, as, className });
     },
     [as, className, otherProps],
   );

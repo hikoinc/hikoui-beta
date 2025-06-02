@@ -19,7 +19,8 @@ const useLink = (props: UseLinkProps) => {
   const getLinkProps = useMemo(
     () => () => {
       const variantClasses = linkVariants({ ...otherProps });
-      return createComponentProps(variantClasses, otherProps, as, className);
+
+      return createComponentProps({ variantClasses, otherProps, as, className });
     },
     [as, className, otherProps],
   );

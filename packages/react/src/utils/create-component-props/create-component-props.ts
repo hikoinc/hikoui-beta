@@ -1,13 +1,11 @@
 import { filterHTMLAttributes } from "@hikoui-beta/system";
 import { twMerge } from "tailwind-merge";
-import type { ElementType, HTMLAttributes } from "react";
 
-function createComponentProps(
-  variantClasses: string,
-  otherProps: Record<string, string | number | boolean | null | undefined>,
-  as: ElementType,
-  className?: string,
-): HTMLAttributes<HTMLElement> & { className: string } {
+import type { CreateComponentPropsProps } from "./create-component-props.types";
+
+function createComponentProps(props: CreateComponentPropsProps) {
+  const { as = "div", variantClasses, otherProps, className } = props;
+
   const domProps = filterHTMLAttributes(otherProps, as);
   const mergedClassName = twMerge(variantClasses, className);
 
