@@ -19,27 +19,22 @@ function componentGenerator(plop: PlopTypes.NodePlopAPI): void {
     actions: [
       {
         type: "add",
-        path: "packages/react/src/{{kebabCase name}}/{{kebabCase name}}.tsx",
+        path: "packages/react/src/components/{{kebabCase name}}/{{kebabCase name}}.tsx",
         templateFile: "templates/component/component.hbs",
       },
       {
         type: "add",
-        path: "packages/react/src/{{kebabCase name}}/{{kebabCase name}}.hook.ts",
+        path: "packages/react/src/components/{{kebabCase name}}/{{kebabCase name}}.hook.ts",
         templateFile: "templates/component/component.hook.hbs",
       },
       {
         type: "add",
-        path: "packages/react/src/{{kebabCase name}}/{{kebabCase name}}.variants.ts",
-        templateFile: "templates/component/component.variants.hbs",
-      },
-      {
-        type: "add",
-        path: "packages/react/src/{{kebabCase name}}/index.ts",
+        path: "packages/react/src/components/{{kebabCase name}}/index.ts",
         templateFile: "templates/component/index.hbs",
       },
       {
         type: "add",
-        path: "packages/react/src/{{kebabCase name}}/__tests__/{{kebabCase name}}.test.tsx",
+        path: "packages/react/src/components/{{kebabCase name}}/__tests__/{{kebabCase name}}.test.tsx",
         templateFile: "templates/component/component.test.hbs",
       },
       {
@@ -51,7 +46,7 @@ function componentGenerator(plop: PlopTypes.NodePlopAPI): void {
         type: "append",
         path: "packages/react/src/index.ts",
         template:
-          'export { default as {{pascalCase name}} } from "./{{kebabCase name}}";\nexport type * from "./{{kebabCase name}}";',
+          'export { default as {{pascalCase name}} } from "./components/{{kebabCase name}}";\nexport type { {{pascalCase name}}Props } from "./components/{{kebabCase name}}";\n',
       },
     ],
   });

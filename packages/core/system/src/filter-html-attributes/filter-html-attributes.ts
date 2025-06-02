@@ -13,13 +13,10 @@ function filterHTMLAttributes(props: HTMLAttributes, elementType: ElementType): 
   const elementAttributes = _.get(htmlElementAttributes, elementName, []);
   const validAttributes = [...globalAttributes, ...elementAttributes];
 
-  return _.pickBy(props, (value, key) => {
-    if (_.includes(validAttributes, key)) return true;
-    if (_.startsWith(key, "data-")) return true;
-    if (_.startsWith(key, "aria-")) return true;
-
-    return false;
-  });
+  return _.pickBy(
+    props,
+    (value, key) => _.includes(validAttributes, key) || _.startsWith(key, "data-") || _.startsWith(key, "aria-"),
+  );
 }
 
 export default filterHTMLAttributes;

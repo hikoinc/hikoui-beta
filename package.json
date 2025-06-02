@@ -10,7 +10,7 @@
   "author": "Joe Takara (https://github.com/joetakara)",
   "scripts": {
     "build": "turbo run build",
-    "build:packages": "turbo run build --filter=@hikoui-beta/react --filter=@hikoui-beta/system --filter=@hikoui-beta/theme",
+    "build:packages": "turbo run build --filter='./packages/**'",
     "build:storybook": "turbo run build --filter=@hikoui-beta/storybook",
     "changeset": "changeset",
     "changeset:next-enter": "changeset pre enter next",
@@ -25,7 +25,7 @@
     "clean:node-modules": "rimraf ./node_modules",
     "clean:turbo": "rimraf .turbo",
     "dev": "turbo dev",
-    "dev:packages": "turbo run dev --filter=@hikoui-beta/*",
+    "dev:packages": "turbo run dev --filter='./packages/**'",
     "dev:storybook": "turbo run dev --filter=@hikoui-beta/storybook",
     "eslint": "eslint . --max-warnings 0",
     "eslint:fix": "eslint . --fix --max-warnings 0",

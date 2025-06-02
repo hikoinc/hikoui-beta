@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 
-export const linkVariants = cva(["antialiased"], {
+const linkVariants = cva(["antialiased"], {
   variants: {
     color: {
       primary: "text-palette-primary-link",
@@ -150,3 +150,5 @@ export const linkVariants = cva(["antialiased"], {
 });
 
 export type LinkVariantProps = VariantProps<typeof linkVariants>;
+
+export default linkVariants;

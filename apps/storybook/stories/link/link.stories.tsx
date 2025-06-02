@@ -30,18 +30,6 @@ const meta: Meta<LinkProps> = {
         },
       },
     },
-    href: {
-      description: "The URL that the hyperlink points to",
-      control: "text",
-      table: {
-        type: {
-          summary: "string",
-        },
-        defaultValue: {
-          summary: "undefined",
-        },
-      },
-    },
     color: {
       description: "The color of the link",
       control: "select",
@@ -219,11 +207,11 @@ export const Primary: Story = {
   args: {
     children: "Link",
     as: "a",
-    href: "#",
     color: "foreground",
     size: "md",
     underline: "hover",
   },
+  render: (args) => <Link {...args} href="#" />,
 };
 
 export const Colors: Story = {

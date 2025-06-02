@@ -1,6 +1,6 @@
 {
   "name": "@hikoui-beta/system",
-  "version": "0.0.2",
+  "version": "0.0.0-next.0",
   "description": "A minimalist React component library built with Tailwind CSS for fast, scalable UI development.",
   "keywords": [
     "system",

@@ -1,14 +1,13 @@
-import { filterHTMLAttributes } from "@hikoui-beta/system";
-import { twMerge } from "tailwind-merge";
 import { useMemo } from "react";
 import type { ReactNode, ElementType } from "react";
 
-import { linkVariants } from "./link.variants";
+import { createComponentProps } from "../../utils";
+
+import linkVariants from "./link.variants";
 import type { LinkVariantProps } from "./link.variants";
 
 export interface UseLinkProps extends LinkVariantProps {
   children: ReactNode;
-  href?: string;
   className?: string;
   as?: ElementType;
 }
@@ -19,13 +18,8 @@ const useLink = (props: UseLinkProps) => {
   const getLinkProps = useMemo(
     () => () => {
       const variantClasses = linkVariants({ ...otherProps });
-      const domProps = filterHTMLAttributes(otherProps, as);
-      const mergedClassName = twMerge(variantClasses, className);
 
-      return {
-        className: mergedClassName,
-        ...domProps,
-      };
+      return createComponentProps({ variantClasses, otherProps, as, className });
     },
     [as, className, otherProps],
   );

@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 
-export const textVariants = cva("antialiased", {
+const textVariants = cva("antialiased", {
   variants: {
     color: {
       primary: "text-palette-primary-text",
@@ -108,3 +108,5 @@ export const textVariants = cva("antialiased", {
 });
 
 export type TextVariantProps = VariantProps<typeof textVariants>;
+
+export default textVariants;
