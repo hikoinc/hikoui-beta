@@ -5,6 +5,7 @@ import js from "@eslint/js";
 import prettierPlugin from "eslint-plugin-prettier";
 import sonarjs from "eslint-plugin-sonarjs";
 import storybook from "eslint-plugin-storybook";
+import tseslint from "typescript-eslint";
 import { configs, plugins } from "eslint-config-airbnb-extended";
 import { includeIgnoreFile } from "@eslint/compat";
 import { rules as prettierConfigRules } from "eslint-config-prettier";
@@ -25,7 +26,12 @@ function createJavaScriptConfig() {
 }
 
 function createTypeScriptConfig() {
-  return [plugins.typescriptEslint, ...configs.base.typescript, ...configs.react.typescript];
+  return [
+    plugins.typescriptEslint,
+    ...configs.base.typescript,
+    ...configs.react.typescript,
+    ...tseslint.configs.recommended,
+  ];
 }
 
 function createImportConfig() {
@@ -103,6 +109,7 @@ function createReactConfig() {
             unnamedComponents: "arrow-function",
           },
         ],
+        "jsx-a11y/anchor-is-valid": "off",
       },
       settings: {
         react: {
@@ -128,11 +135,13 @@ function createStorybookConfig() {
   return [
     {
       name: "storybook/config",
+      files: ["**/*.stories.tsx"],
       plugins: {
         storybook,
       },
       rules: {
         ...storybook.configs.recommended.rules,
+        "jsx-a11y/anchor-is-valid": "off",
       },
     },
   ];
