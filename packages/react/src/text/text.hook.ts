@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import type { ReactNode, ElementType } from "react";
 
-import createComponentProps from "../shared/utils/component.utils";
+import { createComponentProps } from "../utils";
 
 import { textVariants } from "./text.variants";
 import type { TextVariantProps } from "./text.variants";
