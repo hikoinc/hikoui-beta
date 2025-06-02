@@ -135,7 +135,7 @@ export const linkVariants = cva(["antialiased"], {
       false: undefined,
     },
     focus: {
-      true: "focus:outline-palette-muted-link focus:outline-palette-info-link focus:outline-[0.125em] focus:outline-offset-2",
+      true: "focus:outline-palette-info-link focus:outline-[0.125em] focus:outline-offset-2",
       false: "focus:outline-none",
     },
   },
