@@ -1,9 +1,10 @@
 import { useMemo } from "react";
 import type { ReactNode, ElementType } from "react";
-import { linkVariants } from "@hikoui-beta/variants";
-import type { LinkVariantProps } from "@hikoui-beta/variants";
 
 import { createComponentProps } from "../../utils";
+
+import linkVariants from "./link.variants";
+import type { LinkVariantProps } from "./link.variants";
 
 export interface UseLinkProps extends LinkVariantProps {
   children: ReactNode;

@@ -267,54 +267,11 @@ importers:
         specifier: ^3.0.0
         version: 3.2.1
 
-  packages/core/variants:
-    dependencies:
-      class-variance-authority:
-        specifier: ^0.7.1
-        version: 0.7.1
-      lodash:
-        specifier: ^4.17.21
-        version: 4.17.21
-      react:
-        specifier: 19.1.0
-        version: 19.1.0
-      react-dom:
-        specifier: 19.1.0
-        version: 19.1.0(react@19.1.0)
-    devDependencies:
-      '@testing-library/jest-dom':
-        specifier: ^6.6.3
-        version: 6.6.3
-      '@testing-library/react':
-        specifier: ^16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.1.1(@types/react@19.1.0))(@types/react@19.1.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@types/lodash':
-        specifier: ^4.17.17
-        version: 4.17.17
-      '@types/react':
-        specifier: 19.1.0
-        version: 19.1.0
-      '@types/react-dom':
-        specifier: 19.1.1
-        version: 19.1.1(@types/react@19.1.0)
-      sort-package-json:
-        specifier: ^3.0.0
-        version: 3.2.1
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(@swc/core@1.11.29)(jiti@2.4.2)(postcss@8.5.4)(typescript@5.8.2)(yaml@2.8.0)
-      typescript:
-        specifier: 5.8.2
-        version: 5.8.2
-
   packages/react:
     dependencies:
       '@hikoui-beta/system':
         specifier: workspace:*
         version: link:../core/system
-      '@hikoui-beta/variants':
-        specifier: workspace:*
-        version: link:../core/variants
       '@react-types/shared':
         specifier: ^3.29.1
         version: 3.29.1(react@19.1.0)

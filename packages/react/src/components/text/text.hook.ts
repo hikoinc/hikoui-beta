@@ -1,9 +1,10 @@
 import { useMemo } from "react";
 import type { ReactNode, ElementType } from "react";
-import { textVariants } from "@hikoui-beta/variants";
-import type { TextVariantProps } from "@hikoui-beta/variants";
 
 import { createComponentProps } from "../../utils";
+
+import textVariants from "./text.variants";
+import type { TextVariantProps } from "./text.variants";
 
 export interface UseTextProps extends TextVariantProps {
   children: ReactNode;

@@ -51,7 +51,7 @@ function componentGenerator(plop: PlopTypes.NodePlopAPI): void {
         type: "append",
         path: "packages/react/src/index.ts",
         template:
-          'export { default as {{pascalCase name}} } from "./{{kebabCase name}}";\nexport type * from "./{{kebabCase name}}";',
+          'export { default as {{pascalCase name}} } from "./{{kebabCase name}}";\nexport type { {{pascalCase name}}Props } from "./{{kebabCase name}}";\n',
       },
     ],
   });
