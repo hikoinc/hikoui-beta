@@ -8,7 +8,6 @@ import type { LinkVariantProps } from "./link.variants";
 
 export interface UseLinkProps extends LinkVariantProps {
   children: ReactNode;
-  href?: string;
   className?: string;
   as?: ElementType;
 }
