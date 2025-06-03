@@ -39,11 +39,6 @@ function componentGenerator(plop: PlopTypes.NodePlopAPI): void {
       },
       {
         type: "add",
-        path: "packages/react/src/components/{{kebabCase name}}/__tests__/{{kebabCase name}}.test.tsx",
-        templateFile: "templates/component/__tests__/component.test.hbs",
-      },
-      {
-        type: "add",
         path: "apps/storybook/stories/{{kebabCase name}}/{{kebabCase name}}.stories.tsx",
         templateFile: "templates/component/stories/component.stories.hbs",
       },

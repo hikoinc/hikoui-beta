@@ -6,12 +6,6 @@ function packageGenerator(plop: PlopTypes.NodePlopAPI): void {
     prompts: [
       {
         type: "input",
-        name: "category",
-        message: "What category should this package be in? (core, hooks, utils etc.)",
-        default: "core",
-      },
-      {
-        type: "input",
         name: "name",
         message: "What is the name of the package?",
       },
@@ -25,32 +19,32 @@ function packageGenerator(plop: PlopTypes.NodePlopAPI): void {
     actions: [
       {
         type: "add",
-        path: "packages/{{category}}/{{kebabCase name}}/package.json",
+        path: "packages/{{kebabCase name}}/package.json",
         templateFile: "templates/package/package.hbs",
       },
       {
         type: "add",
-        path: "packages/{{category}}/{{kebabCase name}}/tsconfig.json",
+        path: "packages/{{kebabCase name}}/tsconfig.json",
         templateFile: "templates/package/tsconfig.hbs",
       },
       {
         type: "add",
-        path: "packages/{{category}}/{{kebabCase name}}/tsup.config.ts",
+        path: "packages/{{kebabCase name}}/tsup.config.ts",
         templateFile: "templates/package/tsup.config.hbs",
       },
       {
         type: "add",
-        path: "packages/{{category}}/{{kebabCase name}}/.gitignore",
+        path: "packages/{{kebabCase name}}/.gitignore",
         templateFile: "templates/package/.gitignore.hbs",
       },
       {
         type: "add",
-        path: "packages/{{category}}/{{kebabCase name}}/README.md",
+        path: "packages/{{kebabCase name}}/README.md",
         templateFile: "templates/package/README.hbs",
       },
       {
         type: "add",
-        path: "packages/{{category}}/{{kebabCase name}}/src/index.ts",
+        path: "packages/{{kebabCase name}}/src/index.ts",
         templateFile: "templates/package/src/index.hbs",
       },
     ],
