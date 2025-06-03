@@ -19,7 +19,12 @@ const useLink = (props: UseLinkProps) => {
     () => () => {
       const variantClasses = linkVariants({ ...otherProps });
 
-      return createComponentProps({ variantClasses, otherProps, as, className });
+      return createComponentProps({
+        as,
+        className,
+        variantClasses,
+        htmlAttributes: otherProps,
+      });
     },
     [as, className, otherProps],
   );

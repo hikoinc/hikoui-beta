@@ -19,7 +19,12 @@ const useText = (props: UseTextProps) => {
     () => () => {
       const variantClasses = textVariants({ ...otherProps });
 
-      return createComponentProps({ variantClasses, otherProps, as, className });
+      return createComponentProps({
+        as,
+        className,
+        variantClasses,
+        htmlAttributes: otherProps,
+      });
     },
     [as, className, otherProps],
   );

@@ -19,7 +19,12 @@ const use{{pascalCase name}} = (props: Use{{pascalCase name}}Props) => {
     () => () => {
       const variantClasses = {{camelCase name}}Variants({ ...otherProps });
 
-      return createComponentProps({ variantClasses, otherProps, as, className });
+      return createComponentProps({
+        as,
+        className,
+        variantClasses,
+        htmlAttributes: otherProps,
+      });
     },
     [as, className, otherProps],
   );

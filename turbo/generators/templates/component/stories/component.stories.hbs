@@ -19,7 +19,19 @@ const meta: Meta<{{pascalCase name}}Props> = {
       control: "text",
       description: "Additional CSS classes to apply",
     },
-    as: {},
+    as: {
+      description: "The element type to render as",
+      control: "select",
+      options: [],
+      table: {
+        type: {
+          summary: "Element",
+        },
+        defaultValue: {
+          summary: "Element",
+        },
+      },
+    },
   },
   args: {},
 };
