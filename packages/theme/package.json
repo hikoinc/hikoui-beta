@@ -1,9 +1,9 @@
 {
-  "name": "@hikoui-beta/{{name}}",
+  "name": "@hikoui-beta/theme",
   "version": "0.0.0-next.0",
-  "description": "{{description}}",
+  "description": "A minimalist React component library built with Tailwind CSS for fast, scalable UI development.",
   "keywords": [
-    "{{name}}",
+    "theme",
     "react",
     "ui",
     "components",
@@ -20,49 +20,38 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hikoinc/hikoui.git",
-    "directory": "packages/{{category}}/{{name}}"
+    "directory": "packages//theme"
   },
   "license": "MIT",
   "author": "Joe Takara <https://github.com/joetakara>",
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "default": "./dist/primary.css"
     },
+    "primary": "./dist/primary.css",
+    "secondary": "./dist/secondary.css",
     "./package.json": "./package.json"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "dist/primary.css",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "pnpm clean:build && tsup",
+    "build": "pnpm clean:build && sass src:dist",
     "clean": "pnpm clean:build && pnpm clean:turbo && pnpm clean:node_modules",
     "clean:build": "rimraf dist",
     "clean:node_modules": "rimraf node_modules",
     "clean:turbo": "rimraf .turbo",
-    "dev": "pnpm clean:build && tsup --watch",
+    "dev": "pnpm clean:build && sass --watch src:dist",
     "sort-package-json": "pnpm exec sort-package-json",
-    "sort-package-json:check": "pnpm exec sort-package-json --check",
-    "typescheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21"
+    "sort-package-json:check": "pnpm exec sort-package-json --check"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.6.3",
-    "@types/lodash": "^4.17.17",
-    "sort-package-json": "^3.0.0",
-    "tsup": "^8.5.0",
-    "typescript": "5.8.2"
+    "sass": "^1.80.8",
+    "sort-package-json": "^3.0.0"
   },
   "peerDependencies": {
-    "react": ">=19",
-    "react-dom": ">=19",
     "tailwindcss": ">=4"
   },
   "packageManager": "pnpm@10.11.0",

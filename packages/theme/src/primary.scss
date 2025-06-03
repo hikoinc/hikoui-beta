@@ -1,0 +1,14 @@
+@use "themes" as themes;
+@use "components" as components;
+
+@custom-variant dark (&:where(.dark, .dark *), &:where([data-theme='dark'], [data-theme='dark'] *));
+
+@theme {
+  @include themes.light-theme;
+  @include components.button;
+}
+
+.dark,
+[data-theme="dark"] {
+  @include themes.dark-theme;
+}

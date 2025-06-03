@@ -1,0 +1,10 @@
+@use "sass:map";
+@use "../tokens" as tokens;
+
+@mixin light-theme {
+  @each $color-name, $shades in map.get(tokens.$colors, "light") {
+    @each $shade, $value in $shades {
+      --color-#{$color-name}-#{$shade}: #{$value};
+    }
+  }
+}

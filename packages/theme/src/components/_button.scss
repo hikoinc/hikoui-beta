@@ -1,0 +1,18 @@
+$button: (
+  primary: (
+    background: var(--color-hiko-blue-500),
+    text: var(--color-hiko-neutral-50),
+  ),
+  secondary: (
+    background: var(--color-hiko-red-500),
+    text: var(--color-hiko-neutral-50),
+  ),
+) !default;
+
+@mixin button {
+  @each $variant, $properties in $button {
+    @each $property, $value in $properties {
+      --button-#{$variant}-#{$property}: #{$value};
+    }
+  }
+}
