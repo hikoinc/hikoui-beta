@@ -7,7 +7,7 @@ const htmlElementAttributes: HtmlElementAttributesMap = {
     "autofocus",
     "class",
     "contenteditable",
-    "data-*", // Support for custom data attributes
+    "data-*",
     "dir",
     "draggable",
     "enterkeyhint",
@@ -24,7 +24,7 @@ const htmlElementAttributes: HtmlElementAttributesMap = {
     "lang",
     "nonce",
     "popover",
-    "role", // Standard ARIA role attribute
+    "role",
     "slot",
     "spellcheck",
     "style",
