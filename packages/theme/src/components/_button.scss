@@ -1,4 +1,6 @@
-$button: (
+@use "../utils" as utils;
+
+$button-vars: (
   primary: (
     background: var(--color-hiko-blue-500),
     text: var(--color-hiko-neutral-50),
@@ -10,9 +12,5 @@ $button: (
 ) !default;
 
 @mixin button {
-  @each $variant, $properties in $button {
-    @each $property, $value in $properties {
-      --button-#{$variant}-#{$property}: #{$value};
-    }
-  }
+  @include utils.create-component-vars($button-vars, "button");
 }

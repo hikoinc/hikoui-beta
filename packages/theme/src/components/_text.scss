@@ -1,0 +1,11 @@
+@use "../utils" as utils;
+
+$text-vars: (
+  primary: (
+    color: var(--color-hiko-black-base),
+  ),
+) !default;
+
+@mixin text {
+  @include utils.create-component-vars($text-vars, "text");
+}

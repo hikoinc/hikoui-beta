@@ -1,0 +1,11 @@
+@use "../utils" as utils;
+
+$link-vars: (
+  primary: (
+    color: var(--color-hiko-blue-500),
+  ),
+) !default;
+
+@mixin link {
+  @include utils.create-component-vars($link-vars, "link");
+}

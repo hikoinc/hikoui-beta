@@ -5,6 +5,8 @@
 
 @theme {
   @include themes.light-theme;
+  @include components.text;
+  @include components.link;
   @include components.button;
 }
 
