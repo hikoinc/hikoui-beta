@@ -1,9 +1,0 @@
-@use "sass:map";
-
-@mixin create-component-vars($config, $token, $component) {
-  @each $variant, $properties in $config {
-    @each $property, $value in $properties {
-      --#{$token}-#{$component}-#{$property}-#{$variant}: #{$value};
-    }
-  }
-}

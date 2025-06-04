@@ -265,6 +265,9 @@ importers:
       postcss:
         specifier: ^8.5.4
         version: 8.5.4
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
       sort-package-json:
         specifier: ^3.0.0
         version: 3.2.1
@@ -308,6 +311,9 @@ importers:
       '@types/react-dom':
         specifier: 19.1.1
         version: 19.1.1(@types/react@19.1.0)
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
       sort-package-json:
         specifier: ^3.0.0
         version: 3.2.1
@@ -320,16 +326,25 @@ importers:
 
   packages/theme:
     dependencies:
-      tailwindcss:
-        specifier: '>=4'
-        version: 4.1.8
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
     devDependencies:
-      sass:
-        specifier: ^1.80.8
-        version: 1.89.1
+      '@types/lodash':
+        specifier: ^4.17.17
+        version: 4.17.17
+      '@types/node':
+        specifier: ^22.15.29
+        version: 22.15.29
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
       sort-package-json:
         specifier: ^3.0.0
         version: 3.2.1
+      typescript:
+        specifier: 5.8.2
+        version: 5.8.2
 
 packages:
 
@@ -8954,7 +8969,8 @@ snapshots:
 
   ignore@7.0.5: {}
 
-  immutable@5.1.2: {}
+  immutable@5.1.2:
+    optional: true
 
   import-fresh@3.3.1:
     dependencies:
@@ -10590,6 +10606,7 @@ snapshots:
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.1
+    optional: true
 
   saxes@6.0.0:
     dependencies:
