@@ -1,0 +1,15 @@
+{
+  "source": ["src/secondary.json"],
+  "platforms": {
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "dist/",
+      "files": [
+        {
+          "destination": "secondary.css",
+          "format": "css/variables"
+        }
+      ]
+    }
+  }
+}
