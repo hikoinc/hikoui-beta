@@ -3,6 +3,127 @@ import type { TextProps } from "@hikoui-beta/react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { ComponentType } from "react";
 
+interface OptionType {
+  value: string;
+  label: string;
+}
+
+interface OptionsType {
+  colors: OptionType[];
+  sizes: OptionType[];
+  weights: OptionType[];
+  fontStyles: OptionType[];
+  leadings: OptionType[];
+  letterSpacings: OptionType[];
+  whitespaces: OptionType[];
+  decorations: OptionType[];
+  transforms: OptionType[];
+  aligns: OptionType[];
+  lineClamps: OptionType[];
+  displays: OptionType[];
+}
+
+const options: OptionsType = {
+  colors: [
+    { value: "foreground", label: "Foreground" },
+    { value: "primary", label: "Primary" },
+    { value: "secondary", label: "Secondary" },
+    { value: "tertiary", label: "Tertiary" },
+    { value: "success", label: "Success" },
+    { value: "warning", label: "Warning" },
+    { value: "danger", label: "Danger" },
+    { value: "info", label: "Info" },
+    { value: "muted", label: "Muted" },
+    { value: "inherit", label: "Inherit" },
+  ],
+  sizes: [
+    { value: "xs", label: "Extra Small" },
+    { value: "sm", label: "Small" },
+    { value: "md", label: "Medium" },
+    { value: "lg", label: "Large" },
+    { value: "xl", label: "Extra Large" },
+    { value: "2xl", label: "2XL" },
+    { value: "3xl", label: "3XL" },
+    { value: "4xl", label: "4XL" },
+    { value: "5xl", label: "5XL" },
+    { value: "6xl", label: "6XL" },
+    { value: "7xl", label: "7XL" },
+    { value: "8xl", label: "8XL" },
+    { value: "9xl", label: "9XL" },
+  ],
+  weights: [
+    { value: "thin", label: "Thin" },
+    { value: "extralight", label: "Extra Light" },
+    { value: "light", label: "Light" },
+    { value: "normal", label: "Normal" },
+    { value: "medium", label: "Medium" },
+    { value: "semibold", label: "Semibold" },
+    { value: "bold", label: "Bold" },
+    { value: "extrabold", label: "Extra Bold" },
+    { value: "black", label: "Black" },
+  ],
+  fontStyles: [
+    { value: "italic", label: "Italic" },
+    { value: "normal", label: "Normal" },
+  ],
+  leadings: [
+    { value: "tight", label: "Tight" },
+    { value: "snug", label: "Snug" },
+    { value: "normal", label: "Normal" },
+    { value: "relaxed", label: "Relaxed" },
+    { value: "loose", label: "Loose" },
+    { value: "none", label: "None" },
+  ],
+  letterSpacings: [
+    { value: "tighter", label: "Tighter" },
+    { value: "tight", label: "Tight" },
+    { value: "normal", label: "Normal" },
+    { value: "wide", label: "Wide" },
+    { value: "wider", label: "Wider" },
+    { value: "widest", label: "Widest" },
+  ],
+  whitespaces: [
+    { value: "normal", label: "Normal" },
+    { value: "nowrap", label: "No Wrap" },
+  ],
+  decorations: [
+    { value: "underline", label: "Underline" },
+    { value: "overline", label: "Overline" },
+    { value: "line-through", label: "Line Through" },
+  ],
+  transforms: [
+    { value: "capitalize", label: "Capitalize" },
+    { value: "uppercase", label: "Uppercase" },
+    { value: "lowercase", label: "Lowercase" },
+    { value: "normal", label: "Normal" },
+  ],
+  aligns: [
+    { value: "left", label: "Left" },
+    { value: "center", label: "Center" },
+    { value: "right", label: "Right" },
+    { value: "justify", label: "Justify" },
+    { value: "start", label: "Start" },
+    { value: "end", label: "End" },
+  ],
+  lineClamps: [
+    { value: "1", label: "1 Line" },
+    { value: "2", label: "2 Lines" },
+    { value: "3", label: "3 Lines" },
+    { value: "4", label: "4 Lines" },
+    { value: "5", label: "5 Lines" },
+    { value: "6", label: "6 Lines" },
+    { value: "7", label: "7 Lines" },
+    { value: "8", label: "8 Lines" },
+    { value: "none", label: "None" },
+  ],
+  displays: [
+    { value: "block", label: "Block" },
+    { value: "inline", label: "Inline" },
+    { value: "inline-block", label: "Inline Block" },
+    { value: "none", label: "None" },
+  ],
+};
+
 Text.displayName = "Text";
 
 const meta: Meta<TextProps> = {
@@ -16,7 +137,6 @@ const meta: Meta<TextProps> = {
       },
     },
   },
-  tags: ["autodocs"],
   argTypes: {
     children: {
       description: "The text to display",
@@ -33,10 +153,10 @@ const meta: Meta<TextProps> = {
     color: {
       description: "The color of the text",
       control: "select",
-      options: ["primary", "secondary", "tertiary", "success", "warning", "danger", "info", "muted", "inherit"],
+      options: options.colors.map((color) => color.value),
       table: {
         type: {
-          summary: "primary | secondary | tertiary | success | warning | danger | info | muted | inherit",
+          summary: "foreground | primary | secondary | tertiary | success | warning | danger | info | muted | inherit",
         },
         defaultValue: {
           summary: "primary",
@@ -46,7 +166,7 @@ const meta: Meta<TextProps> = {
     size: {
       description: "The size of the text",
       control: "select",
-      options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl", "7xl", "8xl", "9xl"],
+      options: options.sizes.map((size) => size.value),
       table: {
         type: {
           summary: "xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | 6xl | 7xl | 8xl | 9xl",
@@ -59,7 +179,7 @@ const meta: Meta<TextProps> = {
     weight: {
       description: "The font weight of the text",
       control: "select",
-      options: ["thin", "extralight", "light", "normal", "medium", "semibold", "bold", "extrabold", "black"],
+      options: options.weights.map((weight) => weight.value),
       table: {
         type: {
           summary: "thin | extralight | light | normal | medium | semibold | bold | extrabold | black",
@@ -72,7 +192,7 @@ const meta: Meta<TextProps> = {
     fontStyle: {
       description: "The font style of the text",
       control: "select",
-      options: ["italic", "normal"],
+      options: options.fontStyles.map((style) => style.value),
       table: {
         type: {
           summary: "italic | normal",
@@ -85,7 +205,7 @@ const meta: Meta<TextProps> = {
     leading: {
       description: "The line height of the text",
       control: "select",
-      options: ["tight", "snug", "normal", "relaxed", "loose", "none"],
+      options: options.leadings.map((leading) => leading.value),
       table: {
         type: {
           summary: "tight | snug | normal | relaxed | loose | none",
@@ -96,9 +216,9 @@ const meta: Meta<TextProps> = {
       },
     },
     letterSpacing: {
-      control: "select",
-      options: ["tighter", "tight", "normal", "wide", "wider", "widest"],
       description: "The letter spacing of the text",
+      control: "select",
+      options: options.letterSpacings.map((spacing) => spacing.value),
       table: {
         type: {
           summary: "tighter | tight | normal | wide | wider | widest",
@@ -111,7 +231,7 @@ const meta: Meta<TextProps> = {
     whitespace: {
       description: "The whitespace handling of the text",
       control: "select",
-      options: ["normal", "nowrap"],
+      options: options.whitespaces.map((whitespace) => whitespace.value),
       table: {
         type: {
           summary: "normal | nowrap",
@@ -124,7 +244,7 @@ const meta: Meta<TextProps> = {
     decoration: {
       description: "The text decoration",
       control: "select",
-      options: ["underline", "overline", "line-through"],
+      options: options.decorations.map((decoration) => decoration.value),
       table: {
         type: {
           summary: "underline | overline | line-through",
@@ -137,10 +257,10 @@ const meta: Meta<TextProps> = {
     transform: {
       description: "The text transform",
       control: "select",
-      options: ["uppercase", "lowercase", "capitalize", "normal"],
+      options: options.transforms.map((transform) => transform.value),
       table: {
         type: {
-          summary: "uppercase | lowercase | capitalize | normal",
+          summary: "capitalize | uppercase | lowercase | normal",
         },
         defaultValue: {
           summary: "undefined",
@@ -150,7 +270,7 @@ const meta: Meta<TextProps> = {
     align: {
       description: "The text alignment",
       control: "select",
-      options: ["left", "center", "right", "justify", "start", "end"],
+      options: options.aligns.map((align) => align.value),
       table: {
         type: {
           summary: "left | center | right | justify | start | end",
@@ -163,7 +283,7 @@ const meta: Meta<TextProps> = {
     lineClamp: {
       description: "The number of lines to clamp the text to",
       control: "select",
-      options: ["1", "2", "3", "4", "5", "6", "7", "8", "none"],
+      options: options.lineClamps.map((clamp) => clamp.value),
       table: {
         type: {
           summary: "1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | none",
@@ -176,7 +296,7 @@ const meta: Meta<TextProps> = {
     display: {
       description: "The display property of the text",
       control: "select",
-      options: ["block", "inline", "inline-block", "none"],
+      options: options.displays.map((display) => display.value),
       table: {
         type: {
           summary: "block | inline | inline-block | none",
@@ -218,10 +338,10 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
     children: "Text",
-    color: "primary",
+    color: "foreground",
     size: "md",
   },
 };
@@ -229,15 +349,11 @@ export const Primary: Story = {
 export const Colors: Story = {
   render: () => (
     <div className="flex flex-col gap-4 p-4">
-      <Text color="primary">Text Color Primary</Text>
-      <Text color="secondary">Text Color Secondary</Text>
-      <Text color="tertiary">Text Color Tertiary</Text>
-      <Text color="success">Text Color Success</Text>
-      <Text color="warning">Text Color Warning</Text>
-      <Text color="danger">Text Color Danger</Text>
-      <Text color="info">Text Color Info</Text>
-      <Text color="muted">Text Color Muted</Text>
-      <Text color="inherit">Text Color Inherit</Text>
+      {options.colors.map(({ value, label }) => (
+        <Text key={value} color={value as TextProps["color"]}>
+          {label}
+        </Text>
+      ))}
     </div>
   ),
 };
@@ -245,19 +361,11 @@ export const Colors: Story = {
 export const Sizes: Story = {
   render: () => (
     <div className="flex flex-col gap-4 p-4">
-      <Text size="xs">Text Size XS</Text>
-      <Text size="sm">Text Size SM</Text>
-      <Text size="md">Text Size MD</Text>
-      <Text size="lg">Text Size LG</Text>
-      <Text size="xl">Text Size XL</Text>
-      <Text size="2xl">Text Size 2XL</Text>
-      <Text size="3xl">Text Size 3XL</Text>
-      <Text size="4xl">Text Size 4XL</Text>
-      <Text size="5xl">Text Size 5XL</Text>
-      <Text size="6xl">Text Size 6XL</Text>
-      <Text size="7xl">Text Size 7XL</Text>
-      <Text size="8xl">Text Size 8XL</Text>
-      <Text size="9xl">Text Size 9XL</Text>
+      {options.sizes.map(({ value, label }) => (
+        <Text key={value} size={value as TextProps["size"]}>
+          Size {label}
+        </Text>
+      ))}
     </div>
   ),
 };
@@ -265,15 +373,11 @@ export const Sizes: Story = {
 export const Weights: Story = {
   render: () => (
     <div className="flex flex-col gap-4 p-4">
-      <Text weight="thin">Text Weight Thin</Text>
-      <Text weight="extralight">Text Weight Extra Light</Text>
-      <Text weight="light">Text Weight Light</Text>
-      <Text weight="normal">Text Weight Normal</Text>
-      <Text weight="medium">Text Weight Medium</Text>
-      <Text weight="semibold">Text Weight Semibold</Text>
-      <Text weight="bold">Text Weight Bold</Text>
-      <Text weight="extrabold">Text Weight Extra Bold</Text>
-      <Text weight="black">Text Weight Black</Text>
+      {options.weights.map(({ value, label }) => (
+        <Text key={value} weight={value as TextProps["weight"]}>
+          {label}
+        </Text>
+      ))}
     </div>
   ),
 };
@@ -281,8 +385,11 @@ export const Weights: Story = {
 export const FontStyle: Story = {
   render: () => (
     <div className="flex flex-col gap-4 p-4">
-      <Text fontStyle="italic">In the quiet moments between heartbeats</Text>
-      <Text fontStyle="normal">In the quiet moments between heartbeats</Text>
+      {options.fontStyles.map(({ value, label }) => (
+        <Text key={value} fontStyle={value as TextProps["fontStyle"]}>
+          In the quiet moments between heartbeats ({label})
+        </Text>
+      ))}
     </div>
   ),
 };
@@ -290,53 +397,12 @@ export const FontStyle: Story = {
 export const Leading: Story = {
   render: () => (
     <div className="flex flex-col gap-4 p-4">
-      <Text as="p" leading="tight">
-        In the quiet moments between heartbeats, I find myself remembering the way you laughed - not the polite kind,
-        but the deep, unguarded laughter that came from somewhere true. It&apos;s strange how grief doesn&apos;t arrive
-        all at once, but in waves, each one carrying memories I thought I&apos;d forgotten. Sometimes I catch myself
-        reaching for my phone to share something with you, only to remember that the conversation has ended, but
-        somehow, the love remains.
-      </Text>
-
-      <Text as="p" leading="snug">
-        In the quiet moments between heartbeats, I find myself remembering the way you laughed - not the polite kind,
-        but the deep, unguarded laughter that came from somewhere true. It&apos;s strange how grief doesn&apos;t arrive
-        all at once, but in waves, each one carrying memories I thought I&apos;d forgotten. Sometimes I catch myself
-        reaching for my phone to share something with you, only to remember that the conversation has ended, but
-        somehow, the love remains.
-      </Text>
-
-      <Text as="p" leading="normal">
-        In the quiet moments between heartbeats, I find myself remembering the way you laughed - not the polite kind,
-        but the deep, unguarded laughter that came from somewhere true. It&apos;s strange how grief doesn&apos;t arrive
-        all at once, but in waves, each one carrying memories I thought I&apos;d forgotten. Sometimes I catch myself
-        reaching for my phone to share something with you, only to remember that the conversation has ended, but
-        somehow, the love remains.
-      </Text>
-
-      <Text as="p" leading="relaxed">
-        In the quiet moments between heartbeats, I find myself remembering the way you laughed - not the polite kind,
-        but the deep, unguarded laughter that came from somewhere true. It&apos;s strange how grief doesn&apos;t arrive
-        all at once, but in waves, each one carrying memories I thought I&apos;d forgotten. Sometimes I catch myself
-        reaching for my phone to share something with you, only to remember that the conversation has ended, but
-        somehow, the love remains.
-      </Text>
-
-      <Text as="p" leading="loose">
-        In the quiet moments between heartbeats, I find myself remembering the way you laughed - not the polite kind,
-        but the deep, unguarded laughter that came from somewhere true. It&apos;s strange how grief doesn&apos;t arrive
-        all at once, but in waves, each one carrying memories I thought I&apos;d forgotten. Sometimes I catch myself
-        reaching for my phone to share something with you, only to remember that the conversation has ended, but
-        somehow, the love remains.
-      </Text>
-
-      <Text as="p" leading="none">
-        In the quiet moments between heartbeats, I find myself remembering the way you laughed - not the polite kind,
-        but the deep, unguarded laughter that came from somewhere true. It&apos;s strange how grief doesn&apos;t arrive
-        all at once, but in waves, each one carrying memories I thought I&apos;d forgotten. Sometimes I catch myself
-        reaching for my phone to share something with you, only to remember that the conversation has ended, but
-        somehow, the love remains.
-      </Text>
+      {options.leadings.map(({ value, label }) => (
+        <Text key={value} as="p" leading={value as TextProps["leading"]}>
+          In the quiet moments between heartbeats, I find myself remembering the way you laughed. It comes back in
+          fragments and echoes. ({label})
+        </Text>
+      ))}
     </div>
   ),
 };
@@ -344,12 +410,11 @@ export const Leading: Story = {
 export const LetterSpacing: Story = {
   render: () => (
     <div className="flex flex-col gap-4 p-4">
-      <Text letterSpacing="tighter">In the quiet moments between heartbeats</Text>
-      <Text letterSpacing="tight">In the quiet moments between heartbeats</Text>
-      <Text letterSpacing="normal">In the quiet moments between heartbeats</Text>
-      <Text letterSpacing="wide">In the quiet moments between heartbeats</Text>
-      <Text letterSpacing="wider">In the quiet moments between heartbeats</Text>
-      <Text letterSpacing="widest">In the quiet moments between heartbeats</Text>
+      {options.letterSpacings.map(({ value, label }) => (
+        <Text key={value} letterSpacing={value as TextProps["letterSpacing"]}>
+          In the quiet moments between heartbeats ({label})
+        </Text>
+      ))}
     </div>
   ),
 };
@@ -357,21 +422,12 @@ export const LetterSpacing: Story = {
 export const Whitespace: Story = {
   render: () => (
     <div className="flex w-full max-w-xl flex-col gap-4 p-4">
-      <Text as="p" whitespace="nowrap">
-        In the quiet moments between heartbeats, I find myself remembering the way you laughed - not the polite kind,
-        but the deep, unguarded laughter that came from somewhere true. It&apos;s strange how grief doesn&apos;t arrive
-        all at once, but in waves, each one carrying memories I thought I&apos;d forgotten. Sometimes I catch myself
-        reaching for my phone to share something with you, only to remember that the conversation has ended, but
-        somehow, the love remains.
-      </Text>
-
-      <Text as="p" whitespace="normal">
-        In the quiet moments between heartbeats, I find myself remembering the way you laughed - not the polite kind,
-        but the deep, unguarded laughter that came from somewhere true. It&apos;s strange how grief doesn&apos;t arrive
-        all at once, but in waves, each one carrying memories I thought I&apos;d forgotten. Sometimes I catch myself
-        reaching for my phone to share something with you, only to remember that the conversation has ended, but
-        somehow, the love remains.
-      </Text>
+      {options.whitespaces.map(({ value, label }) => (
+        <Text key={value} as="p" whitespace={value as TextProps["whitespace"]}>
+          In the quiet moments between heartbeats, I find myself remembering the way you laughed. It comes back in
+          fragments and echoes. ({label})
+        </Text>
+      ))}
     </div>
   ),
 };
@@ -379,9 +435,11 @@ export const Whitespace: Story = {
 export const Decorations: Story = {
   render: () => (
     <div className="flex flex-col gap-4 p-4">
-      <Text decoration="underline">In the quiet moments between heartbeats</Text>
-      <Text decoration="overline">In the quiet moments between heartbeats</Text>
-      <Text decoration="line-through">In the quiet moments between heartbeats</Text>
+      {options.decorations.map(({ value, label }) => (
+        <Text key={value} decoration={value as TextProps["decoration"]}>
+          In the quiet moments between heartbeats ({label})
+        </Text>
+      ))}
     </div>
   ),
 };
@@ -389,10 +447,11 @@ export const Decorations: Story = {
 export const Transform: Story = {
   render: () => (
     <div className="flex flex-col gap-4 p-4">
-      <Text transform="uppercase">In the quiet moments between heartbeats</Text>
-      <Text transform="lowercase">In the quiet moments between heartbeats</Text>
-      <Text transform="capitalize">In the quiet moments between heartbeats</Text>
-      <Text transform="normal">In the quiet moments between heartbeats</Text>
+      {options.transforms.map(({ value, label }) => (
+        <Text key={value} transform={value as TextProps["transform"]}>
+          In the quiet moments between heartbeats ({label})
+        </Text>
+      ))}
     </div>
   ),
 };
@@ -400,53 +459,12 @@ export const Transform: Story = {
 export const Align: Story = {
   render: () => (
     <div className="flex w-full max-w-md flex-col gap-4 p-4">
-      <Text as="p" align="left">
-        In the quiet moments between heartbeats, I find myself remembering the way you laughed - not the polite kind,
-        but the deep, unguarded laughter that came from somewhere true. It&apos;s strange how grief doesn&apos;t arrive
-        all at once, but in waves, each one carrying memories I thought I&apos;d forgotten. Sometimes I catch myself
-        reaching for my phone to share something with you, only to remember that the conversation has ended, but
-        somehow, the love remains.
-      </Text>
-
-      <Text as="p" align="center">
-        In the quiet moments between heartbeats, I find myself remembering the way you laughed - not the polite kind,
-        but the deep, unguarded laughter that came from somewhere true. It&apos;s strange how grief doesn&apos;t arrive
-        all at once, but in waves, each one carrying memories I thought I&apos;d forgotten. Sometimes I catch myself
-        reaching for my phone to share something with you, only to remember that the conversation has ended, but
-        somehow, the love remains.
-      </Text>
-
-      <Text as="p" align="right">
-        In the quiet moments between heartbeats, I find myself remembering the way you laughed - not the polite kind,
-        but the deep, unguarded laughter that came from somewhere true. It&apos;s strange how grief doesn&apos;t arrive
-        all at once, but in waves, each one carrying memories I thought I&apos;d forgotten. Sometimes I catch myself
-        reaching for my phone to share something with you, only to remember that the conversation has ended, but
-        somehow, the love remains.
-      </Text>
-
-      <Text as="p" align="justify">
-        In the quiet moments between heartbeats, I find myself remembering the way you laughed - not the polite kind,
-        but the deep, unguarded laughter that came from somewhere true. It&apos;s strange how grief doesn&apos;t arrive
-        all at once, but in waves, each one carrying memories I thought I&apos;d forgotten. Sometimes I catch myself
-        reaching for my phone to share something with you, only to remember that the conversation has ended, but
-        somehow, the love remains.
-      </Text>
-
-      <Text as="p" align="start">
-        In the quiet moments between heartbeats, I find myself remembering the way you laughed - not the polite kind,
-        but the deep, unguarded laughter that came from somewhere true. It&apos;s strange how grief doesn&apos;t arrive
-        all at once, but in waves, each one carrying memories I thought I&apos;d forgotten. Sometimes I catch myself
-        reaching for my phone to share something with you, only to remember that the conversation has ended, but
-        somehow, the love remains.
-      </Text>
-
-      <Text as="p" align="end">
-        In the quiet moments between heartbeats, I find myself remembering the way you laughed - not the polite kind,
-        but the deep, unguarded laughter that came from somewhere true. It&apos;s strange how grief doesn&apos;t arrive
-        all at once, but in waves, each one carrying memories I thought I&apos;d forgotten. Sometimes I catch myself
-        reaching for my phone to share something with you, only to remember that the conversation has ended, but
-        somehow, the love remains.
-      </Text>
+      {options.aligns.map(({ value, label }) => (
+        <Text key={value} as="p" align={value as TextProps["align"]}>
+          In the quiet moments between heartbeats, I find myself remembering the way you laughed. It comes back in
+          fragments and echoes. ({label})
+        </Text>
+      ))}
     </div>
   ),
 };

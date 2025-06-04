@@ -8,8 +8,12 @@ const meta: Meta<{{pascalCase name}}Props> = {
   component: {{pascalCase name}} as ComponentType<{{pascalCase name}}Props>,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: "A component that displays {{pascalCase name}}.",
+      },
+    },
   },
-  tags: ["autodocs"],
   argTypes: {
     children: {
       control: "text",
@@ -33,7 +37,6 @@ const meta: Meta<{{pascalCase name}}Props> = {
       },
     },
   },
-  args: {},
 };
 
 export default meta;

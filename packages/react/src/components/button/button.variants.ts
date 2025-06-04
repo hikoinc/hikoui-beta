@@ -4,7 +4,7 @@ import type { VariantProps } from "class-variance-authority";
 const buttonVariants = cva("flex items-center justify-center", {
   variants: {
     color: {
-      foreground: undefined,
+      default: undefined,
       primary: undefined,
       secondary: undefined,
       success: undefined,
@@ -34,34 +34,83 @@ const buttonVariants = cva("flex items-center justify-center", {
     cursor: {
       pointer: "cursor-pointer",
       default: "cursor-default",
-      notAllowed: "cursor-not-allowed",
       wait: "cursor-wait",
+      notAllowed: "cursor-not-allowed",
     },
     shouldFullWidth: {
       true: "w-full",
     },
     disabled: {
-      true: "cursor-not-allowed opacity-50",
+      true: "cursor-not-allowed opacity-40",
     },
   },
   compoundVariants: [
     {
-      color: "foreground",
+      color: "default",
       variant: "solid",
       className: [
-        "bg-palette-foreground-button",
-        "border-1 border-line-foreground-button",
-        "text-typography-foreground-button",
+        "bg-component-button-bg-default",
+        "border-1 border-component-button-border-default",
+        "text-component-button-color-default",
       ],
     },
     {
       color: "primary",
       variant: "solid",
-      className: "bg-palette-primary-button",
+      className: [
+        "bg-component-button-bg-primary",
+        "border-1 border-component-button-border-primary",
+        "text-component-button-color-primary",
+      ],
+    },
+    {
+      color: "secondary",
+      variant: "solid",
+      className: [
+        "bg-component-button-bg-secondary",
+        "border-1 border-component-button-border-secondary",
+        "text-component-button-color-secondary",
+      ],
+    },
+    {
+      color: "success",
+      variant: "solid",
+      className: [
+        "bg-component-button-bg-success",
+        "border-1 border-component-button-border-success",
+        "text-component-button-color-success",
+      ],
+    },
+    {
+      color: "warning",
+      variant: "solid",
+      className: [
+        "bg-component-button-bg-warning",
+        "border-1 border-component-button-border-warning",
+        "text-component-button-color-warning",
+      ],
+    },
+    {
+      color: "danger",
+      variant: "solid",
+      className: [
+        "bg-component-button-bg-danger",
+        "border-1 border-component-button-border-danger",
+        "text-component-button-color-danger",
+      ],
+    },
+    {
+      color: "info",
+      variant: "solid",
+      className: [
+        "bg-component-button-bg-info",
+        "border-1 border-component-button-border-info",
+        "text-component-button-color-info",
+      ],
     },
   ],
   defaultVariants: {
-    color: "primary",
+    color: "default",
     variant: "solid",
     size: "md",
     rounded: "none",

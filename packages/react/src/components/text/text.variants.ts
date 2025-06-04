@@ -4,6 +4,7 @@ import type { VariantProps } from "class-variance-authority";
 const textVariants = cva("antialiased", {
   variants: {
     color: {
+      foreground: "text-component-text-color-foreground",
       primary: "text-component-text-color-primary",
       secondary: "text-component-text-color-secondary",
       tertiary: "text-component-text-color-tertiary",
@@ -70,9 +71,9 @@ const textVariants = cva("antialiased", {
       nowrap: "whitespace-nowrap",
     },
     transform: {
+      capitalize: "capitalize",
       uppercase: "uppercase",
       lowercase: "lowercase",
-      capitalize: "capitalize",
       normal: "normal-case",
     },
     align: {
@@ -102,7 +103,7 @@ const textVariants = cva("antialiased", {
     },
   },
   defaultVariants: {
-    color: "primary",
+    color: "foreground",
     size: "md",
   },
 });

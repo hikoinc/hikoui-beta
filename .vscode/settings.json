@@ -18,5 +18,10 @@
   ],
   "terminal.integrated.scrollback": 10000,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "tailwindCSS.classFunctions": ["cva", "cx", "twMerge"]
+  "tailwindCSS.classFunctions": [
+    "cva",
+    "cx",
+    "twMerge"
+  ],
+  "codeQL.githubDatabase.update": "never"
 }

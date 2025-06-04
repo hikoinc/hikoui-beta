@@ -4,8 +4,29 @@ $link-vars: (
   primary: (
     color: var(--color-hiko-blue-500),
   ),
+  foreground: (
+    color: var(--color-hiko-black-contrast),
+  ),
+  success: (
+    color: var(--color-hiko-green-500),
+  ),
+  warning: (
+    color: var(--color-hiko-yellow-500),
+  ),
+  danger: (
+    color: var(--color-hiko-red-500),
+  ),
+  info: (
+    color: var(--color-hiko-blue-500),
+  ),
+  muted: (
+    color: var(--color-hiko-neutral-100),
+  ),
+  inherit: (
+    color: var(--color-hiko-inherit),
+  ),
 ) !default;
 
 @mixin link {
-  @include utils.create-component-vars($link-vars, "link");
+  @include utils.create-component-vars($link-vars, "color", "component-link");
 }

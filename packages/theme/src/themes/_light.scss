@@ -1,6 +1,6 @@
 @use "../utils" as utils;
-@use "../tokens" as tokens;
+@use "../colors/colors" as colors;
 
 @mixin light-theme {
-  @include utils.light-theme(tokens.$colors);
+  @include utils.light-theme(colors.$colors);
 }

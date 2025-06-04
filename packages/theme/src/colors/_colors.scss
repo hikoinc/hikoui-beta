@@ -1,0 +1,8 @@
+@use "sass:map";
+@use "common-colors" as common;
+@use "semantic-colors" as semantic;
+
+$colors: (
+  "light": map.merge(map.get(common.$common-colors, "light"), map.get(semantic.$semantic-colors, "light")),
+  "dark": map.merge(map.get(common.$common-colors, "dark"), map.get(semantic.$semantic-colors, "dark")),
+);

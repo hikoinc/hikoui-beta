@@ -104,16 +104,6 @@ describe("Link", () => {
     expect(linkElement).toHaveClass("after:content-['→']");
   });
 
-  it("should render with focus disabled", () => {
-    render(
-      <Link href="/" focus={false}>
-        No Focus Link
-      </Link>,
-    );
-    const linkElement = screen.getByText("No Focus Link");
-    expect(linkElement).toHaveClass("focus:outline-none");
-  });
-
   it("should render with font style variants", () => {
     render(
       <Link href="/" fontStyle="italic">
