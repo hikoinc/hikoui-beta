@@ -4,11 +4,8 @@ node_modules
 # Build outputs
 dist
 
-# Turbo
+# Cache
 .turbo
 
 # OS
 .DS_Store
-
-# Misc
-*.pem

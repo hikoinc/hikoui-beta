@@ -20,45 +20,32 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hikoinc/hikoui.git",
-    "directory": "packages//theme"
+    "directory": "packages/theme"
   },
   "license": "MIT",
   "author": "Joe Takara <https://github.com/joetakara>",
   "sideEffects": false,
   "exports": {
-    ".": {
-      "default": "./dist/primary.css",
-      "primary": "./dist/primary.css"
-    },
-    "./secondary": "./dist/secondary.css",
+    ".": "./dist/primary.css",
     "./package.json": "./package.json"
   },
-  "main": "./dist/primary.css",
+  "main": "dist/primary.css",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "pnpm build:primary && pnpm build:secondary",
-    "build:primary": "style-dictionary build --config base.config.json",
-    "build:secondary": "style-dictionary build --config secondary.config.json",
-    "clean": "pnpm clean:build && pnpm clean:turbo && pnpm clean:node_modules",
+    "build": "pnpm clean:build && style-dictionary build --config style-dictionary.config.mjs",
+    "clean": "rimraf dist .turbo node_modules",
     "clean:build": "rimraf dist",
-    "clean:node_modules": "rimraf node_modules",
-    "clean:turbo": "rimraf .turbo",
-    "dev": "concurrently \"style-dictionary build --config base.config.json --watch\" \"style-dictionary build --config secondary.config.json --watch\"",
-    "sort-package-json": "pnpm exec sort-package-json",
-    "sort-package-json:check": "pnpm exec sort-package-json --check",
     "typescheck": "tsc --noEmit"
   },
   "dependencies": {
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.6.3",
     "@types/lodash": "^4.17.17",
-    "concurrently": "^8.2.2",
+    "@types/node": "^20.11.0",
     "rimraf": "^6.0.1",
-    "sort-package-json": "^3.0.0",
     "style-dictionary": "^5.0.0",
     "typescript": "5.8.2"
   },

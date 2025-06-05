@@ -1,8 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "noEmit": false,
     "outDir": "dist"
   },
-  "include": ["src/**/*.ts", "**/*.config.ts"],
+  "include": ["src/**/*.ts", "script/**/*.ts", "script/primary.config.mjs"],
   "exclude": ["node_modules", "dist"]
 }
