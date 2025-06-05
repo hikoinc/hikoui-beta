@@ -44,7 +44,7 @@
     "clean:build": "rimraf dist",
     "clean:node_modules": "rimraf node_modules",
     "clean:turbo": "rimraf .turbo",
-    "dev": "pnpm clean:build && tsup --watch",
+    "dev": "tsup --watch",
     "sort-package-json": "pnpm exec sort-package-json",
     "sort-package-json:check": "pnpm exec sort-package-json --check",
     "typescheck": "tsc --noEmit"
