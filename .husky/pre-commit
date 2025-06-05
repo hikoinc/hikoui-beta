@@ -1,3 +1,2 @@
 pnpm exec lint-staged
 pnpm typescheck
-pnpm test

@@ -42,7 +42,6 @@ function createImportConfig() {
     "**/*.test.{ts,tsx}",
     "**/.storybook/**",
     "**/setup-test.ts",
-    "**/tsup.config.ts",
   ];
 
   const importOrderGroups = ["builtin", "external", "internal", "parent", "sibling", "index"];
