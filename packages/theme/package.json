@@ -34,12 +34,12 @@
     "dist"
   ],
   "scripts": {
-    "build": "pnpm clean:build && node build-tokens.mjs",
+    "build": "pnpm clean:build && ts-node scripts/build-tokens.ts",
     "clean": "pnpm clean:build && pnpm clean:turbo && pnpm clean:node_modules",
     "clean:build": "rimraf dist",
     "clean:node_modules": "rimraf node_modules",
     "clean:turbo": "rimraf .turbo",
-    "dev": "chokidar \"src/**/*.{json,js,mjs}\" -c \"node build-tokens.mjs\"",
+    "dev": "chokidar \"src/**/*.{json,ts}\" -c \"ts-node scripts/build-tokens.ts\"",
     "sort-package-json": "pnpm exec sort-package-json",
     "sort-package-json:check": "pnpm exec sort-package-json --check",
     "typescheck": "tsc --noEmit"
@@ -53,6 +53,7 @@
     "@types/node": "^20.11.0",
     "chokidar-cli": "^3.0.0",
     "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
     "typescript": "5.8.2"
   },
   "peerDependencies": {
