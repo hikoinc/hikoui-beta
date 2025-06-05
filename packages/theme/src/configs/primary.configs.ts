@@ -4,14 +4,17 @@ import type { Config, Format } from "style-dictionary/types";
 export const cssVariablesFormat: Format = {
   name: "css/variables",
   format({ dictionary }) {
-    const commonTokens = _.filter(dictionary.allTokens, (token) => !_.includes(token.filePath, "dark-colors"));
-    const darkTokens = _.filter(dictionary.allTokens, (token) => _.includes(token.filePath, "dark-colors"));
+    const { allTokens } = dictionary;
+
+    const commonTokens = _.filter(allTokens, (token) => _.first(token.path) === "common");
+    const darkTokens = _.filter(allTokens, (token) => _.first(token.path) === "dark");
 
     const commonValues = _.reduce(
       commonTokens,
       (acc, token) => {
-        const path = _.join(token.path, "-");
-        return _.assign({}, acc, { [path]: token.$value as string });
+        const path = _.chain(token.path).slice(1).join("-").value();
+        const value = token.original.$value as string;
+        return _.assign({}, acc, { [path]: value });
       },
       {},
     );
@@ -19,8 +22,9 @@ export const cssVariablesFormat: Format = {
     const darkValues = _.reduce(
       darkTokens,
       (acc, token) => {
-        const path = _.join(token.path, "-");
-        return _.assign({}, acc, { [path]: token.$value as string });
+        const path = _.chain(token.path).slice(1).join("-").value();
+        const value = token.original.$value as string;
+        return _.assign({}, acc, { [path]: value });
       },
       {},
     );
@@ -39,7 +43,7 @@ ${_.map(_.toPairs(darkValues), ([path, value]) => `  --${path}: ${value};`).join
 };
 
 export const primaryThemeConfig: Config = {
-  source: ["src/tokens/primary/common-colors.json", "src/tokens/primary/dark-colors.json"],
+  source: ["src/tokens/primary/**/*.json"],
   platforms: {
     css: {
       transformGroup: "css",

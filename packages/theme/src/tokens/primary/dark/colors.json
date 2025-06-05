@@ -1,0 +1,13 @@
+{
+  "dark": {
+    "colors": {
+      "$type": "color",
+      "black": {
+        "$value": "#ffffff"
+      },
+      "white": {
+        "$value": "#000000"
+      }
+    }
+  }
+}
