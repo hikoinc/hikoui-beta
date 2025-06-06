@@ -3,7 +3,7 @@ import type { PlopTypes } from "@turbo/gen";
 import componentGenerator from "./templates/component/config";
 import packageGenerator from "./templates/package/config";
 
-function generator(plop: PlopTypes.NodePlopAPI): void {
+function generator(plop: PlopTypes.NodePlopAPI) {
   componentGenerator(plop);
   packageGenerator(plop);
 }

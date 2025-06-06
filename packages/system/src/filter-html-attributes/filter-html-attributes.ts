@@ -4,7 +4,7 @@ import type { ElementType } from "react";
 import htmlElementAttributes from "./html-element-attributes";
 import type { HTMLAttributes } from "./filter-html-attributes.types";
 
-function filterHTMLAttributes(props: HTMLAttributes, elementType: ElementType): HTMLAttributes {
+function filterHTMLAttributes(props: HTMLAttributes, elementType: ElementType) {
   if (!_.isPlainObject(props) || _.isEmpty(props)) return {};
 
   const elementName = _.toLower(String(elementType));

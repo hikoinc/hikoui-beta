@@ -2,7 +2,7 @@ import StyleDictionary from "style-dictionary";
 
 import { cssVariablesFormat, primaryThemeConfig } from "../src/configs/primary.configs";
 
-async function buildTokens(): Promise<void> {
+async function buildTokens() {
   StyleDictionary.registerFormat(cssVariablesFormat);
 
   const sd = new StyleDictionary(primaryThemeConfig);

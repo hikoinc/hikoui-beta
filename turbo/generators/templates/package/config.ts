@@ -1,6 +1,6 @@
 import type { PlopTypes } from "@turbo/gen";
 
-function packageGenerator(plop: PlopTypes.NodePlopAPI): void {
+function packageGenerator(plop: PlopTypes.NodePlopAPI) {
   plop.setGenerator("package", {
     description: "Adds a new package",
     prompts: [

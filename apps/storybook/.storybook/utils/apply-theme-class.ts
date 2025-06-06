@@ -1,6 +1,6 @@
 import type { StoryContext } from "@storybook/react-vite";
 
-function applyThemeClass(context: StoryContext): void {
+function applyThemeClass(context: StoryContext) {
   const backgroundValue = context.globals.backgrounds?.value;
   const isDark = backgroundValue === "dark";
   const className = isDark ? "dark" : "light";

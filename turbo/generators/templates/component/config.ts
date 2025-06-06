@@ -1,6 +1,6 @@
 import type { PlopTypes } from "@turbo/gen";
 
-function componentGenerator(plop: PlopTypes.NodePlopAPI): void {
+function componentGenerator(plop: PlopTypes.NodePlopAPI) {
   plop.setGenerator("component", {
     description: "Adds a new react component",
     prompts: [
