@@ -34,12 +34,14 @@
     "dist"
   ],
   "scripts": {
-    "build": "pnpm clean:build && ts-node scripts/build-tokens.ts",
+    "build": "pnpm build:primary",
+    "build:primary": "pnpm clean:build && ts-node scripts/build-tokens.ts",
     "clean": "pnpm clean:build && pnpm clean:turbo && pnpm clean:node_modules",
     "clean:build": "rimraf dist",
     "clean:node_modules": "rimraf node_modules",
     "clean:turbo": "rimraf .turbo",
-    "dev": "chokidar \"src/tokens/**/*.json\" -c \"pnpm build\"",
+    "dev": "pnpm dev:primary",
+    "dev:primary": "chokidar \"src/tokens/**/*.json\" -c \"pnpm build:primary\"",
     "sort-package-json": "pnpm exec sort-package-json",
     "sort-package-json:check": "pnpm exec sort-package-json --check",
     "typescheck": "tsc --noEmit"
