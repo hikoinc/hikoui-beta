@@ -5,16 +5,18 @@ export const cssVariablesFormat: Format = {
   name: "css/variables",
   format({ dictionary }) {
     const { allTokens } = dictionary;
-
     const commonTokens = _.filter(allTokens, (token) => _.first(token.path) === "common");
     const darkTokens = _.filter(allTokens, (token) => _.first(token.path) === "dark");
 
     const commonValues = _.reduce(
       commonTokens,
       (acc, token) => {
-        const path = _.chain(token.path).slice(1).join("-").value();
+        const path = _.join([token.$type, ..._.chain(token.path).slice(2).value()], "-");
         const value = token.original.$value as string;
-        return _.assign({}, acc, { [path]: value });
+
+        return _.assign({}, acc, {
+          [path]: value,
+        });
       },
       {},
     );
@@ -22,9 +24,12 @@ export const cssVariablesFormat: Format = {
     const darkValues = _.reduce(
       darkTokens,
       (acc, token) => {
-        const path = _.chain(token.path).slice(1).join("-").value();
+        const path = _.join([token.$type, ..._.chain(token.path).slice(2).value()], "-");
         const value = token.original.$value as string;
-        return _.assign({}, acc, { [path]: value });
+
+        return _.assign({}, acc, {
+          [path]: value,
+        });
       },
       {},
     );

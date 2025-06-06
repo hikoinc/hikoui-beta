@@ -39,7 +39,7 @@
     "clean:build": "rimraf dist",
     "clean:node_modules": "rimraf node_modules",
     "clean:turbo": "rimraf .turbo",
-    "dev": "chokidar \"src/**/*.{json,ts}\" -c \"ts-node scripts/build-tokens.ts\"",
+    "dev": "chokidar \"src/tokens/**/*.json\" -c \"pnpm build\"",
     "sort-package-json": "pnpm exec sort-package-json",
     "sort-package-json:check": "pnpm exec sort-package-json --check",
     "typescheck": "tsc --noEmit"
