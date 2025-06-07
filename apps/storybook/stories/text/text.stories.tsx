@@ -25,10 +25,10 @@ interface OptionsType {
 
 const options: OptionsType = {
   colors: [
-    { value: "foreground", label: "Foreground" },
     { value: "primary", label: "Primary" },
     { value: "secondary", label: "Secondary" },
     { value: "tertiary", label: "Tertiary" },
+    { value: "accent", label: "Accent" },
     { value: "success", label: "Success" },
     { value: "warning", label: "Warning" },
     { value: "danger", label: "Danger" },
@@ -156,7 +156,7 @@ const meta: Meta<TextProps> = {
       options: options.colors.map((color) => color.value),
       table: {
         type: {
-          summary: "foreground | primary | secondary | tertiary | success | warning | danger | info | muted | inherit",
+          summary: "primary | secondary | tertiary | accent | success | warning | danger | info | muted | inherit",
         },
         defaultValue: {
           summary: "primary",
@@ -341,7 +341,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: "Text",
-    color: "foreground",
+    color: "primary",
     size: "md",
   },
 };

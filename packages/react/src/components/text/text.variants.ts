@@ -4,15 +4,15 @@ import type { VariantProps } from "class-variance-authority";
 const textVariants = cva("antialiased", {
   variants: {
     color: {
-      foreground: "text-component-text-color-foreground",
-      primary: "text-component-text-color-primary",
-      secondary: "text-component-text-color-secondary",
-      tertiary: "text-component-text-color-tertiary",
-      success: "text-component-text-color-success",
-      warning: "text-component-text-color-warning",
-      danger: "text-component-text-color-danger",
-      info: "text-component-text-color-info",
-      muted: "text-component-text-color-muted",
+      primary: "text-content",
+      secondary: "text-content-contrast",
+      tertiary: "text-content-high-contrast",
+      accent: "text-primary",
+      success: "text-success",
+      warning: "text-warning",
+      danger: "text-danger",
+      info: "text-info",
+      muted: "text-content-muted",
       inherit: "text-inherit",
     },
     size: {
@@ -103,7 +103,7 @@ const textVariants = cva("antialiased", {
     },
   },
   defaultVariants: {
-    color: "foreground",
+    color: "primary",
     size: "md",
   },
 });
