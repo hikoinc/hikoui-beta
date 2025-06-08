@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@import "@hikoui-beta/theme";
+
+@source "../../node_modules/@hikoui-beta/react";
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}

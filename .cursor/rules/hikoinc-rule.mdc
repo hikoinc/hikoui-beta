@@ -12,3 +12,4 @@ alwaysApply: true
 - Important Use Typescript Only
 - Code Base on ESlint airbnb Style Guide Only
 - Important when eslint error do not add disabled comment fix code only
+- Don' t add add return type
