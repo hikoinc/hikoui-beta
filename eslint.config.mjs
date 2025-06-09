@@ -1,5 +1,3 @@
-import path from "node:path";
-
 import importPlugin from "eslint-plugin-import-x";
 import js from "@eslint/js";
 import prettierPlugin from "eslint-plugin-prettier";
@@ -7,11 +5,7 @@ import sonarjs from "eslint-plugin-sonarjs";
 import storybook from "eslint-plugin-storybook";
 import tseslint from "typescript-eslint";
 import { configs, plugins } from "eslint-config-airbnb-extended";
-import { includeIgnoreFile } from "@eslint/compat";
 import { rules as prettierConfigRules } from "eslint-config-prettier";
-
-export const projectRoot = path.resolve(".");
-export const gitignorePath = path.resolve(projectRoot, ".gitignore");
 
 function createJavaScriptConfig() {
   return [
@@ -192,7 +186,6 @@ function createPrettierConfig() {
 }
 
 export default [
-  includeIgnoreFile(gitignorePath),
   ...createJavaScriptConfig(),
   ...createTypeScriptConfig(),
   ...createImportConfig(),

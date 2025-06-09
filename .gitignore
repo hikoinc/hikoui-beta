@@ -2,14 +2,25 @@
 node_modules
 
 # Build outputs
+.next
 dist
+out
 storybook-static
 
 # Testing
 coverage
 
+# Environment
+.env*
+
+# TypeScript
+*.tsbuildinfo
+
 # Turbo
 .turbo
+
+# Vercel
+.vercel
 
 # Debug
 .pnpm-debug.log*
