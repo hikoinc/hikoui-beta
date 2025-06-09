@@ -137,13 +137,37 @@ function createStorybookConfig() {
   return [
     {
       name: "storybook/config",
-      files: ["**/*.stories.tsx"],
+      files: ["apps/storybook/**/*.stories.tsx"],
       plugins: {
         storybook,
       },
       rules: {
         ...storybook.configs.recommended.rules,
         "jsx-a11y/anchor-is-valid": "off",
+      },
+    },
+  ];
+}
+
+function createDocsConfig() {
+  return [
+    {
+      name: "docs/import-rules",
+      files: ["apps/docs/**/*"],
+      rules: {
+        "import-x/prefer-default-export": "off",
+      },
+    },
+  ];
+}
+
+function createForwardPolymorphicRefConfig() {
+  return [
+    {
+      name: "forward-ref/allow-any",
+      files: ["packages/system/src/forward-polymorphic-ref/**/*"],
+      rules: {
+        "@typescript-eslint/no-explicit-any": "off",
       },
     },
   ];
@@ -167,21 +191,6 @@ function createPrettierConfig() {
   ];
 }
 
-function forwardPolymorphicRefConfig() {
-  return [
-    {
-      name: "forward-ref/allow-any",
-      files: [
-        "packages/system/src/forward-polymorphic-ref/forward-polymorphic-ref.ts",
-        "packages/system/src/forward-polymorphic-ref/forward-polymorphic-ref.types.ts",
-      ],
-      rules: {
-        "@typescript-eslint/no-explicit-any": "off",
-      },
-    },
-  ];
-}
-
 export default [
   includeIgnoreFile(gitignorePath),
   ...createJavaScriptConfig(),
@@ -190,6 +199,7 @@ export default [
   ...createReactConfig(),
   ...createSonarJSConfig(),
   ...createStorybookConfig(),
+  ...createForwardPolymorphicRefConfig(),
+  ...createDocsConfig(),
   ...createPrettierConfig(),
-  ...forwardPolymorphicRefConfig(),
 ];

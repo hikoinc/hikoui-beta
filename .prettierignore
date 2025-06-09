@@ -1,22 +1,32 @@
-
 # Dependencies
 node_modules
+
+# Build outputs
+dist
+/.next/
+/out/
+/build
 
 # Testing
 coverage
 
-# Turbo
-.turbo
-**/*.hbs
-
-# Vercel
-.vercel
-
-# Changeset
-.changeset
-
-# Build outputs
-dist
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
 
 # Package
 pnpm-lock.yaml
+
+# Environment
+.env*
+
+# Version Control
+.changeset
+
+# Development
+.turbo
+**/*.hbs
+.vercel
+
+# Debug
+.pnpm-debug.log*

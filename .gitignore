@@ -11,8 +11,9 @@ coverage
 # Turbo
 .turbo
 
+# Debug
+.pnpm-debug.log*
+*storybook.log
+
 # OS
 .DS_Store
-
-# Debug
-*storybook.log

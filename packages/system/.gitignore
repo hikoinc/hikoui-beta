@@ -4,8 +4,11 @@ node_modules
 # Build outputs
 dist
 
-# Turbo
-.turbo
+# Debug
+.pnpm-debug.log*
 
 # OS
 .DS_Store
+
+# Turbo
+.turbo
