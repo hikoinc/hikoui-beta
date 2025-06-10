@@ -267,6 +267,15 @@
       "foreground-high-contrast": {
         "$value": "var(--color-hiko-neutral-700)"
       },
+      "divider": {
+        "$value": "var(--color-hiko-neutral-50)"
+      },
+      "divider-contrast": {
+        "$value": "var(--color-hiko-neutral-200)"
+      },
+      "divider-high-contrast": {
+        "$value": "var(--color-hiko-neutral-400)"
+      },
       "primary": {
         "$value": "var(--color-hiko-blue-500)"
       },

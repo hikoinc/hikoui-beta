@@ -20,6 +20,15 @@
       "foreground-high-contrast": {
         "$value": "var(--color-hiko-neutral-300)"
       },
+      "divider": {
+        "$value": "var(--color-hiko-neutral-950)"
+      },
+      "divider-contrast": {
+        "$value": "var(--color-hiko-neutral-800)"
+      },
+      "divider-high-contrast": {
+        "$value": "var(--color-hiko-neutral-600)"
+      },
       "primary": {
         "$value": "var(--color-hiko-blue-500)"
       },

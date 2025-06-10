@@ -1,12 +1,21 @@
-import createMDX from "@next/mdx";
+import { withContentlayer } from "next-contentlayer2";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  pageExtensions: ["ts", "tsx", "md", "mdx"],
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/docs/introduction",
+        permanent: true,
+      },
+      {
+        source: "/docs",
+        destination: "/docs/introduction",
+        permanent: true,
+      },
+    ];
+  },
 };
 
-const withMDX = createMDX({
-  extension: /\.mdx?$/,
-});
-
-export default withMDX(nextConfig);
+export default withContentlayer(nextConfig);

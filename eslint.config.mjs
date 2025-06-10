@@ -150,6 +150,7 @@ function createDocsConfig() {
       files: ["apps/docs/**/*"],
       rules: {
         "import-x/prefer-default-export": "off",
+        "no-underscore-dangle": "off",
       },
     },
   ];

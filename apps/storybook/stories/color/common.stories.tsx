@@ -20,7 +20,7 @@ export const Colors: Story = {
   render: () => (
     <div className="mx-auto flex flex-col gap-16 px-8 py-4">
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Hiko Red</h2>
+        <h2 className="text-content text-lg font-bold">Hiko Red</h2>
 
         <div className="flex flex-wrap gap-4">
           <div className="bg-hiko-red-50 flex size-24 flex-col items-center justify-center rounded-lg text-xs font-bold uppercase text-black">
@@ -81,7 +81,7 @@ export const Colors: Story = {
       </div>
 
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Hiko Blue</h2>
+        <h2 className="text-content text-lg font-bold">Hiko Blue</h2>
 
         <div className="flex flex-wrap gap-4">
           <div className="bg-hiko-blue-50 flex size-24 flex-col items-center justify-center rounded-lg text-xs font-bold uppercase text-black">
@@ -142,7 +142,7 @@ export const Colors: Story = {
       </div>
 
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Hiko Green</h2>
+        <h2 className="text-content text-lg font-bold">Hiko Green</h2>
 
         <div className="flex flex-wrap gap-4">
           <div className="bg-hiko-green-50 flex size-24 flex-col items-center justify-center rounded-lg text-xs font-bold uppercase text-black">
@@ -203,7 +203,7 @@ export const Colors: Story = {
       </div>
 
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Hiko Yellow</h2>
+        <h2 className="text-content text-lg font-bold">Hiko Yellow</h2>
 
         <div className="flex flex-wrap gap-4">
           <div className="bg-hiko-yellow-50 flex size-24 flex-col items-center justify-center rounded-lg text-xs font-bold uppercase text-black">
@@ -264,7 +264,7 @@ export const Colors: Story = {
       </div>
 
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Hiko Orange</h2>
+        <h2 className="text-content text-lg font-bold">Hiko Orange</h2>
 
         <div className="flex flex-wrap gap-4">
           <div className="bg-hiko-orange-50 flex size-24 flex-col items-center justify-center rounded-lg text-xs font-bold uppercase text-black">
@@ -325,7 +325,7 @@ export const Colors: Story = {
       </div>
 
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Hiko Purple</h2>
+        <h2 className="text-content text-lg font-bold">Hiko Purple</h2>
 
         <div className="flex flex-wrap gap-4">
           <div className="bg-hiko-purple-50 flex size-24 flex-col items-center justify-center rounded-lg text-xs font-bold uppercase text-black">
@@ -386,7 +386,7 @@ export const Colors: Story = {
       </div>
 
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Hiko Neutral</h2>
+        <h2 className="text-content text-lg font-bold">Hiko Neutral</h2>
 
         <div className="flex flex-wrap gap-4">
           <div className="bg-hiko-neutral-50 flex size-24 flex-col items-center justify-center rounded-lg text-xs font-bold uppercase text-black">

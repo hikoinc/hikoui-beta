@@ -20,25 +20,25 @@ export const Colors: Story = {
   render: () => (
     <div className="mx-auto flex flex-col gap-16 px-8 py-4">
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Background</h2>
+        <h2 className="text-content text-lg font-bold">Background</h2>
 
         <div className="flex flex-wrap gap-4">
-          <div className="bg-background border-background-contrast text-foreground flex size-24 flex-col items-center justify-center gap-1 rounded-lg border text-xs font-bold">
+          <div className="bg-background border-divider text-content flex size-24 flex-col items-center justify-center gap-1 rounded-lg border text-xs font-bold">
             Default
           </div>
 
-          <div className="bg-background-contrast text-foreground flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
+          <div className="bg-background-contrast text-content flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
             Contrast
           </div>
 
-          <div className="bg-background-high-contrast text-foreground flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
+          <div className="bg-background-high-contrast text-content flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
             High Contrast
           </div>
         </div>
       </div>
 
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Foreground</h2>
+        <h2 className="text-content text-lg font-bold">Foreground</h2>
 
         <div className="flex flex-wrap gap-4">
           <div className="bg-foreground border-foreground-contrast text-background flex size-24 flex-col items-center justify-center gap-1 rounded-lg border text-xs font-bold">
@@ -56,7 +56,7 @@ export const Colors: Story = {
       </div>
 
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Primary</h2>
+        <h2 className="text-content text-lg font-bold">Primary</h2>
 
         <div className="flex flex-wrap gap-4">
           <div className="bg-primary border-primary-contrast flex size-24 flex-col items-center justify-center gap-1 rounded-lg border text-xs font-bold text-white">
@@ -71,14 +71,14 @@ export const Colors: Story = {
             High Contrast
           </div>
 
-          <div className="bg-primary-muted text-foreground flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
+          <div className="bg-primary-muted text-content flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
             Muted
           </div>
         </div>
       </div>
 
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Secondary</h2>
+        <h2 className="text-content text-lg font-bold">Secondary</h2>
 
         <div className="flex flex-wrap gap-4">
           <div className="bg-secondary border-secondary-contrast flex size-24 flex-col items-center justify-center gap-1 rounded-lg border text-xs font-bold text-white">
@@ -93,14 +93,14 @@ export const Colors: Story = {
             High Contrast
           </div>
 
-          <div className="bg-secondary-muted text-foreground flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
+          <div className="bg-secondary-muted text-content flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
             Muted
           </div>
         </div>
       </div>
 
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Accent</h2>
+        <h2 className="text-content text-lg font-bold">Accent</h2>
 
         <div className="flex flex-wrap gap-4">
           <div className="bg-accent border-accent-contrast text-background flex size-24 flex-col items-center justify-center gap-1 rounded-lg border text-xs font-bold">
@@ -115,14 +115,14 @@ export const Colors: Story = {
             High Contrast
           </div>
 
-          <div className="bg-accent-muted text-foreground flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
+          <div className="bg-accent-muted text-content flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
             Muted
           </div>
         </div>
       </div>
 
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Success</h2>
+        <h2 className="text-content text-lg font-bold">Success</h2>
 
         <div className="flex flex-wrap gap-4">
           <div className="bg-success border-success-contrast flex size-24 flex-col items-center justify-center gap-1 rounded-lg border text-xs font-bold text-white">
@@ -137,14 +137,14 @@ export const Colors: Story = {
             High Contrast
           </div>
 
-          <div className="bg-success-muted text-foreground flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
+          <div className="bg-success-muted text-content flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
             Muted
           </div>
         </div>
       </div>
 
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Info</h2>
+        <h2 className="text-content text-lg font-bold">Info</h2>
 
         <div className="flex flex-wrap gap-4">
           <div className="bg-info border-info-contrast flex size-24 flex-col items-center justify-center gap-1 rounded-lg border text-xs font-bold text-white">
@@ -159,14 +159,14 @@ export const Colors: Story = {
             High Contrast
           </div>
 
-          <div className="bg-info-muted text-foreground flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
+          <div className="bg-info-muted text-content flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
             Muted
           </div>
         </div>
       </div>
 
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Warning</h2>
+        <h2 className="text-content text-lg font-bold">Warning</h2>
 
         <div className="flex flex-wrap gap-4">
           <div className="bg-warning border-warning-contrast flex size-24 flex-col items-center justify-center gap-1 rounded-lg border text-xs font-bold text-white">
@@ -181,14 +181,14 @@ export const Colors: Story = {
             High Contrast
           </div>
 
-          <div className="bg-warning-muted text-foreground flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
+          <div className="bg-warning-muted text-content flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
             Muted
           </div>
         </div>
       </div>
 
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Danger</h2>
+        <h2 className="text-content text-lg font-bold">Danger</h2>
 
         <div className="flex flex-wrap gap-4">
           <div className="bg-danger border-danger-contrast flex size-24 flex-col items-center justify-center gap-1 rounded-lg border text-xs font-bold text-white">
@@ -203,14 +203,14 @@ export const Colors: Story = {
             High Contrast
           </div>
 
-          <div className="bg-danger-muted text-foreground flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
+          <div className="bg-danger-muted text-content flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
             Muted
           </div>
         </div>
       </div>
 
       <div className="flex flex-col gap-4">
-        <h2 className="text-foreground text-lg font-bold">Content</h2>
+        <h2 className="text-content text-lg font-bold">Content</h2>
 
         <div className="flex flex-wrap gap-4">
           <div className="bg-content border-content-contrast text-background flex size-24 flex-col items-center justify-center gap-1 rounded-lg border text-xs font-bold">
@@ -225,7 +225,7 @@ export const Colors: Story = {
             High Contrast
           </div>
 
-          <div className="bg-content-muted text-foreground flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
+          <div className="bg-content-muted text-content flex size-24 flex-col items-center justify-center gap-1 rounded-lg text-xs font-bold">
             Muted
           </div>
         </div>

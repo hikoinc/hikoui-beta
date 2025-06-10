@@ -13,6 +13,9 @@ coverage
 # Environment
 .env*
 
+# contentlayer
+.contentlayer
+
 # TypeScript
 *.tsbuildinfo
 

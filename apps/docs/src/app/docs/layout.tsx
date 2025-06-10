@@ -1,11 +1,19 @@
-interface DocsLayoutProps {
-  children: React.ReactNode;
-}
+import type { PropsWithChildren } from "react";
 
-const DocsLayout = (props: DocsLayoutProps) => {
-  const { children } = props;
+import { Content, Footer, Header, Sidebar, Table } from "src/components/layout";
 
-  return <div className="flex flex-col gap-8">{children}</div>;
-};
+const RootLayout = async ({ children }: PropsWithChildren) => (
+  <div className="space-y-8">
+    <Header />
 
-export default DocsLayout;
+    <div className="layout-container flex gap-8">
+      <Sidebar />
+      <Content>{children}</Content>
+      <Table />
+    </div>
+
+    <Footer />
+  </div>
+);
+
+export default RootLayout;
