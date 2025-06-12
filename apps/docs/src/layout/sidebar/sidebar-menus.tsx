@@ -1,6 +1,5 @@
 "use client";
 
-import _ from "lodash";
 import NextLink from "next/link";
 
 import { Text } from "src/components/base";
@@ -8,28 +7,34 @@ import { Text } from "src/components/base";
 import useSidebarMenus from "./sidebar-menus.hook";
 
 const SidebarMenus = () => {
-  const { menus, isActive } = useSidebarMenus();
+  const { docMenus, isActivePath } = useSidebarMenus();
 
-  const renderMenus = () =>
-    _.map(menus, (menu: { title: string; href: string }) => {
-      const classes = `block text-sm ${isActive(menu.href) ? "text-primary pointer-events-none" : "text-content-contrast hover:text-content"}`;
+  const renderMenuItem = (groupSlug: string, item: { title: string; slug: string }) => {
+    const href = `/docs/${groupSlug}/${item.slug}`;
+    const isActive = isActivePath(href);
+    const linkClasses = isActive ? "text-primary" : "text-content-contrast hover:text-content";
 
-      return (
-        <NextLink key={menu.href} className={classes} href={menu.href}>
-          {menu.title}
+    return (
+      <li key={href}>
+        <NextLink href={href} className={`text-sm ${linkClasses}`}>
+          {item.title}
         </NextLink>
-      );
-    });
+      </li>
+    );
+  };
 
-  return (
-    <div className="space-y-2">
-      <Text as="h3" variant="head-5">
-        Getting Started
-      </Text>
+  const renderMenu = () =>
+    docMenus.routes.map((group) => (
+      <div className="space-y-2" key={group.slug}>
+        <Text as="h3" variant="head-5">
+          {group.title}
+        </Text>
 
-      <div className="space-y-2">{renderMenus()}</div>
-    </div>
-  );
+        <ul className="space-y-1">{group.children.map((item) => renderMenuItem(group.slug, item))}</ul>
+      </div>
+    ));
+
+  return <div className="space-y-4">{renderMenu()}</div>;
 };
 
 export default SidebarMenus;

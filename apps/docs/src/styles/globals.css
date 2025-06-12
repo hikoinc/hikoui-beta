@@ -22,7 +22,7 @@ body {
   @apply prose-h5:text-sm prose-h5:font-bold prose-h5:text-content;
   @apply prose-h6:text-xs prose-h6:font-bold prose-h6:text-content;
   @apply prose-p:text-content;
-  @apply prose-a:text-hiko-blue-500;
+  @apply prose-a:text-content prose-a:hover:no-underline;
   @apply prose-hr:border-divider;
   @apply prose-pre:bg-background-contrast prose-pre:text-content;
 }

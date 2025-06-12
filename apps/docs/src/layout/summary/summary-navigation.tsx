@@ -1,5 +1,6 @@
 "use client";
 
+import _ from "lodash";
 import NextLink from "next/link";
 
 import { Text } from "src/components/base";
@@ -7,9 +8,9 @@ import { Text } from "src/components/base";
 import useSummaryNavigation from "./summary-navigation.hook";
 
 const SummaryNavigation = () => {
-  const { headings } = useSummaryNavigation();
+  const { docHeadings } = useSummaryNavigation();
 
-  if (!headings) return null;
+  if (!docHeadings) return null;
 
   const renderHeading = (heading: { slug: string; text: string; level: number }) => {
     const { slug, text, level } = heading;
@@ -28,7 +29,7 @@ const SummaryNavigation = () => {
     );
   };
 
-  const renderHeadings = () => headings.map(renderHeading);
+  const renderHeadings = () => _.map(docHeadings, renderHeading);
 
   return (
     <div className="space-y-4">

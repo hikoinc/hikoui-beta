@@ -1,4 +1,5 @@
 import { defineDocumentType, makeSource } from "contentlayer2/source-files";
+
 import { getContentUrl, parseMarkdownHeadings } from "./src/utils";
 
 const Doc = defineDocumentType(() => ({
@@ -6,8 +7,14 @@ const Doc = defineDocumentType(() => ({
   filePathPattern: `docs/**/*.mdx`,
   contentType: "mdx",
   fields: {
-    title: { type: "string", required: true },
-    description: { type: "string", required: true },
+    title: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+      required: true,
+    },
   },
   computedFields: {
     url: {
