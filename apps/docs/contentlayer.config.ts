@@ -1,55 +1,27 @@
 import { defineDocumentType, makeSource } from "contentlayer2/source-files";
+import { getContentUrl, parseMarkdownHeadings } from "./src/utils";
 
 const Doc = defineDocumentType(() => ({
   name: "Doc",
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: `docs/**/*.mdx`,
   contentType: "mdx",
   fields: {
-    title: {
-      type: "string",
-      description: "The title of the doc",
-      required: true,
-    },
-    description: {
-      type: "string",
-      description: "The description of the doc",
-      required: true,
-    },
-    order: {
-      type: "number",
-      description: "The order of the doc",
-      required: true,
-    },
+    title: { type: "string", required: true },
+    description: { type: "string", required: true },
   },
   computedFields: {
     url: {
       type: "string",
-      resolve: (doc) => `/docs/${doc._raw.flattenedPath}`,
+      resolve: (doc) => getContentUrl(doc._raw.flattenedPath, "docs"),
     },
     headings: {
       type: "json",
-      resolve: (doc) => {
-        const headingRegex = /^(#{2,6})\s+(.*)$/gm;
-        const headings = [];
-        let match: RegExpExecArray | null = null;
-
-        while ((match = headingRegex.exec(doc.body.raw)) !== null) {
-          const level = match[1].length;
-          const text = match[2];
-
-          const slug = text
-            .toLowerCase()
-            .replace(/[^\w\s-]/g, "")
-            .replace(/\s+/g, "-");
-          headings.push({ level, text, slug });
-        }
-        return headings;
-      },
+      resolve: (doc) => parseMarkdownHeadings(doc.body.raw),
     },
   },
 }));
 
 export default makeSource({
-  contentDirPath: "src/docs",
+  contentDirPath: "src/markdown",
   documentTypes: [Doc],
 });

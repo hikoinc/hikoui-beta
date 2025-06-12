@@ -13,7 +13,7 @@ const DocPage = async (props: DocPageProps) => {
 
   const resolvedParams = await params;
   const slugPath = resolvedParams.slug.join("/");
-  const docsContent = _.find(allDocs, (doc) => doc._raw.flattenedPath === slugPath);
+  const docsContent = _.find(allDocs, (doc) => doc._raw.flattenedPath.replace(/^docs\//, "") === slugPath);
 
   if (!docsContent) return notFound();
 
@@ -27,7 +27,7 @@ export const generateMetadata = async (props: DocPageProps) => {
 
   const resolvedParams = await params;
   const slugPath = resolvedParams.slug.join("/");
-  const docsMetadata = _.find(allDocs, (doc) => doc._raw.flattenedPath === slugPath);
+  const docsMetadata = _.find(allDocs, (doc) => doc._raw.flattenedPath.replace(/^docs\//, "") === slugPath);
 
   return {
     title: docsMetadata ? `${docsMetadata.title} - Hiko` : "Document - Hiko",

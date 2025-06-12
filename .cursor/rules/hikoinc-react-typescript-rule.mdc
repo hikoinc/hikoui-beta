@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+* Use **function declaration syntax** (function funcName() { ... }) for `.ts` and `.js` files, except for files matching `*.hook.ts` which must use **arrow functions**.
+* Use **arrow functions** for `.tsx`, `.jsx`, and files matching `*.hook.ts`.
+* Provide **complete TypeScript types** for all parameters and return values.
+* **Do not use** `any` or `unknown` types under any circumstances.
+* Import lodash as: import \_ from "lodash"; when lodash is required.
+* Write clean, idiomatic, and valid TypeScript code only.
+* Use **TypeScript exclusively** (no plain JavaScript).
+* Follow the **ESLint Airbnb Style Guide** strictly.
+* When ESLint errors occur, **do not add disable comments**; fix the code to comply.
+* **Do not add explicit return types** unless required by TypeScript compiler.
+* In JSX attributes, **avoid nested braces or complex inline expressions** for clarity.

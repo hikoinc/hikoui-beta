@@ -1,16 +1,16 @@
 import type { PropsWithChildren } from "react";
 
-import { Content, Footer, Header, Sidebar, Table } from "src/components/layout";
+import { Content, Footer, Header, Main, Sidebar, Summary } from "src/layout";
 
 const RootLayout = async ({ children }: PropsWithChildren) => (
   <div className="space-y-8">
     <Header />
 
-    <div className="layout-container flex gap-8">
+    <Main>
       <Sidebar />
       <Content>{children}</Content>
-      <Table />
-    </div>
+      <Summary />
+    </Main>
 
     <Footer />
   </div>

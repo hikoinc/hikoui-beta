@@ -6,12 +6,17 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/",
-        destination: "/docs/introduction",
+        destination: "/docs/getting-started/introduction",
         permanent: true,
       },
       {
         source: "/docs",
-        destination: "/docs/introduction",
+        destination: "/docs/getting-started/introduction",
+        permanent: true,
+      },
+      {
+        source: "/docs/getting-started",
+        destination: "/docs/getting-started/introduction",
         permanent: true,
       },
     ];
