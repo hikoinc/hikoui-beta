@@ -19,7 +19,7 @@
     "changeset:release-next": "changeset publish --tag next",
     "changeset:version": "changeset version",
     "changeset:version-next": "changeset version --snapshot next",
-    "clean": "turbo run clean && pnpm clean:lock && pnpm clean:turbo && pnpm clean:coverage && pnpm clean:node-modules && pnpm install --hoist",
+    "clean": "turbo run clean && pnpm clean:turbo && pnpm clean:coverage && pnpm clean:lock && pnpm clean:node-modules",
     "clean:coverage": "rimraf ./coverage",
     "clean:lock": "rimraf ./pnpm-lock.yaml",
     "clean:node-modules": "rimraf ./node_modules",

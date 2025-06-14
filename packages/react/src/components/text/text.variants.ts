@@ -5,14 +5,14 @@ const textVariants = cva("antialiased", {
   variants: {
     color: {
       primary: "text-content",
-      secondary: "text-content-contrast",
-      tertiary: "text-content-high-contrast",
+      secondary: "text-content-soft",
+      tertiary: "text-content-quiet",
       accent: "text-primary",
       success: "text-success",
       warning: "text-warning",
       danger: "text-danger",
       info: "text-info",
-      muted: "text-content-muted",
+      muted: "text-content-quiet",
       inherit: "text-inherit",
     },
     size: {

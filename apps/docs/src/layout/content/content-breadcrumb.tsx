@@ -16,13 +16,13 @@ const ContentBreadcrumb = () => {
       ) : (
         <div className="flex items-center gap-2">
           <NextLink
-            className={`text-content-contrast hover:text-content text-sm capitalize ${isActive(item.href) ? "font-medium" : ""}`}
+            className={`text-content-soft hover:text-content text-sm capitalize ${isActive(item.href) ? "font-medium" : ""}`}
             href={item.href}
           >
             {item.label}
           </NextLink>
 
-          <svg className="text-content-high-contrast size-4" viewBox="0 -960 960 960" fill="currentColor">
+          <svg className="text-content-quiet size-4" viewBox="0 -960 960 960" fill="currentColor">
             <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
           </svg>
         </div>

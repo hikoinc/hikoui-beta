@@ -10,7 +10,7 @@ const linkVariants = cva(["antialiased"], {
       warning: "text-component-link-color-warning",
       danger: "text-component-link-color-danger",
       info: "text-component-link-color-info",
-      muted: "text-component-link-color-muted",
+      muted: "text-component-link-color-quiet",
       inherit: "text-inherit",
     },
     size: {

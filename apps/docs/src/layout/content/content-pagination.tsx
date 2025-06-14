@@ -3,6 +3,7 @@
 import { memo } from "react";
 import NextLink from "next/link";
 import { ChevronLeft, ChevronRight } from "src/components/icons";
+
 import useContentPagination from "./content-pagination.hook";
 
 const ContentPagination = () => {
@@ -17,12 +18,13 @@ const ContentPagination = () => {
 
     return (
       <div className="flex flex-1 items-center">
-        <NextLink className="text-content hover:text-primary group flex-1" href={item.href}>
+        <NextLink className="text-content hover:text-content-link group flex-1" href={item.href}>
           <span className={`flex flex-1 items-center gap-4 ${justifyClass}`}>
             {isPrev && <Icon />}
+
             <span className={`flex flex-col ${alignClass}`}>
-              <span className="group-hover:text-primary text-content-high-contrast text-xs capitalize">{label}</span>
-              <span className="text-sm capitalize">{item.title}</span>
+              <span className="group-hover:text-content-link text-content-quiet text-sm capitalize">{label}</span>
+              <span className="capitalize">{item.title}</span>
             </span>
             {!isPrev && <Icon />}
           </span>

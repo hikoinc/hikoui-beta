@@ -127,7 +127,7 @@ function createSonarJSConfig() {
   ];
 }
 
-function createStorybookConfig() {
+function createStorybookAppConfig() {
   return [
     {
       name: "storybook/config",
@@ -143,7 +143,7 @@ function createStorybookConfig() {
   ];
 }
 
-function createDocsConfig() {
+function createDocsAppConfig() {
   return [
     {
       name: "docs/import-rules",
@@ -156,7 +156,20 @@ function createDocsConfig() {
   ];
 }
 
-function createForwardPolymorphicRefConfig() {
+function createThemePackageConfig() {
+  return [
+    {
+      name: "theme/import-rules",
+      files: ["packages/theme/**/*"],
+      rules: {
+        "import-x/prefer-default-export": "off",
+        "no-underscore-dangle": "off",
+      },
+    },
+  ];
+}
+
+function createForwardPolymorphicRefPackageConfig() {
   return [
     {
       name: "forward-ref/allow-any",
@@ -192,8 +205,9 @@ export default [
   ...createImportConfig(),
   ...createReactConfig(),
   ...createSonarJSConfig(),
-  ...createStorybookConfig(),
-  ...createForwardPolymorphicRefConfig(),
-  ...createDocsConfig(),
+  ...createStorybookAppConfig(),
+  ...createForwardPolymorphicRefPackageConfig(),
+  ...createThemePackageConfig(),
+  ...createDocsAppConfig(),
   ...createPrettierConfig(),
 ];

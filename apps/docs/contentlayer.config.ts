@@ -1,3 +1,5 @@
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 import { defineDocumentType, makeSource } from "contentlayer2/source-files";
 
 import { getContentUrl, parseMarkdownHeadings } from "./src/utils";
@@ -31,4 +33,7 @@ const Doc = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: "src/markdown",
   documentTypes: [Doc],
+  mdx: {
+    rehypePlugins: [remarkGfm, rehypeSlug],
+  },
 });

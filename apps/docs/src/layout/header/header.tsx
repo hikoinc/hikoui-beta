@@ -1,16 +1,17 @@
 "use client";
 
-import NextLink from "next/link";
-
-import { Brand } from "src/components/base";
+import HeaderBrand from "./header-brand";
+import HeaderNavbar from "./header-navbar";
 
 const Header = () => (
   <div className="border-divider bg-background sticky top-0 z-10 border-b">
-    <div className="layout-container flex h-16 items-center">
-      <NextLink className="flex items-center gap-2" href="/" aria-label="Hikoui">
-        <Brand className="text-content size-6" />
-        <h2 className="text-content text-2xl font-medium">Hiko UI</h2>
-      </NextLink>
+    <div className="layout-container flex h-16 items-center gap-8">
+      <div className="flex gap-8">
+        <HeaderBrand />
+        <HeaderNavbar />
+      </div>
+
+      <div className="flex flex-1 justify-end">Actions</div>
     </div>
   </div>
 );

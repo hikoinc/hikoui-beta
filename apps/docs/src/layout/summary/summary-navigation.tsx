@@ -2,7 +2,6 @@
 
 import _ from "lodash";
 import NextLink from "next/link";
-
 import { Text } from "src/components/base";
 
 import useSummaryNavigation from "./summary-navigation.hook";
@@ -22,7 +21,7 @@ const SummaryNavigation = () => {
         key={slug}
         href={anchorHref}
         style={paddingStyle}
-        className="text-content-contrast hover:text-content block text-xs"
+        className="text-content-quiet hover:text-content-soft block text-xs"
       >
         {text}
       </NextLink>

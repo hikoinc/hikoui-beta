@@ -9,20 +9,31 @@ body {
   @apply bg-background text-content;
 }
 
+a {
+  @apply transition-colors duration-200;
+}
+
 .layout-container {
   @apply mx-auto w-full max-w-screen-xl overflow-visible px-4;
 }
 
 .prose {
-  @apply text-content-high-contrast w-full max-w-none;
-  @apply prose-h1:text-2xl prose-h1:font-bold prose-h1:text-content;
-  @apply prose-h2:text-xl prose-h2:font-bold prose-h2:text-content;
-  @apply prose-h3:text-lg prose-h3:font-bold prose-h3:text-content;
-  @apply prose-h4:text-base prose-h4:font-bold prose-h4:text-content;
-  @apply prose-h5:text-sm prose-h5:font-bold prose-h5:text-content;
-  @apply prose-h6:text-xs prose-h6:font-bold prose-h6:text-content;
-  @apply prose-p:text-content;
-  @apply prose-a:text-content prose-a:hover:no-underline;
-  @apply prose-hr:border-divider;
-  @apply prose-pre:bg-background-contrast prose-pre:text-content;
+  --tw-prose-body: var(--color-content-soft);
+  --tw-prose-headings: var(--color-content);
+  --tw-prose-lead: var(--color-content-quiet);
+  --tw-prose-links: var(--color-content);
+  --tw-prose-bold: var(--color-content);
+  --tw-prose-counters: var(--color-content-quiet);
+  --tw-prose-bullets: var(--color-content-quiet);
+  --tw-prose-hr: var(--color-divider);
+  --tw-prose-quotes: var(--color-content);
+  --tw-prose-quote-borders: var(--color-divider);
+  --tw-prose-captions: var(--color-content-quiet);
+  --tw-prose-code: var(--color-content-soft);
+  --tw-prose-pre-code: var(--color-neutral-50);
+  --tw-prose-pre-bg: var(--color-neutral-900);
+  --tw-prose-th-borders: var(--color-divider);
+  --tw-prose-td-borders: var(--color-divider-soft);
+
+  @apply max-w-none scroll-mt-24;
 }

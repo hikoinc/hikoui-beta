@@ -1,6 +1,5 @@
 import _ from "lodash";
 import { usePathname } from "next/navigation";
-
 import { allDocs } from "contentlayer/generated";
 
 const useAllDocs = () => {
@@ -29,12 +28,22 @@ const useAllDocs = () => {
         ],
       },
       {
-        title: "Frameworks",
-        slug: "frameworks",
+        title: "Design Tokens",
+        slug: "design-tokens",
         children: [
           {
-            title: "Project Structure",
-            slug: "project-structure",
+            title: "Colors",
+            slug: "colors",
+          },
+        ],
+      },
+      {
+        title: "Components",
+        slug: "components",
+        children: [
+          {
+            title: "Text",
+            slug: "text",
           },
         ],
       },

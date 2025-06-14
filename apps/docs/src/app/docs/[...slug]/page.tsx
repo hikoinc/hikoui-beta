@@ -3,6 +3,7 @@ import { getMDXComponent } from "next-contentlayer2/hooks";
 import { notFound } from "next/navigation";
 
 import { allDocs } from "contentlayer/generated";
+import { ColorTokens } from "src/components/feature";
 
 interface DocPageProps {
   params: Promise<{ slug: string[] }>;
@@ -19,7 +20,9 @@ const DocPage = async (props: DocPageProps) => {
 
   const Content = getMDXComponent(docsContent.body.code);
 
-  return <Content />;
+  const components = { ColorTokens };
+
+  return <Content components={components} />;
 };
 
 export const generateMetadata = async (props: DocPageProps) => {

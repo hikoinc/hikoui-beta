@@ -1,7 +1,6 @@
 "use client";
 
 import NextLink from "next/link";
-
 import { Text } from "src/components/base";
 
 import useSidebarMenus from "./sidebar-menus.hook";
@@ -12,7 +11,7 @@ const SidebarMenus = () => {
   const renderMenuItem = (groupSlug: string, item: { title: string; slug: string }) => {
     const href = `/docs/${groupSlug}/${item.slug}`;
     const isActive = isActivePath(href);
-    const linkClasses = isActive ? "text-primary" : "text-content-contrast hover:text-content";
+    const linkClasses = isActive ? "text-content-link" : "text-content-soft hover:text-content";
 
     return (
       <li key={href}>

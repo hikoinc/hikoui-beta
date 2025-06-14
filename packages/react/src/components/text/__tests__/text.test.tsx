@@ -176,7 +176,7 @@ describe("Text", () => {
   it("renders muted color variant", () => {
     render(<Text color="muted">Muted text</Text>);
     const textElement = screen.getByText("Muted text");
-    expect(textElement).toHaveClass("text-palette-muted-text");
+    expect(textElement).toHaveClass("text-palette-quiet-text");
   });
 
   it("renders with inherit color variant", () => {
