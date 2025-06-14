@@ -1,7 +1,7 @@
 import StyleDictionary from "style-dictionary";
 
-import { primaryConfig } from "./configs";
-import { tailwindcssVariable } from "./formats";
+import { primaryConfig } from "../src/configs";
+import { tailwindcssVariable } from "../src/formats";
 
 StyleDictionary.registerFormat(tailwindcssVariable);
 

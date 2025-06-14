@@ -34,12 +34,12 @@
     "dist"
   ],
   "scripts": {
-    "build": "pnpm clean:build && ts-node src/index.ts",
+    "build": "ts-node scripts/build-all-platforms",
     "clean": "pnpm clean:build && pnpm clean:turbo && pnpm clean:node_modules",
     "clean:build": "rimraf dist",
     "clean:node_modules": "rimraf node_modules",
     "clean:turbo": "rimraf .turbo",
-    "dev": "chokidar \"src/tokens/**/*.json\" -c \"pnpm build\"",
+    "dev": "chokidar \"src/tokens/**/*.json\" -c \"pnpm build\" --initial",
     "sort-package-json": "pnpm exec sort-package-json",
     "sort-package-json:check": "pnpm exec sort-package-json --check",
     "typescheck": "tsc --noEmit"

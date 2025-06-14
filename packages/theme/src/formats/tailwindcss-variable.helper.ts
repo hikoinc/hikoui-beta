@@ -1,33 +1,51 @@
-import type { Dictionary } from "style-dictionary/types";
 import _ from "lodash";
+import type { Dictionary } from "style-dictionary/types";
 
-function formatTailwindcssVariables({ dictionary }: { dictionary: Dictionary }): string {
+function formatTailwindcssVariables({ dictionary }: { dictionary: Dictionary }) {
   const { allTokens } = dictionary;
 
-  function renderThemeVariables(theme: "light" | "dark", indent = 2): string {
-    const space = " ".repeat(indent);
+  const renderThemeVariables = (theme: "light" | "dark") => {
+    const isDarkTheme = _.isEqual(theme, "dark");
 
-    return _.chain(allTokens)
-      .filter((token) => token.path.includes("dark") === (theme === "dark"))
-      .map((token) => {
-        const name = _.chain(token.path)
-          .filter((part) => !_.includes(["color", "dark"], part))
-          .join("-")
-          .value();
+    const themeTokens = _.filter(allTokens, (token) => {
+      const tokenPath = _.get(token, "path");
+      const tokenIsDark = _.includes(tokenPath, "dark");
 
-        const value = _.get(token, "original.$value", "");
-        const comment = _.get(token, "original.$description", "");
+      return _.isEqual(tokenIsDark, isDarkTheme);
+    });
 
-        return `${space}--color-${name}: ${value};${comment}`;
-      })
-      .join("\n")
-      .value();
-  }
+    const lines = _.map(themeTokens, (token) => {
+      const tokenPath = _.get(token, "path");
+      const tokenName = _.join(_.without(tokenPath, "color", "dark"), "-");
 
-  const lightVariables = renderThemeVariables("light", 2);
-  const darkVariables = renderThemeVariables("dark", 4);
+      const originalValue = _.get(token, "original.$value", "");
+      const hasReference = _.includes(originalValue, "{color.");
 
-  return `:root {\n${lightVariables}\n}\n\n.dark, [data-theme="dark"] {\n${darkVariables}\n}`;
+      let resolvedValue = originalValue;
+
+      if (hasReference) {
+        resolvedValue = _.replace(originalValue, /{color\.(.*?)}/g, (match) => {
+          const cleaned = _.replace(match, /[{}]/g, "");
+          const pathParts = _.split(cleaned, ".");
+          const referenceParts = _.slice(pathParts, 1);
+          const referencePath = _.join(referenceParts, "-");
+
+          return `var(--color-${referencePath})`;
+        });
+      }
+
+      const comment = _.get(token, "original.$description", "");
+
+      return `  --color-${tokenName}: ${resolvedValue};${comment}`;
+    });
+
+    return _.join(lines, "\n");
+  };
+
+  const lightTheme = renderThemeVariables("light");
+  const darkTheme = renderThemeVariables("dark");
+
+  return `@theme {\n${lightTheme}\n}\n\n.dark, [data-theme="dark"] {\n${darkTheme}\n}`;
 }
 
 export default formatTailwindcssVariables;

@@ -16,6 +16,16 @@ const primaryConfig: Config = {
         },
       ],
     },
+    json: {
+      transformGroup: "js",
+      buildPath: "dist/",
+      files: [
+        {
+          destination: "primary.json",
+          format: "json",
+        },
+      ],
+    },
   },
 };
 
